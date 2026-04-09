@@ -1,0 +1,57 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 09 April 2026, 15:34 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 30.41°C
+  Kelembaban   : 68%
+  Angin        : 7.72 m/s
+  Kondisi      : awan tersebar
+
+── ANALISIS ───────────────────────────────────────────────
+1. KONDISI SAAT INI: 
+Kondisi lingkungan di Jakarta saat ini dapat digambarkan sebagai berikut: suhu udara 30,41°C, kelembaban 68%, dan polutan PM2.5 sebesar 63 μg/m³ yang masih berada di atas batas yang diinginkan. Status udara di Jakarta dapat dikategorikan sebagai "Baik" menurut standar WHO/ISPU, namun perlu diingat bahwa nilai AQI dan PM2.5 masih berada di atas batas yang diinginkan.
+
+2. PREDIKSI RISIKO: 
+Risiko banjir di Jakarta dapat diprediksi berdasarkan curah hujan yang diperkirakan. Berdasarkan data, curah hujan pada tanggal 9 April 2026 diperkirakan sebesar 1,2 mm, sedangkan pada tanggal 10 April 2026 diperkirakan sebesar 4,7 mm. Risiko polusi di Jakarta dapat diprediksi berdasarkan kualitas udara dan polutan yang diperkirakan. Berdasarkan data AQI (63) dan PM2.5 (63), status udara di Jakarta dapat dikategorikan sebagai "Baik" menurut standar WHO/ISPU.
+
+3. DAMPAK SOSIAL: 
+Dampak sosial dari kondisi lingkungan di Jakarta dapat berupa penurunan kualitas hidup masyarakat, peningkatan biaya kesehatan, dan penurunan produktivitas. Selain itu, kondisi lingkungan yang buruk juga dapat mempengaruhi pariwisata dan ekonomi kota.
+
+4. CATATAN ETIKA: 
+Catatan etika dalam analisis ini adalah pentingnya transparansi data, keadilan dalam penanganan limbah, dan akurasi dalam perhitungan skor kerentanan. Skor etika yang dihitung sebesar 72 menunjukkan bahwa analisis ini telah memenuhi beberapa aspek etika, namun masih perlu peninjauan ulang dan perbaikan.
+
+5. RENCANA AKSI: 
+[PRIORITAS: tinggi] [PELAKU: Pemerintah Kota Jakarta] [AKSI: Meningkatkan efisiensi sistem penanganan limbah] [DAMPAK: Mengurangi polutan PM2.5 sebesar 20% dalam 6 bulan]
+[PRIORITAS: sedang] [PELAKU: Masyarakat] [AKSI: Meningkatkan kesadaran tentang pentingnya pengelolaan limbah yang baik] [DAMPAK: Meningkatkan partisipasi masyarakat dalam pengelolaan limbah sebesar 30% dalam 3 bulan]
+[PRIORITAS: rendah] [PELAKU: Swasta] [AKSI: Meningkatkan penggunaan energi terbarukan] [DAMPAK: Mengurangi emisi gas rumah kaca sebesar 10% dalam 1 tahun]
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan efisiensi sistem penanganan limbah
+     Pelaku : Pemerintah Kota Jakarta
+     Dampak : Mengurangi polutan PM2.5 sebesar 20% dalam 6 bulan
+
+  2. [SEDANG] Meningkatkan kesadaran tentang pentingnya pengelolaan limbah yang baik
+     Pelaku : Masyarakat
+     Dampak : Meningkatkan partisipasi masyarakat dalam pengelolaan limbah sebesar 30% dalam 3 bulan
+
+  3. [RENDAH] Meningkatkan penggunaan energi terbarukan
+     Pelaku : Swasta
+     Dampak : Mengurangi emisi gas rumah kaca sebesar 10% dalam 1 tahun
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

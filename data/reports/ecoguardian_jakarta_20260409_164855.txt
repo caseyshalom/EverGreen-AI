@@ -1,0 +1,64 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 09 April 2026, 16:48 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 30.1°C
+  Kelembaban   : 67%
+  Angin        : 7.72 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Suhu udara di Jakarta saat ini relatif sejuk dengan nilai 30,1°C, namun kualitas udara masih dalam kategori baik dengan AQI 63 dan PM2,5 63 μg/m³, yang masih di bawah standar WHO/ISPU. Risiko banjir di Jakarta sangat tinggi karena prakiraan cuaca pada tanggal 2026-04-10 terdapat hujan dengan intensitas 4,7 mm. Risiko polusi udara juga sedang karena kualitas udara masih dalam kategori baik, namun dengan adanya hujan, polusi udara dapat meningkat.
+
+**PREDIKSI RISIKO**
+
+Risiko banjir di Jakarta sangat tinggi karena prakiraan cuaca pada tanggal 2026-04-10 terdapat hujan dengan intensitas 4,7 mm. Risiko polusi udara juga sedang karena kualitas udara masih dalam kategori baik, namun dengan adanya hujan, polusi udara dapat meningkat.
+
+**DAMPAK SOSIAL**
+
+Kelompok rentan yang paling berisiko terhadap polusi udara adalah anak-anak dan orang lanjut usia yang lebih rentan terhadap penyakit akibat kualitas udara yang kurang baik dan akses terbatas ke fasilitas kesehatan. Kelompok rentan lainnya adalah masyarakat kurang mampu yang tinggal di daerah kumuh dengan akses terbatas ke fasilitas sanitasi dan air bersih.
+
+**CATATAN ETIKA**
+
+Rekomendasi-rekomendasi yang telah disampaikan tidak secara spesifik mengidentifikasi kelompok rentan yang paling berisiko terhadap polusi udara dan sumber kemiskinan yang paling signifikan. Oleh karena itu, perlu diperhatikan bahwa rekomendasi-rekomendasi ini perlu disempurnakan untuk lebih spesifik dan efektif.
+
+**RENCANA AKSI**
+
+1. [PRIORITAS: Tinggi] [PELAKU: Pemerintah setempat] [AKSI: Meningkatkan akses ke fasilitas sanitasi dan air bersih di daerah kumuh] [DAMPAK: Mengurangi kemiskinan dan meningkatkan kualitas hidup masyarakat]
+2. [PRIORITAS: Sedang] [PELAKU: Masyarakat] [AKSI: Menggunakan masker saat beraktivitas di luar ruangan] [DAMPAK: Mengurangi risiko polusi udara dan menjaga kesehatan]
+3. [PRIORITAS: Rendah] [PELAKU: Pemerintah setempat] [AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara] [DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara]
+
+**RISK_LEVEL**: Sedang
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan akses ke fasilitas sanitasi dan air bersih di daerah kumuh
+     Pelaku : Pemerintah setempat
+     Dampak : Mengurangi kemiskinan dan meningkatkan kualitas hidup masyarakat
+
+  2. [SEDANG] Menggunakan masker saat beraktivitas di luar ruangan
+     Pelaku : Masyarakat
+     Dampak : Mengurangi risiko polusi udara dan menjaga kesehatan
+
+  3. [RENDAH] Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara
+     Pelaku : Pemerintah setempat
+     Dampak : Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

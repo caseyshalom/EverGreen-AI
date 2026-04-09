@@ -1,0 +1,57 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 09 April 2026, 15:46 WIB
+============================================================
+
+TINGKAT RISIKO: 🔴 TINGGI
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 30.75°C
+  Kelembaban   : 67%
+  Angin        : 7.72 m/s
+  Kondisi      : awan tersebar
+
+── ANALISIS ───────────────────────────────────────────────
+1. KONDISI SAAT INI: 
+Kondisi lingkungan di Jakarta saat ini dapat digambarkan sebagai berikut: suhu udara 30,75°C, kelembaban 67%, dan polutan PM2,5 dengan nilai 63, yang termasuk dalam kisaran tinggi. Status udara di Jakarta dapat dikategorikan sebagai "Baik" menurut standar WHO/ISPU, namun perlu diingat bahwa nilai AQI dan PM2,5 yang tinggi dapat menyebabkan efek negatif pada kesehatan manusia, terutama bagi orang-orang dengan kondisi medis yang sensitif.
+
+2. PREDIKSI RISIKO: 
+Risiko banjir di Jakarta pada tanggal 9 April 2026 dan 10 April 2026 dapat dikategorikan sebagai rendah, sedangkan risiko polusi dapat dikategorikan sebagai tinggi. Hal ini karena curah hujan yang diprakirakan relatif rendah, yaitu 1,2 mm pada tanggal 9 April dan 4,7 mm pada tanggal 10 April, namun nilai PM2,5 yang diprakirakan relatif tinggi, yaitu 63 pada tanggal 9 April.
+
+3. DAMPAK SOSIAL: 
+Dampak sosial dari kondisi lingkungan di Jakarta dapat dirasakan oleh masyarakat, terutama kelompok rentan seperti masyarakat berpenghasilan rendah. Mereka memiliki akses yang terbatas pada sumber daya ekonomi dan kebutuhan dasar, sehingga lebih rentan terhadap risiko banjir dan polusi. Selain itu, kondisi lingkungan yang buruk juga dapat mempengaruhi kesehatan masyarakat, terutama bagi orang-orang dengan kondisi medis yang sensitif.
+
+4. CATATAN ETIKA: 
+Skor etika untuk analisis ini adalah 80, karena analisis yang cukup baik, namun masih perlu ditingkatkan transparansi dan perhatian pada kelompok rentan. Temuan-temuan yang signifikan adalah peningkatan transparansi data, keterbatasan data, dan kurangnya perhatian pada kelompok rentan.
+
+5. RENCANA AKSI: 
+- [PRIORITAS: tinggi] [PELAKU: Pemerintah Kota Jakarta] [AKSI: Meningkatkan monitoring polutan dan mengembangkan strategi mitigasi polusi] [DAMPAK: Mengurangi dampak negatif polusi pada kesehatan manusia dan lingkungan]
+- [PRIORITAS: sedang] [PELAKU: Masyarakat] [AKSI: Meningkatkan kesadaran dan partisipasi dalam menjaga lingkungan] [DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan]
+- [PRIORITAS: rendah] [PELAKU: Swasta] [AKSI: Meningkatkan investasi pada teknologi lingkungan] [DAMPAK: Meningkatkan efisiensi dan efektifitas dalam menjaga lingkungan]
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan monitoring polutan dan mengembangkan strategi mitigasi polusi
+     Pelaku : Pemerintah Kota Jakarta
+     Dampak : Mengurangi dampak negatif polusi pada kesehatan manusia dan lingkungan
+
+  2. [SEDANG] Meningkatkan kesadaran dan partisipasi dalam menjaga lingkungan
+     Pelaku : Masyarakat
+     Dampak : Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan
+
+  3. [RENDAH] Meningkatkan investasi pada teknologi lingkungan
+     Pelaku : Swasta
+     Dampak : Meningkatkan efisiensi dan efektifitas dalam menjaga lingkungan
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

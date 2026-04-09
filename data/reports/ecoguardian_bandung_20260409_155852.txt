@@ -1,0 +1,66 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  BANDUNG — 09 April 2026, 15:58 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : N/A
+  PM2.5        : N/A μg/m³
+  Suhu         : 25.64°C
+  Kelembaban   : 74%
+  Angin        : 2.18 m/s
+  Kondisi      : hujan rintik-rintik
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Suhu udara di Bandung saat ini adalah 25,64°C, sedangkan kelembaban udara adalah 74%. Kondisi ini dapat dikategorikan sebagai suhu normal dan kelembaban yang relatif tinggi. Namun, tidak ada data tentang polutan atau kualitas udara lainnya yang dapat membantu menentukan kondisi lingkungan secara lebih akurat.
+
+**PREDIKSI RISIKO**
+
+Berdasarkan prakiraan cuaca yang tersedia, saya dapat memberikan prediksi risiko banjir dan polusi di Bandung sebagai berikut:
+
+- **Risiko Banjir:** Sedang
+- **Risiko Polusi:** Rendah
+- **Tingkat Kepercayaan:** 70% (karena tidak ada data tentang polutan atau kualitas udara lainnya yang dapat membantu menentukan kondisi lingkungan secara lebih akurat)
+
+**DAMPAK SOSIAL**
+
+Dampak sosial dari kondisi lingkungan di Bandung dapat membahayakan kesehatan masyarakat, terutama bagi kelompok rentan seperti anak-anak, orang tua, dan orang dengan penyakit kronis. Selain itu, kondisi lingkungan yang tidak sehat juga dapat mempengaruhi produktivitas dan kualitas hidup masyarakat.
+
+**CATATAN ETIKA**
+
+Skor Etika: 60
+
+**RENCANA AKSI**
+
+1. **PRIORITAS:** Tinggi **PELAKU:** Pemerintah Kota Bandung **AKSI:** Pengumpulan data yang lengkap tentang kualitas udara, termasuk AQI, PM2,5, dan polutan lainnya **DAMPAK:** Meningkatkan akurasi analisis lingkungan dan kemampuan untuk mengambil keputusan yang tepat.
+2. **PRIORITAS:** Sedang **PELAKU:** Masyarakat **AKSI:** Pengembangan sistem monitoring lingkungan yang efektif **DAMPAK:** Meningkatkan kualitas udara dan lingkungan di Bandung.
+3. **PRIORITAS:** Rendah **PELAKU:** Organisasi Non-Pemerintah **AKSI:** Meningkatkan kesadaran masyarakat tentang pentingnya kualitas udara dan lingkungan **DAMPAK:** Meningkatkan kesadaran dan partisipasi masyarakat dalam upaya meningkatkan kualitas udara dan lingkungan.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] **PRIORITAS:** Tinggi **PELAKU:** Pemerintah Kota Bandung **AKSI:** Pengumpulan data yang lengkap tentang kualitas udara
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] **PRIORITAS:** Sedang **PELAKU:** Masyarakat **AKSI:** Pengembangan sistem monitoring lingkungan yang efektif **DAMPAK:*
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] **PRIORITAS:** Rendah **PELAKU:** Organisasi Non-Pemerintah **AKSI:** Meningkatkan kesadaran masyarakat tentang pentingn
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

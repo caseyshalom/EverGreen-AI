@@ -27,7 +27,7 @@ EcoGuardian Orchestrator (agents/orchestrator.py)
        ↓
   Free APIs (WAQI, OpenWeatherMap, Open-Meteo, World Bank)
        ↓
-  Gemini 2.5 Flash (LLM backbone)
+  Groq llama-3.1-8b-instant (LLM backbone)
        ↓
   SQLite Database (memory/db.py)
 ```
@@ -58,11 +58,11 @@ Sesuai ketentuan lomba, berikut daftar lengkap perangkat lunak, API, dan layanan
   - Digunakan untuk: orkestrasi multi-agent (Monitor, Predict, Social, Report Agent)
 
 #### Model AI / LLM
-- **Gemini 2.5 Flash API** oleh Google DeepMind
-  - Tautan: https://ai.google.dev/gemini-api/docs
+- **Groq API** — llama-3.1-8b-instant
+  - Tautan: https://console.groq.com/
   - Digunakan untuk: reasoning, analisis data lingkungan, pembuatan laporan
-  - Free tier: 1.500 request/hari via Google AI Studio
-  - SDK: `google-generativeai` (pip)
+  - Free tier: tersedia
+  - SDK: `groq` (pip)
 
 #### API Data Lingkungan (Gratis)
 - **World Air Quality Index (WAQI) API** oleh aqicn.org
@@ -119,7 +119,7 @@ cp .env.example .env
 
 File `.env`:
 ```
-GEMINI_API_KEY=     # Dari https://aistudio.google.com/
+GROQ_API_KEY=     # Dari https://console.groq.com/
 OPENWEATHER_API_KEY= # Dari https://openweathermap.org/api
 WAQI_TOKEN=          # Dari https://aqicn.org/data-platform/token/
 ```

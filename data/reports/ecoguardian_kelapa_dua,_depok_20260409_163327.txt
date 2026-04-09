@@ -1,0 +1,79 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  KELAPA DUA, DEPOK — 09 April 2026, 16:33 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : N/A
+  PM2.5        : N/A μg/m³
+  Suhu         : 29.86°C
+  Kelembaban   : 68%
+  Angin        : 5.14 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+Saya siap untuk memberikan laporan EcoGuardian yang komprehensif untuk Kelapa Dua, Depok.
+
+**KONDISI SAAT INI**
+
+Saat ini, kondisi lingkungan di Kelapa Dua, Depok, dapat dilihat dari beberapa aspek:
+
+* Status udara: Baik
+* Suhu udara: Relatif tinggi (29,86°C) namun masih dalam kisaran normal
+* Risiko banjir: Tinggi
+* Risiko polusi: Sedang
+
+Dengan demikian, kondisi lingkungan di Kelapa Dua, Depok, saat ini dapat dikategorikan sebagai kondisi yang relatif stabil namun memiliki potensi risiko banjir yang tinggi.
+
+**PREDIKSI RISIKO**
+
+Dari data yang tersedia, prediksi risiko di Kelapa Dua, Depok, dapat dilihat dari beberapa aspek:
+
+* Risiko banjir: Tinggi karena curah hujan yang cukup tinggi (12,4 mm) dan kecepatan angin yang relatif rendah (12,0 m/s) pada tanggal 2026-04-10
+* Risiko polusi: Sedang karena tidak ada data yang menunjukkan adanya polusi yang signifikan di Kelapa Dua, Depok
+
+Dengan demikian, prediksi risiko di Kelapa Dua, Depok, dapat dikategorikan sebagai risiko tinggi karena kemungkinan banjir yang mungkin terjadi pada tanggal 2026-04-10.
+
+**DAMPAK SOSIAL**
+
+Dampak sosial di Kelapa Dua, Depok, dapat dilihat dari beberapa aspek:
+
+* Masyarakat kurang mampu yang tinggal di Kelapa Dua, Depok, yang memiliki kemiskinan sebesar 4% dan potensi kesulitan akses ke fasilitas sanitasi yang memadai
+* Keluarga dengan anak-anak yang tinggal di Kelapa Dua, Depok, yang memiliki akses air bersih sebesar 89% dan potensi kesulitan kesehatan akibat kurangnya sanitasi yang memadai
+
+Dengan demikian, dampak sosial di Kelapa Dua, Depok, dapat dikategorikan sebagai dampak yang signifikan karena kemiskinan dan kesulitan akses ke fasilitas sanitasi yang memadai.
+
+**CATATAN ETIKA**
+
+Dalam membuat laporan ini, saya telah mempertimbangkan aspek etika berikut:
+
+* Masyarakat di Kelapa Dua, Depok, perlu diinformasikan tentang kemungkinan banjir yang mungkin terjadi pada tanggal 2026-04-10 dan diberikan saran untuk mempersiapkan diri dengan mengamankan barang-barang yang berharga dan tidak berada di daerah yang rawan banjir.
+* Pemerintah setempat dapat meningkatkan penanaman pohon atau tanaman lainnya untuk memberikan peneduh dan mengurangi efek panas, tetapi perlu diingat bahwa program ini harus dilakukan secara efektif dan tidak membiarkan masyarakat kurang mampu terus-menerus mengalami kesulitan.
+
+Dengan demikian, catatan etika dalam laporan ini dapat dikategorikan sebagai catatan yang signifikan karena perlu diingat bahwa program bantuan sosial dan penanaman pohon harus dilakukan secara efektif.
+
+**RENCANA AKSI**
+
+Dengan demikian, rencana aksi untuk Kelapa Dua, Depok, dapat dibuat sebagai berikut:
+
+1. [PRIORITAS: Tinggi] [PELAKU: Pemerintah setempat] [AKSI: Meningkatkan penanaman pohon atau tanaman lainnya untuk memberikan peneduh dan mengurangi efek panas] [DAMPAK: Meningkatkan kenyamanan masyarakat dan mengurangi efek panas]
+2. [PRIORITAS: Sedang] [PELAKU: Masyarakat di Kel
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan penanaman pohon atau tanaman lainnya untuk memberikan peneduh dan mengurangi efek panas
+     Pelaku : Pemerintah setempat
+     Dampak : Meningkatkan kenyamanan masyarakat dan mengurangi efek panas
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

@@ -47,6 +47,11 @@ class QueryResponse(BaseModel):
     monitor: dict = {}
     predict: dict = {}
     social: dict = {}
+    ethics: dict = {}
+    actions: list = []
+    notifications: dict = {}
+    report_file: str = ""
+    sources: list = []
     history: list = []
     session_id: str = ""
 
@@ -75,6 +80,34 @@ async def analyze(req: QueryRequest):
     return result
 
 
+@app.get("/api/download-report")
+async def download_report(file: str):
+    """Download laporan yang sudah digenerate."""
+    from fastapi.responses import FileResponse as FR
+    import urllib.parse
+    decoded = urllib.parse.unquote(file)
+    path = Path(decoded)
+    # Normalisasi path untuk validasi (support Windows backslash)
+    normalized = str(path).replace("\\", "/")
+    if not path.exists() or not normalized.startswith("data/reports"):
+        raise HTTPException(status_code=404, detail="File tidak ditemukan")
+    return FR(
+        path=str(path),
+        filename=path.name,
+        media_type="text/plain; charset=utf-8",
+        headers={"Content-Disposition": f'attachment; filename="{path.name}"'},
+    )
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    favicon_path = BASE_DIR / "static" / "favicon.ico"
+    if favicon_path.exists():
+        return FileResponse(str(favicon_path))
+    from fastapi.responses import Response
+    return Response(status_code=204)
+
+
 @app.get("/api/health")
 async def health():
     return {
@@ -82,12 +115,9 @@ async def health():
         "service": "EcoGuardian AI",
         "version": "1.0.0",
         "ai": {
-            "gemini": {
-                "active": False
-            },
             "groq": {
                 "active": True,
-                "model": "llama3-8b-8192"
+                "model": "llama-3.1-8b-instant"
             }
         }
     }

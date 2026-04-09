@@ -1,0 +1,65 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 09 April 2026, 16:30 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 31.05°C
+  Kelembaban   : 66%
+  Angin        : 7.72 m/s
+  Kondisi      : awan tersebar
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Status udara di Jakarta saat ini relatif sejuk dengan nilai 31,05°C, namun kualitas udara masih memenuhi standar WHO/ISPU dengan AQI 63 dan PM2,5 63 μg/m³, yang masih dalam kategori baik. Risiko banjir di Jakarta saat ini rendah, namun risiko polusi sedang. Kualitas udara di Jakarta masih memenuhi standar WHO/ISPU, namun perlu meningkatkan kegiatan pembersihan lingkungan dan penanaman pohon untuk meningkatkan kualitas udara.
+
+**PREDIKSI RISIKO**
+
+Prediksi risiko banjir di Jakarta saat ini rendah, namun risiko polusi sedang. Kualitas udara di Jakarta masih memenuhi standar WHO/ISPU, namun perlu meningkatkan kegiatan pembersihan lingkungan dan penanaman pohon untuk meningkatkan kualitas udara. Pemerintah Kota Jakarta perlu meningkatkan pengawasan dan pengendalian emisi polusi udara dari sumber-sumber industri dan transportasi untuk menjaga kualitas udara tetap baik.
+
+**DAMPAK SOSIAL**
+
+Kelompok rentan seperti masyarakat miskin dan kurang mampu, serta masyarakat yang tinggal di daerah kumuh, perlu mendapatkan perhatian khusus dari Pemerintah Kota Jakarta untuk meningkatkan akses mereka terhadap sumber daya dasar seperti air bersih dan sanitasi. Masyarakat miskin dan kurang mampu yang tinggal di Jakarta masih memiliki kemiskinan yang mencapai 4%, yang dapat mempengaruhi akses mereka terhadap sumber daya dasar seperti air bersih dan sanitasi.
+
+**CATATAN ETIKA**
+
+Skor etika untuk kebijakan pemerintah Kota Jakarta adalah 85, yang menunjukkan bahwa kebijakan tersebut sudah cukup baik. Namun, perlu diingat bahwa kualitas udara di Jakarta masih memenuhi standar WHO/ISPU, namun perlu meningkatkan kegiatan pembersihan lingkungan dan penanaman pohon untuk meningkatkan kualitas udara.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS: Tinggi** **PELAKU: Pemerintah Kota Jakarta** **AKSI: Meningkatkan program bantuan sosial untuk masyarakat miskin dan kurang mampu** **DAMPAK: Meningkatkan akses masyarakat miskin dan kurang mampu terhadap sumber daya dasar seperti air bersih dan sanitasi**
+2. **PRIORITAS: Sedang** **PELAKU: Pemerintah Kota Jakarta** **AKSI: Meningkatkan infrastruktur sanitasi di daerah kumuh** **DAMPAK: Meningkatkan kesehatan masyarakat yang tinggal di daerah kumuh**
+3. **PRIORITAS: Rendah** **PELAKU: Warga Jakarta** **AKSI: Meningkatkan kegiatan pembersihan lingkungan dan penanaman pohon** **DAMPAK: Meningkatkan kualitas udara di Jakarta**
+
+
+Saya harap jawaban ini dapat memenuhi kebutuhan Anda.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] **PRIORITAS: Tinggi** **PELAKU: Pemerintah Kota Jakarta** **AKSI: Meningkatkan program bantuan sosial untuk masyarakat m
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] **PRIORITAS: Sedang** **PELAKU: Pemerintah Kota Jakarta** **AKSI: Meningkatkan infrastruktur sanitasi di daerah kumuh** 
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] **PRIORITAS: Rendah** **PELAKU: Warga Jakarta** **AKSI: Meningkatkan kegiatan pembersihan lingkungan dan penanaman pohon
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

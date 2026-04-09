@@ -7,6 +7,20 @@ import httpx
 import os
 from typing import Optional
 
+# Koordinat fallback untuk kota-kota umum (jika geocoding gagal)
+CITY_COORDS_FALLBACK = {
+    "jakarta":      {"lat": -6.2088,  "lon": 106.8456},
+    "surabaya":     {"lat": -7.2575,  "lon": 112.7521},
+    "bandung":      {"lat": -6.9175,  "lon": 107.6191},
+    "medan":        {"lat":  3.5952,  "lon":  98.6722},
+    "semarang":     {"lat": -6.9932,  "lon": 110.4203},
+    "makassar":     {"lat": -5.1477,  "lon": 119.4327},
+    "singapore":    {"lat":  1.3521,  "lon": 103.8198},
+    "kuala lumpur": {"lat":  3.1390,  "lon": 101.6869},
+    "bangkok":      {"lat": 13.7563,  "lon": 100.5018},
+    "tokyo":        {"lat": 35.6762,  "lon": 139.6503},
+}
+
 
 async def get_air_quality(city: str) -> dict:
     """
@@ -165,11 +179,14 @@ async def get_social_data(country_code: str) -> dict:
 
 async def get_city_coordinates(city: str) -> Optional[dict]:
     """
-    Geocoding gratis via OpenWeatherMap API.
+    Geocoding via OpenWeatherMap API, dengan fallback koordinat hardcoded.
     """
+    # Coba fallback dulu (instan, tanpa API call)
+    fallback = CITY_COORDS_FALLBACK.get(city.lower())
+
     api_key = os.getenv("OPENWEATHER_API_KEY", "")
     if not api_key:
-        return None
+        return fallback  # pakai fallback kalau tidak ada API key
 
     url = "http://api.openweathermap.org/geo/1.0/direct"
     params = {"q": city, "limit": 1, "appid": api_key}
@@ -180,6 +197,6 @@ async def get_city_coordinates(city: str) -> Optional[dict]:
             data = resp.json()
         if data:
             return {"lat": data[0]["lat"], "lon": data[0]["lon"], "country": data[0].get("country", "")}
-        return None
+        return fallback
     except Exception:
-        return None
+        return fallback
