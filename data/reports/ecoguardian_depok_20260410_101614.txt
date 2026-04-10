@@ -1,0 +1,69 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  DEPOK — 10 April 2026, 10:16 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 160
+  PM2.5        : 160 μg/m³
+  Suhu         : 31.75°C
+  Kelembaban   : 44%
+  Angin        : 4.12 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Kualitas udara di Depok saat ini sangat buruk, dengan AQI (Indeks Kualitas Udara) yang melebihi batas toleransi WHO (World Health Organization) yaitu 50. Hal ini juga ditunjukkan oleh nilai PM2.5 yang sangat tinggi, yaitu 160 μg/m³, yang jauh melebihi standar WHO yaitu 25 μg/m³. Suhu udara yang tinggi, yaitu 31,75°C, juga dapat memperburuk kondisi udara. Selain itu, risiko banjir juga tinggi karena prakiraan cuaca yang menunjukkan hujan yang cukup tinggi pada tanggal 11 April 2026, dengan curah hujan sebesar 12,4 mm.
+
+**PREDIKSI RISIKO**
+
+Risiko polusi udara sangat tinggi karena kondisi udara yang sangat buruk di Depok. Selain itu, risiko banjir juga tinggi karena prakiraan cuaca yang menunjukkan hujan yang cukup tinggi pada tanggal 11 April 2026.
+
+**DAMPAK SOSIAL**
+
+Dampak sosial dari kondisi udara yang buruk dan risiko banjir dapat menyebabkan kesehatan masyarakat yang buruk, terutama bagi kelompok rentan seperti masyarakat miskin dan kurang mampu, anak-anak, dan orang tua yang memiliki kondisi kesehatan yang lemah.
+
+**CATATAN ETIKA**
+
+Skor etika untuk kualitas udara di Depok adalah 40, karena:
+
+1. Kualitas udara di Depok sangat buruk, dengan AQI yang melebihi batas toleransi WHO dan nilai PM2.5 yang sangat tinggi, sehingga berdampak pada kesehatan masyarakat.
+2. Pemerintah setempat belum mengambil tindakan yang efektif untuk mengurangi emisi polusi udara, seperti meningkatkan efisiensi pembangkit listrik tenaga batu bara dan meningkatkan penggunaan energi terbarukan.
+3. Masyarakat dan pemerintah belum bekerja sama secara efektif untuk meningkatkan kesadaran dan pengetahuan tentang pentingnya menjaga kualitas udara dan lingkungan, serta melakukan aksi nyata untuk mengurangi polusi udara dan meningkatkan kualitas hidup di Depok.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS: Tinggi** **PELAKU: Pemerintah setempat** **AKSI: Meningkatkan efisiensi pembangkit listrik tenaga batu bara dan meningkatkan penggunaan energi terbarukan** **DAMPAK: Mengurangi emisi polusi udara dan meningkatkan kualitas udara di Depok**
+2. **PRIORITAS: Tinggi** **PELAKU: Masyarakat** **AKSI: Mengurangi aktivitas di luar ruangan dan menggunakan masker untuk melindungi diri dari polusi udara** **DAMPAK: Meningkatkan kesehatan masyarakat dan mengurangi dampak polusi udara**
+3. **PRIORITAS: Tinggi** **PELAKU: Pemerintah setempat dan masyarakat** **AKSI: Meningkatkan pengelolaan sampah dan limbah, serta meningkatkan penanaman pohon dan tanaman lainnya untuk mengurangi polusi udara** **DAMPAK: Mengurangi polusi udara dan meningkatkan kualitas hidup di Depok**
+
+
+Risiko polusi udara di Depok sangat tinggi, sedangkan risiko banjir juga tinggi karena prakiraan cu
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: Tinggi PELAKU: Pemerintah setempat AKSI: Meningkatkan efisiensi pembangkit listrik tenaga batu bara dan meningkatkan penggunaan energi terbarukan DAMPAK: Mengurangi emisi polusi udara dan meningkatkan kualitas udara di Depok
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [TINGGI] PRIORITAS: Tinggi PELAKU: Masyarakat AKSI: Mengurangi aktivitas di luar ruangan dan menggunakan masker untuk melindungi diri dari polusi udara DAMPAK: Meningkatkan kesehatan masyarakat dan mengurangi dampak polusi udara
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [TINGGI] PRIORITAS: Tinggi PELAKU: Pemerintah setempat dan masyarakat AKSI: Meningkatkan pengelolaan sampah dan limbah, serta meningkatkan penanaman pohon dan tanaman lainnya untuk mengurangi polusi udara DAMPAK: Mengurangi polusi udara dan meningkatkan kualitas hidup di Depok
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

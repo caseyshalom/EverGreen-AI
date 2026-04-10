@@ -1,0 +1,65 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 09 April 2026, 21:19 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 27.76°C
+  Kelembaban   : 76%
+  Angin        : 2.57 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Kondisi lingkungan di Jakarta saat ini relatif sejuk dengan suhu udara 27,76°C, namun kualitas udara masih dalam kategori baik dengan AQI 63 dan PM2,5 63 μg/m³. Risiko banjir tinggi karena curah hujan yang diperkirakan cukup tinggi, sedangkan risiko polusi udara sedang. Skor kerentanan 12 menunjukkan bahwa masyarakat miskin dan kurang mampu yang tinggal di daerah kumuh dan masyarakat yang tinggal di daerah pinggiran kota masih perlu mendapatkan perhatian khusus dari pemerintah setempat.
+
+**PREDIKSI RISIKO**
+
+Risiko banjir tinggi karena curah hujan yang diperkirakan cukup tinggi, sedangkan risiko polusi udara sedang. Skor kerentanan 12 menunjukkan bahwa masyarakat miskin dan kurang mampu yang tinggal di daerah kumuh dan masyarakat yang tinggal di daerah pinggiran kota masih perlu mendapatkan perhatian khusus dari pemerintah setempat.
+
+**DAMPAK SOSIAL**
+
+Dampak sosial yang paling signifikan adalah kemiskinan yang masih tinggi (4%) yang dapat mempengaruhi akses masyarakat terhadap sumber daya dasar seperti air bersih dan sanitasi. Selain itu, sanitasi yang masih rendah (88%) dapat mempengaruhi kualitas hidup masyarakat dan meningkatkan risiko penyakit.
+
+**CATATAN ETIKA**
+
+Skor etika 85 menunjukkan bahwa masyarakat harus lebih berpartisipasi dalam menjaga kebersihan lingkungan dan mengurangi emisi polusi udara. Pemerintah setempat harus meningkatkan pengawasan dan pengelolaan limbah, serta meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara. Kelompok rentan seperti masyarakat miskin dan kurang mampu yang tinggal di daerah kumuh dan masyarakat yang tinggal di daerah pinggiran kota masih perlu mendapatkan perhatian khusus dari pemerintah setempat.
+
+**RENCANA AKSI**
+
+1. [PRIORITAS: Tinggi] [PELAKU: Masyarakat] [AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara] [DAMPAK: Meningkatkan kesadaran masyarakat tentang bahaya polusi udara]
+2. [PRIORITAS: Sedang] [PELAKU: Pemerintah setempat] [AKSI: Meningkatkan pengawasan dan pengelolaan limbah] [DAMPAK: Meningkatkan kualitas udara dan mengurangi risiko polusi]
+3. [PRIORITAS: Rendah] [PELAKU: Masyarakat] [AKSI: Meningkatkan akses masyarakat ke air bersih dan sanitasi] [DAMPAK: Meningkatkan kualitas hidup masyarakat dan mengurangi risiko penyakit]
+
+
+Saya berharap laporan ini dapat membantu EcoGuardian Jakarta dalam mengambil keputusan yang tepat untuk mengatasi masalah lingkungan dan sosial di Jakarta.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara
+     Pelaku : Masyarakat
+     Dampak : Meningkatkan kesadaran masyarakat tentang bahaya polusi udara
+
+  2. [SEDANG] Meningkatkan pengawasan dan pengelolaan limbah
+     Pelaku : Pemerintah setempat
+     Dampak : Meningkatkan kualitas udara dan mengurangi risiko polusi
+
+  3. [RENDAH] Meningkatkan akses masyarakat ke air bersih dan sanitasi
+     Pelaku : Masyarakat
+     Dampak : Meningkatkan kualitas hidup masyarakat dan mengurangi risiko penyakit
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

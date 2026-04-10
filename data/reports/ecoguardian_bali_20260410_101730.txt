@@ -1,0 +1,66 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  BALI — 10 April 2026, 10:17 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 121
+  PM2.5        : 121 μg/m³
+  Suhu         : 30.59°C
+  Kelembaban   : 66%
+  Angin        : 3.66 m/s
+  Kondisi      : awan tersebar
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Kualitas udara di Bali saat ini sangat buruk dengan AQI 121 dan PM2.5 121, yang berarti tingkat polusi udara sangat tinggi dan dapat menyebabkan gangguan kesehatan. Cuaca cerah pada tanggal 2026-04-10, tetapi prakiraan cuaca untuk tanggal 2026-04-11 menunjukkan cuaca hujan dengan kelembaban tinggi. Status udara di Bali saat ini sangat buruk dan dapat menyebabkan gangguan kesehatan bagi masyarakat, terutama anak-anak dan orang tua yang memiliki kondisi kesehatan yang lemah.
+
+**PREDIKSI RISIKO**
+
+Risiko banjir di Bali saat ini rendah, tetapi risiko polusi udara sangat tinggi. Polusi udara dapat menyebabkan gangguan kesehatan bagi masyarakat, terutama anak-anak dan orang tua yang memiliki kondisi kesehatan yang lemah. Oleh karena itu, perlu dilakukan upaya pengendalian polusi udara yang lebih efektif.
+
+**DAMPAK SOSIAL**
+
+Polusi udara dapat menyebabkan gangguan kesehatan bagi masyarakat, terutama anak-anak dan orang tua yang memiliki kondisi kesehatan yang lemah. Selain itu, polusi udara juga dapat menyebabkan kerugian ekonomi bagi masyarakat yang terkena dampaknya. Oleh karena itu, perlu dilakukan upaya pengendalian polusi udara yang lebih efektif untuk mengurangi dampak sosial.
+
+**CATATAN ETIKA**
+
+Informasi tentang status udara di Bali tidak sepenuhnya transparan dan akurat, sehingga masyarakat tidak dapat membuat keputusan yang tepat untuk melindungi diri dari polusi udara. Rekomendasi yang diberikan tidak sepenuhnya adil, karena tidak mempertimbangkan kebutuhan dan kondisi masyarakat miskin dan pedesaan yang lebih rentan terhadap polusi udara. Data tentang status udara di Bali tidak sepenuhnya akurat, karena AQI dan PM2.5 yang diberikan tidak mencerminkan kondisi sebenarnya di lapangan.
+
+**RENCANA AKSI**
+
+1. [PRIORITAS: Tinggi] [PELAKU: Pemerintah Bali] [AKSI: Meningkatkan upaya pengendalian polusi udara dengan meningkatkan penggunaan energi terbarukan dan mengurangi emisi gas buang dari kendaraan bermotor] [DAMPAK: Mengurangi polusi udara dan gangguan kesehatan bagi masyarakat]
+2. [PRIORITAS: Sedang] [PELAKU: Masyarakat] [AKSI: Meningkatkan penggunaan energi terbarukan dan mengurangi konsumsi energi fosil] [DAMPAK: Mengurangi polusi udara dan gangguan kesehatan bagi masyarakat]
+3. [PRIORITAS: Rendah] [PELAKU: Masyarakat] [AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara dan lingkungan] [DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara dan lingkungan]
+
+**RISK_LEVEL**
+
+Risiko polusi udara di Bali saat ini sangat tinggi, sehingga perlu dilakukan upaya pengendalian polusi udara yang lebih efektif untuk mengurangi dampak sosial.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan upaya pengendalian polusi udara dengan meningkatkan penggunaan energi terbarukan dan mengurangi emisi gas buang dari kendaraan bermotor
+     Pelaku : Pemerintah Bali
+     Dampak : Mengurangi polusi udara dan gangguan kesehatan bagi masyarakat
+
+  2. [SEDANG] Meningkatkan penggunaan energi terbarukan dan mengurangi konsumsi energi fosil
+     Pelaku : Masyarakat
+     Dampak : Mengurangi polusi udara dan gangguan kesehatan bagi masyarakat
+
+  3. [RENDAH] Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara dan lingkungan
+     Pelaku : Masyarakat
+     Dampak : Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara dan lingkungan
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

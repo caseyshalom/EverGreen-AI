@@ -1,0 +1,62 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  MANGGARAI — 10 April 2026, 10:14 WIB
+============================================================
+
+TINGKAT RISIKO: 🟢 RENDAH
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : N/A
+  PM2.5        : N/A μg/m³
+  Suhu         : 31.11°C
+  Kelembaban   : 67%
+  Angin        : 4.12 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Lingkungan Manggarai sedang mengalami cuaca yang sejuk dengan suhu udara sekitar 31,11°C. Namun, perlu diingat bahwa data AQI dan PM2,5 tidak tersedia, sehingga tidak dapat mengetahui kualitas udara secara akurat. Risiko banjir di Manggarai tinggi, sedangkan risiko polusi sedang. Skor kerentanan di Manggarai adalah 11, yang menunjukkan bahwa masyarakat di daerah ini rentan terhadap berbagai ancaman.
+
+**PREDIKSI RISIKO**
+
+Pada tanggal 2026-04-11, prakiraan cuaca menunjukkan bahwa akan hujan dengan intensitas 10,6 mm, yang dapat meningkatkan risiko banjir. Selain itu, kondisi udara akan menjadi lebih lembab dan berpotensi meningkatkan polusi udara. Oleh karena itu, sangat penting untuk memantau prakiraan cuaca dan kondisi sungai sebelum melakukan aktivitas di luar ruangan.
+
+**DAMPAK SOSIAL**
+
+Masyarakat di Manggarai rentan terhadap berbagai ancaman, termasuk banjir, polusi, dan kurangnya akses ke sumber daya dasar seperti air bersih dan sanitasi. Kelompok rentan yang paling terdampak adalah masyarakat miskin dan kurang mampu, serta masyarakat yang tinggal di daerah pedesaan dan tidak memiliki akses ke fasilitas sanitasi yang memadai.
+
+**CATATAN ETIKA**
+
+Skor Etika di Manggarai adalah 72, yang menunjukkan bahwa masih ada beberapa kelemahan dalam pengambilan kebijakan dan implementasi rencana. Data AQI dan PM2,5 tidak tersedia, sehingga tidak dapat mengetahui kualitas udara secara akurat. Selain itu, prakiraan cuaca menunjukkan bahwa kondisi udara akan menjadi lebih lembab dan berpotensi meningkatkan polusi udara pada tanggal 2026-04-11, namun tidak ada rencana yang jelas untuk mengatasi masalah ini.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS: Tinggi** **PELAKU: Pemerintah dan organisasi non-pemerintah** **AKSI: Meningkatkan akses ke sumber daya dasar seperti air bersih dan sanitasi** **DAMPAK: Meningkatkan kualitas hidup masyarakat**
+2. **PRIORITAS: Sedang** **PELAKU: Masyarakat** **AKSI: Menggunakan fasilitas sanitasi yang ada dengan benar dan efektif** **DAMPAK: Meningkatkan kualitas hidup masyarakat**
+3. **PRIORITAS: Rendah** **PELAKU: Masyarakat** **AKSI: Menginformasikan tentang pentingnya menjaga kebersihan dan kesehatan** **DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kebersihan dan kesehatan**
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: Tinggi PELAKU: Pemerintah dan organisasi non-pemerintah AKSI: Meningkatkan akses ke sumber daya dasar seperti air bersih dan sanitasi DAMPAK: Meningkatkan kualitas hidup masyarakat
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] PRIORITAS: Sedang PELAKU: Masyarakat AKSI: Menggunakan fasilitas sanitasi yang ada dengan benar dan efektif DAMPAK: Meningkatkan kualitas hidup masyarakat
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] PRIORITAS: Rendah PELAKU: Masyarakat AKSI: Menginformasikan tentang pentingnya menjaga kebersihan dan kesehatan DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kebersihan dan kesehatan
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

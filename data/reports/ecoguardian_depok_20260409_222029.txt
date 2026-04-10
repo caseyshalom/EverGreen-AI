@@ -1,0 +1,64 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  DEPOK — 09 April 2026, 22:20 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 160
+  PM2.5        : 160 μg/m³
+  Suhu         : 26.84°C
+  Kelembaban   : 77%
+  Angin        : 1.54 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+Saya siap untuk memberikan laporan EcoGuardian untuk Depok yang menjawab pertanyaan user secara spesifik.
+
+**KONDISI SAAT INI**
+
+Kualitas udara di Depok saat ini sangat buruk, dengan AQI (Indeks Kualitas Udara) yang melebihi batas toleransi WHO (200) dan PM2,5 yang sangat tinggi. Risiko banjir juga tinggi karena prakiraan cuaca menunjukkan hujan lebat pada hari esok. Selain itu, kualitas udara di Depok sangat buruk, sehingga risiko polusi dianggap sangat tinggi.
+
+**PREDIKSI RISIKO**
+
+Risiko banjir dianggap tinggi karena prakiraan cuaca menunjukkan hujan lebat pada hari esok. Risiko polusi dianggap sangat tinggi karena kualitas udara di Depok sangat buruk.
+
+**DAMPAK SOSIAL**
+
+Masyarakat miskin dan kurang mampu yang tinggal di daerah pinggiran kota sangat rentan terhadap polusi udara dan banjir. Anak-anak dan orang tua juga sangat rentan terhadap polusi udara karena mereka memiliki sistem kekebalan tubuh yang lebih lemah dan lebih rentan terhadap penyakit pernapasan.
+
+**CATATAN ETIKA**
+
+Pemerintah setempat tidak memberikan informasi yang jelas tentang prakiraan cuaca dan risiko banjir, sehingga masyarakat tidak dapat mempersiapkan diri dengan baik. Kualitas udara di Depok sangat buruk, namun tidak ada rekomendasi yang jelas tentang cara mengurangi polusi udara dan meningkatkan kualitas udara. Pemerintah setempat tidak memiliki rencana yang jelas untuk meningkatkan infrastruktur transportasi yang ramah lingkungan.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS:** Tinggi **PELAKU:** Pemerintah setempat **AKSI:** Meningkatkan upaya pengendalian polusi udara dan banjir, seperti meningkatkan efisiensi pembangunan infrastruktur transportasi, meningkatkan penggunaan energi terbarukan, dan memperkuat sistem drainase untuk mengurangi risiko banjir. **DAMPAK:** Mengurangi risiko banjir dan polusi udara di Depok.
+2. **PRIORITAS:** Sedang **PELAKU:** Warga Depok **AKSI:** Mengurangi aktivitas di luar ruangan dan menggunakan masker untuk melindungi diri dari polusi udara, serta memantau prakiraan cuaca untuk menghindari hujan lebat yang dapat menyebabkan banjir. **DAMPAK:** Mengurangi risiko polusi udara dan banjir di Depok.
+3. **PRIORITAS:** Rendah **PELAKU:** Pemerintah setempat **AKSI:** Meningkatkan program pemberdayaan masyarakat, seperti pelatihan dan pendidikan tentang cara mengurangi polusi udara dan meningkatkan kualitas udara di daerah mereka. **DAMPAK:** Meningkatkan kesadaran masyarakat tentang pentingnya mengurangi polusi udara dan meningkatkan kualitas udara di Depok.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: Tinggi PELAKU: Pemerintah setempat AKSI: Meningkatkan upaya pengendalian polusi udara dan banjir, seperti meningkatkan efisiensi pembangunan infrastruktur transportasi, meningkatkan penggunaan energi terbarukan, dan memperkuat sistem drainase untuk mengurangi risiko banjir. DAMPAK: Mengurangi risiko banjir dan polusi udara di Depok.
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] PRIORITAS: Sedang PELAKU: Warga Depok AKSI: Mengurangi aktivitas di luar ruangan dan menggunakan masker untuk melindungi diri dari polusi udara, serta memantau prakiraan cuaca untuk menghindari hujan lebat yang dapat menyebabkan banjir. DAMPAK: Mengurangi risiko polusi udara dan banjir di Depok.
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] PRIORITAS: Rendah PELAKU: Pemerintah setempat AKSI: Meningkatkan program pemberdayaan masyarakat, seperti pelatihan dan pendidikan tentang cara mengurangi polusi udara dan meningkatkan kualitas udara di daerah mereka. DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya mengurangi polusi udara dan meningkatkan kualitas udara di Depok.
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

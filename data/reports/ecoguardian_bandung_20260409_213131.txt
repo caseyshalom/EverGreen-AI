@@ -1,0 +1,64 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  BANDUNG — 09 April 2026, 21:31 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : N/A
+  PM2.5        : N/A μg/m³
+  Suhu         : 25.3°C
+  Kelembaban   : 85%
+  Angin        : 1.19 m/s
+  Kondisi      : awan mendung
+
+── ANALISIS ───────────────────────────────────────────────
+Saya siap untuk memberikan laporan EcoGuardian yang lengkap dan akurat untuk Bandung.
+
+**KONDISI SAAT INI**
+
+Kondisi lingkungan di Bandung saat ini relatif stabil dan tidak ada tanda-tanda perubahan cuaca ekstrem. Suhu udara yang stabil pada 25,3°C menunjukkan bahwa kondisi lingkungan di Bandung saat ini relatif stabil. Namun, risiko banjir dianggap tinggi karena prakiraan cuaca menunjukkan bahwa Bandung akan mengalami hujan yang cukup intens pada tanggal 9 dan 10 April 2026. Selain itu, status udara yang baik pada saat ini tidak menunjukkan adanya polusi udara yang berat, tetapi risiko polusi dianggap sedang karena kemungkinan terjadinya polusi udara meningkat dengan meningkatnya intensitas hujan.
+
+**PREDIKSI RISIKO**
+
+Risiko banjir di Bandung dianggap tinggi karena prakiraan cuaca menunjukkan bahwa Bandung akan mengalami hujan yang cukup intens pada tanggal 9 dan 10 April 2026. Risiko polusi dianggap sedang karena kemungkinan terjadinya polusi udara meningkat dengan meningkatnya intensitas hujan.
+
+**DAMPAK SOSIAL**
+
+Dampak sosial dari kondisi lingkungan di Bandung saat ini dapat dirasakan oleh masyarakat yang tinggal di daerah kumuh dan pedesaan. Masyarakat miskin yang tinggal di daerah kumuh mungkin tidak memiliki akses yang sama dengan masyarakat perkotaan terhadap fasilitas sanitasi dan air bersih yang memadai. Sementara itu, masyarakat yang tinggal di daerah pedesaan mungkin tidak memiliki akses yang sama dengan masyarakat perkotaan terhadap fasilitas sanitasi dan air bersih yang memadai.
+
+**CATATAN ETIKA**
+
+Pemerintah setempat harus meningkatkan transparansi dalam pengelolaan air hujan dan pengawasan kualitas udara untuk menjaga kualitas udara yang baik dan mengurangi risiko banjir dan polusi. Masyarakat harus lebih berhati-hati dalam melakukan kegiatan di daerah yang rawan banjir dan tidak melakukan kegiatan yang dapat menyebabkan banjir. Pemerintah harus meningkatkan akses masyarakat miskin ke fasilitas sanitasi dan air bersih yang memadai, serta memberikan bantuan ekonomi untuk meningkatkan kesejahteraan mereka.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS:** Tinggi **PELAKU:** Pemerintah setempat **AKSI:** Meningkatkan transparansi dalam pengelolaan air hujan dan pengawasan kualitas udara **DAMPAK:** Meningkatkan kualitas udara yang baik dan mengurangi risiko banjir dan polusi.
+2. **PRIORITAS:** Sedang **PELAKU:** Masyarakat **AKSI:** Berhati-hati dalam melakukan kegiatan di daerah yang rawan banjir dan tidak melakukan kegiatan yang dapat menyebabkan banjir **DAMPAK:** Mengurangi risiko banjir dan polusi.
+3. **PRIORITAS:** Tinggi **PELAKU:** Pemerintah **AKSI:** Meningkatkan akses masyarakat miskin ke fasilitas sanitasi dan air bersih yang memadai **DAMPAK:** Meningkatkan kesejahteraan masyarakat miskin.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] **PRIORITAS:** Tinggi **PELAKU:** Pemerintah setempat **AKSI:** Meningkatkan transparansi dalam pengelolaan air hujan da
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] **PRIORITAS:** Sedang **PELAKU:** Masyarakat **AKSI:** Berhati-hati dalam melakukan kegiatan di daerah yang rawan banjir
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [TINGGI] **PRIORITAS:** Tinggi **PELAKU:** Pemerintah **AKSI:** Meningkatkan akses masyarakat miskin ke fasilitas sanitasi dan ai
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

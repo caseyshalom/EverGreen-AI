@@ -91,14 +91,14 @@ async def fetch_all_env_data(city: str, country_code: str) -> dict:
 def parse_action_plan(text: str) -> list:
     """
     Ekstrak rencana aksi terstruktur dari teks laporan.
-    Format yang dicari: [PRIORITAS] [PELAKU] [AKSI] [DAMPAK]
-    Fallback: baris yang mengandung kata kunci aksi.
+    Support berbagai format output LLM.
     """
+    import re as _re
     actions = []
 
-    # Coba parse format terstruktur
+    # Format 1: [PRIORITAS: x] [PELAKU: x] [AKSI: x] [DAMPAK: x]
     pattern = r'\[PRIORITAS:\s*(\w+)\]\s*\[PELAKU:\s*([^\]]+)\]\s*\[AKSI:\s*([^\]]+)\]\s*\[DAMPAK:\s*([^\]]+)\]'
-    matches = re.findall(pattern, text, re.IGNORECASE)
+    matches = _re.findall(pattern, text, _re.IGNORECASE)
     for m in matches:
         actions.append({
             "prioritas": m[0].strip().lower(),
@@ -106,38 +106,48 @@ def parse_action_plan(text: str) -> list:
             "aksi": m[2].strip(),
             "dampak": m[3].strip(),
         })
-
     if actions:
-        return actions
+        return actions[:6]
 
-    # Fallback: cari baris bernomor di bagian "Rencana Aksi"
+    # Format 2: PRIORITAS: x PELAKU: x AKSI: x DAMPAK: x (tanpa kurung siku)
+    pattern2 = r'PRIORITAS:\s*(\w+)\s+PELAKU:\s*([^A-Z\n]+?)\s+(?:\*\*)?AKSI:\s*([^D\n]+?)\s+(?:\*\*)?DAMPAK:\s*([^\n\[]+)'
+    matches2 = _re.findall(pattern2, text, _re.IGNORECASE)
+    for m in matches2:
+        aksi = m[2].strip().rstrip('*').strip()
+        dampak = m[3].strip().rstrip('*').strip()
+        actions.append({
+            "prioritas": m[0].strip().lower(),
+            "pelaku": m[1].strip().rstrip('*').strip(),
+            "aksi": aksi,
+            "dampak": dampak,
+        })
+    if actions:
+        return actions[:6]
+
+    # Format 3: baris bernomor di bagian Rencana Aksi
     lines = text.split("\n")
     in_aksi = False
     for line in lines:
         line = line.strip()
-        if re.search(r'rencana aksi|action plan', line, re.IGNORECASE):
+        if _re.search(r'rencana aksi|action plan', line, _re.IGNORECASE):
             in_aksi = True
             continue
-        if in_aksi and re.match(r'^[\d\-\*\•]+[\.\)]\s+.{10,}', line):
-            # Coba deteksi prioritas dari kata kunci
+        if in_aksi and _re.match(r'^[\d\-\*\•]+[\.\)]\s+.{10,}', line):
             prio = "sedang"
             if any(w in line.lower() for w in ["segera", "kritis", "darurat", "tinggi"]):
                 prio = "tinggi"
             elif any(w in line.lower() for w in ["jangka panjang", "rendah", "opsional"]):
                 prio = "rendah"
-            clean = re.sub(r'^[\d\-\*\•]+[\.\)]\s+', '', line)
+            clean_line = _re.sub(r'^[\d\-\*\•]+[\.\)]\s+', '', line)
+            clean_line = _re.sub(r'\*\*', '', clean_line).strip()
             actions.append({
                 "prioritas": prio,
                 "pelaku": "Pemerintah & Masyarakat",
-                "aksi": clean[:120],
+                "aksi": clean_line,
                 "dampak": "Peningkatan kondisi lingkungan dan sosial",
             })
-        elif in_aksi and line == "":
-            pass
-        elif in_aksi and re.match(r'^[A-Z\d]\.', line):
-            break  # Masuk section baru
 
-    return actions[:6]  # Maks 6 aksi
+    return actions[:6]
 
 
 # ---------------------------------------------------------------------------

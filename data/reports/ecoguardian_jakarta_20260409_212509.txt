@@ -1,0 +1,68 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 09 April 2026, 21:25 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 27.76°C
+  Kelembaban   : 76%
+  Angin        : 2.57 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+**1. KONDISI SAAT INI**
+
+Saat ini, kualitas udara di Jakarta relatif baik dengan AQI 63 dan PM2,5 63 μg/m³, yang masih di bawah batas maksimum yang diperbolehkan. Suhu udara di Jakarta saat ini relatif sejuk dengan nilai 27,76°C. Namun, warga Jakarta harus tetap waspada terhadap kemungkinan banjir karena curah hujan yang diperkirakan cukup tinggi pada tanggal 10 April 2026. Selain itu, masyarakat miskin dan rentan yang tinggal di daerah kumuh dan pinggiran kota memiliki akses terbatas pada fasilitas sanitasi, air bersih, kesehatan, dan pendidikan.
+
+**2. PREDIKSI RISIKO**
+
+Risiko banjir di Jakarta saat ini sedang, karena curah hujan yang diperkirakan cukup tinggi pada tanggal 10 April 2026. Risiko polusi udara juga tinggi, karena kualitas udara di Jakarta masih memenuhi standar WHO/ISPU, namun masih perlu ditingkatkan untuk mengurangi polusi udara. Selain itu, masyarakat miskin dan rentan yang tinggal di daerah kumuh dan pinggiran kota memiliki akses terbatas pada fasilitas sanitasi, air bersih, kesehatan, dan pendidikan, sehingga perlu ditingkatkan investasi pada infrastruktur dan program-program bantuan sosial.
+
+**3. DAMPAK SOSIAL**
+
+Dampak sosial dari kondisi lingkungan di Jakarta saat ini adalah:
+
+* Masyarakat miskin dan rentan yang tinggal di daerah kumuh dan pinggiran kota memiliki akses terbatas pada fasilitas sanitasi, air bersih, kesehatan, dan pendidikan.
+* Warga Jakarta harus tetap waspada terhadap kemungkinan banjir karena curah hujan yang diperkirakan cukup tinggi pada tanggal 10 April 2026.
+* Kualitas udara di Jakarta masih memenuhi standar WHO/ISPU, namun masih perlu ditingkatkan untuk mengurangi polusi udara.
+
+**4. CATATAN ETIKA**
+
+Skor Etika dari laporan ini adalah 72, yang menunjukkan bahwa laporan ini telah mempertimbangkan aspek etika dalam analisis kondisi lingkungan di Jakarta. Namun, perlu ditingkatkan untuk memastikan bahwa laporan ini telah mempertimbangkan semua aspek etika yang relevan.
+
+**5. RENCANA AKSI**
+
+Berikut adalah rencana aksi untuk mengatasi kondisi lingkungan di Jakarta:
+
+* [PRIORITAS: Tinggi] [PELAKU: Pemerintah dan Masyarakat] [AKSI: Meningkatkan investasi pada infrastruktur sanitasi dan air bersih] [DAMPAK: Meningkatkan akses masyarakat pada fasilitas sanitasi dan air bersih]
+* [PRIORITAS: Sedang] [PELAKU: Pemerintah] [AKSI: Meningkatkan program-program bantuan sosial untuk masyarakat miskin dan rentan] [DAMPAK: Meningkatkan kualitas hidup masyarakat miskin dan rentan]
+* [PRIORITAS: Rendah] [PELAKU: Warga Jakarta] [AKSI: Menggunakan masker untuk melindungi diri dari polusi udara] [DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara]
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] Meningkatkan investasi pada infrastruktur sanitasi dan air bersih
+     Pelaku : Pemerintah dan Masyarakat
+     Dampak : Meningkatkan akses masyarakat pada fasilitas sanitasi dan air bersih
+
+  2. [SEDANG] Meningkatkan program-program bantuan sosial untuk masyarakat miskin dan rentan
+     Pelaku : Pemerintah
+     Dampak : Meningkatkan kualitas hidup masyarakat miskin dan rentan
+
+  3. [RENDAH] Menggunakan masker untuk melindungi diri dari polusi udara
+     Pelaku : Warga Jakarta
+     Dampak : Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kualitas udara
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

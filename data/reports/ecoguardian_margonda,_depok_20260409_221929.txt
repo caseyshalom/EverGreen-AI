@@ -1,0 +1,75 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  MARGONDA, DEPOK — 09 April 2026, 22:19 WIB
+============================================================
+
+TINGKAT RISIKO: 🟢 RENDAH
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : N/A
+  PM2.5        : N/A μg/m³
+  Suhu         : N/A°C
+  Kelembaban   : N/A%
+  Angin        : N/A m/s
+  Kondisi      : N/A
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Kondisi lingkungan di Margonda, Depok, masih belum diketahui dengan jelas karena data yang tersedia tidak mencukupi untuk menentukan kualitas udara. Selain itu, risiko banjir dan polusi juga belum diketahui karena tidak ada data yang akurat. Skor kerentanan yang diperoleh adalah 60, yang menunjukkan bahwa masyarakat kurang mampu dan anak-anak/ remaja rentan terhadap dampak buruk lingkungan. Skor etika yang diperoleh adalah 40, yang menunjukkan bahwa ada beberapa kekurangan dalam hal keterbukaan dan transparansi data, kurangnya informasi, dan kurangnya inklusi.
+
+**PREDIKSI RISIKO**
+
+Dengan kondisi lingkungan yang belum diketahui dengan jelas, prediksi risiko yang dapat dilakukan adalah:
+
+* Risiko banjir: Tidak Diketahui
+* Risiko polusi: Tidak Diketahui
+* Risiko dampak buruk lingkungan bagi masyarakat kurang mampu dan anak-anak/ remaja: Tinggi
+
+**DAMPAK SOSIAL**
+
+Dampak sosial yang dapat diprediksi adalah:
+
+* Masyarakat kurang mampu akan rentan terhadap kemiskinan dan kurangnya akses ke fasilitas sanitasi yang memadai.
+* Anak-anak dan remaja akan rentan terhadap dampak buruk lingkungan dan kurangnya akses ke fasilitas kesehatan yang memadai.
+
+**CATATAN ETIKA**
+
+Dalam menangani kondisi lingkungan di Margonda, Depok, perlu diingat beberapa hal etika, yaitu:
+
+* Keterbukaan dan transparansi data: perlu dilakukan pengukuran ulang untuk mendapatkan informasi yang akurat.
+* Kurangnya informasi: perlu dilakukan penelitian lebih lanjut untuk mendapatkan informasi yang akurat.
+* Kurangnya inklusi: perlu diantisipasi kelompok rentan yang tidak tercakup dalam rekomendasi, seperti orang tua dan penyandang disabilitas.
+
+**RENCANA AKSI**
+
+Berikut adalah rencana aksi yang dapat dilakukan untuk menangani kondisi lingkungan di Margonda, Depok:
+
+1. **PRIORITAS: Tinggi** **PELAKU: Pemerintah setempat** **AKSI: Lakukan pengukuran kualitas udara di Margonda, Depok, untuk mendapatkan data yang akurat tentang kualitas udara.** **DAMPAK: Mendapatkan data yang akurat tentang kualitas udara di Margonda, Depok.**
+2. **PRIORITAS: Sedang** **PELAKU: Pemerintah setempat** **AKSI: Pastikan peralatan pengukuran kualitas udara yang digunakan memenuhi standar WHO/ISPU untuk mendapatkan hasil yang akurat.** **DAMPAK: Mendapatkan hasil yang akurat dari pengukuran kualitas udara di Margonda, Depok.**
+3. **PRIORITAS: Rendah** **PELAKU: Masyarakat** **AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kebersihan dan kesehatan lingkungan.** **DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kebersihan dan kesehatan lingkungan di Margonda, Depok.**
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: Tinggi PELAKU: Pemerintah setempat AKSI: Lakukan pengukuran kualitas udara di Margonda, Depok, untuk mendapatkan data yang akurat tentang kualitas udara. DAMPAK: Mendapatkan data yang akurat tentang kualitas udara di Margonda, Depok.
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] PRIORITAS: Sedang PELAKU: Pemerintah setempat AKSI: Pastikan peralatan pengukuran kualitas udara yang digunakan memenuhi standar WHO/ISPU untuk mendapatkan hasil yang akurat. DAMPAK: Mendapatkan hasil yang akurat dari pengukuran kualitas udara di Margonda, Depok.
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] PRIORITAS: Rendah PELAKU: Masyarakat AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kebersihan dan kesehatan lingkungan. DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga kebersihan dan kesehatan lingkungan di Margonda, Depok.
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================
