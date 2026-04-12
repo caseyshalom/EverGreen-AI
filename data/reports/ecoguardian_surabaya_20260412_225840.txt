@@ -1,0 +1,67 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  SURABAYA — 12 April 2026, 22:58 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : N/A
+  PM2.5        : N/A μg/m³
+  Suhu         : 25.97°C
+  Kelembaban   : 89%
+  Angin        : 1.54 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+Saya siap untuk memberikan laporan yang lengkap dan akurat tentang kondisi lingkungan di Surabaya.
+
+**KONDISI SAAT INI**
+
+Kondisi saat ini di Surabaya adalah cuaca lembab dengan suhu udara 25,97°C dan kelembaban udara 89%. Kondisi cuaca ini dapat mempengaruhi kualitas udara, terutama pada saat hujan atau cuaca lembab. Namun, data AQI dan PM2.5 tidak tersedia, sehingga tidak dapat dihitung status udara yang akurat.
+
+**PREDIKSI RISIKO**
+
+Berdasarkan data gempa terbaru dari BMKG, gempa dengan kekuatan M3.0 terjadi di laut 107 km barat Jailolo. Meskipun gempa ini tidak terjadi di Surabaya, namun kita harus memperhatikan potensi dampak gempa pada infrastruktur dan lingkungan di Surabaya. Risiko banjir dan polusi di Surabaya tidak dapat diprediksi dengan akurat karena data yang tersedia tidak mencukupi.
+
+**DAMPAK SOSIAL**
+
+Kondisi cuaca lembab dan suhu udara yang tinggi dapat mempengaruhi kesehatan masyarakat, terutama pada anak-anak dan orang tua. Selain itu, kondisi cuaca ini juga dapat mempengaruhi produksi pertanian dan perkebunan di sekitar Surabaya. Kelompok rentan relevan yang paling berpotensi terkena dampak negatif dari kondisi lingkungan di Surabaya adalah orang miskin dan keluarga dengan kondisi sanitasi buruk.
+
+**CATATAN ETIKA**
+
+Data AQI dan PM2.5 tidak tersedia, sehingga tidak dapat dihitung status udara yang akurat. Rekomendasi untuk membuat survei kualitas udara di Surabaya dapat membantu mendapatkan data yang akurat tentang kondisi udara di kota tersebut. Namun, risiko banjir dan polusi di Surabaya tidak dapat diprediksi dengan akurat karena data yang tersedia tidak mencukupi.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS: Tinggi** **PELAKU: Pemerintah dan Instansi Lingkungan** **AKSI: Membuat survei kualitas udara di Surabaya** **DAMPAK: Meningkatkan akurasi data kualitas udara di Surabaya**
+2. **PRIORITAS: Sedang** **PELAKU: Masyarakat** **AKSI: Membuat perencanaan untuk menghadapi cuaca lembab dan suhu udara yang tinggi** **DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan**
+3. **PRIORITAS: Rendah** **PELAKU: Pemerintah dan Instansi Lingkungan** **AKSI: Membangun program pemberdayaan masyarakat** **DAMPAK: Meningkatkan kemampuan dan keterampilan warga miskin dan keluarga dengan kondisi sanitasi buruk**
+
+
+Dengan menggunakan data yang tersedia, saya dapat mengidentifikasi beberapa kelemahan dalam analisis kondisi lingkungan di Surabaya. Data AQI dan PM2.5 tidak tersedia, sehingga tidak dapat dihitung status udara yang akurat. Rekomendasi untuk membuat survei kualitas udara di Surabaya dapat membantu mendapatkan data yang akurat tentang kondisi udara di kota tersebut. Namun, risiko banjir dan polusi di Surabaya tidak dapat diprediksi dengan akurat karena data yang tersedia tidak mencukupi. Oleh karena itu, perlu dilakukan penelitian lebih lanjut untuk memperoleh data yang lebih akurat dan memprediksi risiko banjir dan polusi di Surabaya.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: Tinggi PELAKU: Pemerintah dan Instansi Lingkungan AKSI: Membuat survei kualitas udara di Surabaya DAMPAK: Meningkatkan akurasi data kualitas udara di Surabaya
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [TINGGI] PRIORITAS: Sedang PELAKU: Masyarakat AKSI: Membuat perencanaan untuk menghadapi cuaca lembab dan suhu udara yang tinggi DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] PRIORITAS: Rendah PELAKU: Pemerintah dan Instansi Lingkungan AKSI: Membangun program pemberdayaan masyarakat DAMPAK: Meningkatkan kemampuan dan keterampilan warga miskin dan keluarga dengan kondisi sanitasi buruk
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

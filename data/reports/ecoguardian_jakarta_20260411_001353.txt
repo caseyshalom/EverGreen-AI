@@ -1,0 +1,75 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 11 April 2026, 00:13 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : 63
+  PM2.5        : 63 μg/m³
+  Suhu         : 27.1°C
+  Kelembaban   : 82%
+  Angin        : 0.45 m/s
+  Kondisi      : sedikit berawan
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Kondisi lingkungan di Jakarta saat ini dapat dianalisis berdasarkan data yang tersedia. Berdasarkan data AQI dan PM2.5, kondisi udara di Jakarta dapat dikategorikan sebagai "Baik". Namun, perlu diingat bahwa nilai AQI dan PM2.5 dapat berubah-ubah tergantung pada kondisi cuaca dan aktivitas manusia. Berdasarkan data cuaca, kondisi cuaca di Jakarta dapat dikategorikan sebagai "Hujan" dengan suhu yang relatif normal dan kelembaban yang relatif tinggi.
+
+**PREDIKSI RISIKO**
+
+Berdasarkan data prakiraan cuaca, pada tanggal 11 April 2026, Jakarta dapat mengalami hujan dengan intensitas 6,9 mm, yang dapat menyebabkan banjir di beberapa wilayah. Pada tanggal 12 April 2026, hujan masih terjadi dengan intensitas 4,8 mm, tetapi lebih rendah daripada tanggal sebelumnya. Risiko banjir di Jakarta dapat diperkirakan tinggi dengan tingkat kepercayaan 80%. Risiko polusi udara di Jakarta dapat diperkirakan sedang dengan tingkat kepercayaan 60%.
+
+**DAMPAK SOSIAL**
+
+Dampak sosial yang dapat terjadi adalah:
+
+- Kondisi udara yang baik dapat meningkatkan kualitas hidup masyarakat.
+- Kondisi cuaca yang hujan dapat menyebabkan banjir dan kerusakan pada infrastruktur.
+- Gempa dapat menyebabkan kerusakan pada infrastruktur dan korban jiwa.
+
+**CATATAN ETIKA**
+
+Perlu diingat bahwa data yang digunakan untuk menganalisis kondisi lingkungan di Jakarta masih memiliki beberapa keterbatasan, seperti:
+
+- Data AQI dan PM2.5 hanya dapat mewakili kondisi udara di Jakarta pada saat-saat tertentu dan tidak dapat mewakili kondisi udara di Jakarta secara keseluruhan.
+- Data cuaca hanya dapat mewakili kondisi cuaca di Jakarta pada saat-saat tertentu dan tidak dapat mewakili kondisi cuaca di Jakarta secara keseluruhan.
+- Data gempa hanya dapat mewakili risiko gempa di Jakarta pada saat-saat tertentu dan tidak dapat mewakili risiko gempa di Jakarta secara keseluruhan.
+
+**RENCANA AKSI**
+
+Berdasarkan analisis kondisi lingkungan yang telah dianalisis, rekomendasi yang dapat diberikan adalah:
+
+1. **PRIORITAS: Tinggi** **PELAKU: Masyarakat** **AKSI: Meningkatkan kesadaran akan pentingnya menjaga kualitas udara dan mengurangi emisi gas buang** **DAMPAK: Meningkatkan kualitas hidup masyarakat dengan 10%**
+2. **PRIORITAS: Sedang** **PELAKU: Pemerintah** **AKSI: Meningkatkan infrastruktur untuk menghadapi kondisi cuaca yang hujan dan gempa** **DAMPAK: Mengurangi kerusakan pada infrastruktur dengan 20%**
+3. **PRIORITAS: Rendah** **PELAKU: Masyarakat** **AKSI: Menggunakan transportasi umum atau bersepeda untuk mengurangi emisi kendaraan bermotor** **DAMPAK: Mengurangi emisi kendaraan bermotor dengan 5%**
+
+
+Risiko lingkungan di Jakarta dapat diperkirakan rendah dengan skor 32. Namun, perlu diingat bahwa risiko dapat berubah-ubah tergantung pada kondisi cuaca dan aktivitas manusia.
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: Tinggi PELAKU: Masyarakat AKSI: Meningkatkan kesadaran akan pentingnya menjaga kualitas udara dan mengurangi emisi gas buang DAMPAK: Meningkatkan kualitas hidup masyarakat dengan 10%
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] PRIORITAS: Sedang PELAKU: Pemerintah AKSI: Meningkatkan infrastruktur untuk menghadapi kondisi cuaca yang hujan dan gempa DAMPAK: Mengurangi kerusakan pada infrastruktur dengan 20%
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] PRIORITAS: Rendah PELAKU: Masyarakat AKSI: Menggunakan transportasi umum atau bersepeda untuk mengurangi emisi kendaraan bermotor DAMPAK: Mengurangi emisi kendaraan bermotor dengan 5%
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

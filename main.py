@@ -320,7 +320,7 @@ Jika ada data analisis terbaru, gunakan sebagai konteks jawaban."""
         chat = client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=messages,
-            max_tokens=400,
+            max_tokens=1024,
             temperature=0.7,
         )
         reply = chat.choices[0].message.content.strip()
@@ -487,7 +487,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
         "main:app",
-        host=os.getenv("HOST", "0.0.0.0"),
-        port=int(os.getenv("PORT", 8000)),
+        host=os.getenv("HOST", "127.0.0.1"),
+        port=int(os.getenv("PORT", 8080)),
         reload=os.getenv("DEBUG", "false").lower() == "true",
     )

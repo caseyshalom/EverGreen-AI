@@ -1,0 +1,68 @@
+============================================================
+  LAPORAN ECOGUARDIAN AI
+  JAKARTA — 12 April 2026, 22:39 WIB
+============================================================
+
+TINGKAT RISIKO: 🟡 SEDANG
+
+── METRIK LINGKUNGAN ──────────────────────────────────────
+  AQI          : -
+  PM2.5        : N/A μg/m³
+  Suhu         : 26.13°C
+  Kelembaban   : 95%
+  Angin        : 1.54 m/s
+  Kondisi      : awan tersebar
+
+── ANALISIS ───────────────────────────────────────────────
+**KONDISI SAAT INI**
+
+Kondisi lingkungan di Jakarta saat ini relatif tidak nyaman, dengan suhu 26,13°C dan kelembaban 95%. Kondisi ini dapat menyebabkan risiko kesehatan akibat suhu dan kelembaban tinggi, terutama bagi orang-orang yang memiliki kondisi kesehatan yang lemah. Selain itu, ada kemungkinan terjadinya hujan lebat pada tanggal 13 April 2026, dengan intensitas curah hujan sebesar 6,5 mm, yang dapat meningkatkan risiko banjir di Jakarta.
+
+**PREDIKSI RISIKO**
+
+Tingkat kepercayaan prediksi risiko banjir adalah 70%, karena ada kemungkinan terjadinya hujan lebat pada tanggal 13 April 2026. Tingkat kepercayaan prediksi polusi adalah 80%, karena ada kemungkinan terjadinya polusi udara pada tanggal 12 April 2026.
+
+**DAMPAK SOSIAL**
+
+Risiko banjir dan polusi dapat memiliki dampak signifikan pada masyarakat Jakarta, terutama pada mereka yang tinggal di wilayah-wilayah yang rentan terhadap bencana alam. Mereka dapat mengalami kerugian material dan emosional, serta menghadapi risiko kesehatan yang lebih besar. Kelompok rentan relevan yang paling berpotensi terkena dampak dari kondisi lingkungan Jakarta adalah Masyarakat Berpenghasilan Rendah (MBR).
+
+**CATATAN ETIKA**
+
+Tidak ada data yang tersedia tentang AQI (Indeks Kualitas Udara) di Jakarta, sehingga tidak dapat memberikan informasi yang akurat tentang kondisi udara. Selain itu, tidak ada data yang tersedia tentang dampak sosial dari risiko banjir dan polusi di Jakarta, sehingga rekomendasi yang diberikan belum sepenuhnya didukung oleh data.
+
+**RENCANA AKSI**
+
+1. **PRIORITAS: tinggi** **PELAKU: Pemerintah dan organisasi non-pemerintah** **AKSI: Meningkatkan akses air bersih dan sanitasi** **DAMPAK: Meningkatkan kualitas hidup MBR dan mengurangi dampak sosial dari kondisi lingkungan yang buruk** (Dampak terukur: 30% peningkatan akses air bersih dan sanitasi di daerah-daerah yang rentan)
+2. **PRIORITAS: sedang** **PELAKU: Masyarakat** **AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan** **DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan dan mengurangi dampak sosial dari kondisi lingkungan yang buruk** (Dampak terukur: 20% peningkatan kesadaran masyarakat tentang pentingnya menjaga lingkungan)
+3. **PRIORITAS: rendah** **PELAKU: Pemerintah** **AKSI: Mengembangkan program perlindungan sosial** **DAMPAK: Meningkatkan kualitas hidup MBR dan mengurangi dampak sosial dari kondisi lingkungan yang buruk** (Dampak terukur: 15% peningkatan kualitas hidup MBR)
+
+**RISK_LEVEL**
+
+Risiko lingkungan di Jakarta saat ini adalah sedang, karena ada kemungkinan terjadinya hujan lebat dan polusi udara. Namun, dengan menerapkan rekomendasi-rekomendasi di atas, risiko lingkungan dapat dikurangi dan dampak sosial dapat diurangi.
+
+RISIKO: sedang
+
+── RENCANA AKSI ───────────────────────────────────────────
+  1. [TINGGI] PRIORITAS: tinggi PELAKU: Pemerintah dan organisasi non-pemerintah AKSI: Meningkatkan akses air bersih dan sanitasi DAMPAK: Meningkatkan kualitas hidup MBR dan mengurangi dampak sosial dari kondisi lingkungan yang buruk (Dampak terukur: 30% peningkatan akses air bersih dan sanitasi di daerah-daerah yang rentan)
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  2. [SEDANG] PRIORITAS: sedang PELAKU: Masyarakat AKSI: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan DAMPAK: Meningkatkan kesadaran masyarakat tentang pentingnya menjaga lingkungan dan mengurangi dampak sosial dari kondisi lingkungan yang buruk (Dampak terukur: 20% peningkatan kesadaran masyarakat tentang pentingnya menjaga lingkungan)
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+  3. [RENDAH] PRIORITAS: rendah PELAKU: Pemerintah AKSI: Mengembangkan program perlindungan sosial DAMPAK: Meningkatkan kualitas hidup MBR dan mengurangi dampak sosial dari kondisi lingkungan yang buruk (Dampak terukur: 15% peningkatan kualitas hidup MBR)
+     Pelaku : Pemerintah & Masyarakat
+     Dampak : Peningkatan kondisi lingkungan dan sosial
+
+── SUMBER DATA RESMI ──────────────────────────────────────
+  • BMKG: https://www.bmkg.go.id
+  • KLHK: https://www.menlhk.go.id
+  • ISPU KLHK: https://iku.menlhk.go.id
+  • BPS Indonesia: https://www.bps.go.id
+  • BNPB: https://www.bnpb.go.id
+
+============================================================
+  Dibuat oleh EcoGuardian AI — Multi-Agent System
+  Powered by CrewAI + Groq
+============================================================

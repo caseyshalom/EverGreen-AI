@@ -1330,14 +1330,93 @@ window.loadWeatherForCity = async function loadWeatherForCity(city) {
 
     const w  = data.weather  || {};
     const aq = data.air_quality || {};
-    if (w.temperature && document.getElementById("s-temp")) {
-      document.getElementById("s-temp").textContent = w.temperature + "°C";
+
+    // ── Isi semua stat cards di ringkasan ──
+    const aqi  = aq.aqi;
+    const temp = w.temperature;
+    const pm25 = aq.pm25;
+    const hum  = w.humidity;
+
+    if (document.getElementById("s-temp")) {
+      document.getElementById("s-temp").textContent = temp ? temp + "°C" : "—";
       document.getElementById("s-temp-lbl").textContent = w.description || "°C";
     }
-    if (aq.aqi && document.getElementById("s-aqi")) {
-      document.getElementById("s-aqi").textContent = aq.aqi;
+    if (document.getElementById("s-aqi") && aqi) {
+      document.getElementById("s-aqi").textContent = aqi;
       if (typeof getAqiLabel === "function")
-        document.getElementById("s-aqi-lbl").textContent = getAqiLabel(aq.aqi);
+        document.getElementById("s-aqi-lbl").textContent = getAqiLabel(aqi);
+      // Badge AQI
+      const aqiNum = parseInt(aqi);
+      const badgeEl = document.getElementById("s-aqi-badge");
+      if (badgeEl && !isNaN(aqiNum)) {
+        if (aqiNum <= 50)       { badgeEl.className = "sc-badge badge-green"; badgeEl.textContent = "Baik"; }
+        else if (aqiNum <= 100) { badgeEl.className = "sc-badge badge-amber"; badgeEl.textContent = "Sedang"; }
+        else                    { badgeEl.className = "sc-badge badge-red";   badgeEl.textContent = "Tidak Sehat"; }
+      }
+    }
+
+    // Tingkat risiko otomatis dari AQI
+    if (document.getElementById("s-risk") && aqi) {
+      const aqiNum = parseInt(aqi);
+      let risk = "rendah", riskClass = "badge-green";
+      if (aqiNum > 200)      { risk = "kritis"; riskClass = "badge-red"; }
+      else if (aqiNum > 150) { risk = "tinggi"; riskClass = "badge-red"; }
+      else if (aqiNum > 100) { risk = "sedang"; riskClass = "badge-amber"; }
+      document.getElementById("s-risk").textContent = capitalize(risk);
+      document.getElementById("s-risk-lbl").textContent = "Level risiko lingkungan";
+      const rb = document.getElementById("s-risk-badge");
+      if (rb) { rb.className = "sc-badge " + riskClass; rb.textContent = capitalize(risk); }
+    }
+
+    // IKL sederhana dari AQI + suhu
+    if (document.getElementById("s-ikl") && aqi) {
+      const aqiNum = parseInt(aqi);
+      const iklScore = Math.max(0, Math.round(100 - (aqiNum / 3)));
+      const iklLabel = iklScore >= 80 ? "Baik" : iklScore >= 60 ? "Cukup" : iklScore >= 40 ? "Sedang" : "Buruk";
+      const iklClass = iklScore >= 80 ? "badge-green" : iklScore >= 60 ? "badge-teal" : iklScore >= 40 ? "badge-amber" : "badge-red";
+      document.getElementById("s-ikl").textContent = iklScore + "/100";
+      document.getElementById("s-ikl").style.color = iklScore >= 80 ? "var(--green-d)" : iklScore >= 60 ? "var(--teal)" : iklScore >= 40 ? "var(--amber)" : "var(--red)";
+      const iklLabel2 = document.getElementById("s-ikl-label");
+      const iklBadge = document.getElementById("s-ikl-badge");
+      if (iklLabel2) iklLabel2.textContent = iklLabel + " — skor gabungan udara & cuaca";
+      if (iklBadge) { iklBadge.className = "sc-badge " + iklClass; iklBadge.textContent = iklLabel; }
+    }
+
+    // ── Isi monitoring cards ──
+    if (document.getElementById("m-aqi")) {
+      document.getElementById("m-aqi").textContent = aqi || "—";
+      document.getElementById("m-aqi-desc").textContent = typeof getAqiLabel === "function" ? getAqiLabel(aqi) : "—";
+      const aqiNum = parseInt(aqi);
+      const aqiPct = !isNaN(aqiNum) ? Math.min((aqiNum / 300) * 100, 100) : 0;
+      const bar = document.getElementById("m-aqi-bar");
+      if (bar) { bar.style.width = aqiPct + "%"; bar.className = "progress-fill " + (aqiPct < 33 ? "fill-green" : aqiPct < 66 ? "fill-amber" : "fill-red"); }
+    }
+    if (document.getElementById("m-pm25") && pm25) {
+      document.getElementById("m-pm25").textContent = pm25 + " μg/m³";
+      const pm25Pct = Math.min((parseFloat(pm25) / 75) * 100, 100);
+      const bar = document.getElementById("m-pm25-bar");
+      if (bar) bar.style.width = pm25Pct + "%";
+    }
+    if (document.getElementById("m-temp") && temp) {
+      document.getElementById("m-temp").textContent = temp + "°C";
+      document.getElementById("m-temp-desc").textContent = w.description || "—";
+      const tempPct = Math.min(Math.max(((parseFloat(temp) - 15) / 25) * 100, 0), 100);
+      const bar = document.getElementById("m-temp-bar");
+      if (bar) bar.style.width = tempPct + "%";
+    }
+    if (document.getElementById("m-humidity") && hum) {
+      document.getElementById("m-humidity").textContent = hum + "%";
+      const bar = document.getElementById("m-humidity-bar");
+      if (bar) bar.style.width = hum + "%";
+    }
+    if (document.getElementById("m-wind") && w.wind_speed) {
+      document.getElementById("m-wind").textContent = w.wind_speed + " m/s";
+      const windPct = Math.min((parseFloat(w.wind_speed) / 30) * 100, 100);
+      const bar = document.getElementById("m-wind-bar");
+      if (bar) bar.style.width = windPct + "%";
+    }
+    if (document.getElementById("m-pollutant") && aq.dominant_pollutant) {
+      document.getElementById("m-pollutant").textContent = aq.dominant_pollutant;
     }
 
     // Weather Map dengan OWM tile layers
@@ -1376,9 +1455,20 @@ function enterDashboard() {
     document.querySelectorAll('.kpi, .stat-card').forEach((c, i) => {
       setTimeout(() => c.classList.add('on'), 80 + i * 100);
     });
-    // Auto-load cuaca saat masuk dashboard
+    // Auto-load cuaca & data real-time saat masuk dashboard
     const savedCity = localStorage.getItem('eco_last_city') || 'Jakarta';
+    localStorage.setItem('eco_dashboard_entered', '1');
     setTimeout(() => loadWeatherForCity(savedCity), 300);
+    // Auto-monitor untuk alert threshold
+    setTimeout(() => startAutoMonitor(savedCity), 1000);
+    // Load statistik global
+    setTimeout(() => { if (typeof loadStats === 'function') loadStats(); }, 1500);
+    // Refresh data setiap 10 menit
+    if (window._dashRefreshInterval) clearInterval(window._dashRefreshInterval);
+    window._dashRefreshInterval = setInterval(() => {
+      const city = localStorage.getItem('eco_last_city') || 'Jakarta';
+      loadWeatherForCity(city);
+    }, 10 * 60 * 1000);
   }, 1000);
 }
 // ── Dark / Light Mode ────────────────────────────────────────────────────
@@ -1399,6 +1489,25 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", function() {
   const saved = localStorage.getItem("eco_theme") || "light";
   applyTheme(saved);
+
+  // Kalau sudah pernah masuk dashboard, langsung skip landing
+  if (localStorage.getItem("eco_dashboard_entered") === "1") {
+    const landing = document.getElementById('eco-landing');
+    const dash    = document.getElementById('eco-dashboard');
+    if (landing && dash) {
+      landing.style.display = 'none';
+      dash.style.display = 'block';
+      document.querySelectorAll('.kpi, .stat-card').forEach(c => c.classList.add('on'));
+      const savedCity = localStorage.getItem('eco_last_city') || 'Jakarta';
+      setTimeout(() => loadWeatherForCity(savedCity), 300);
+      setTimeout(() => startAutoMonitor(savedCity), 1000);
+      setTimeout(() => { if (typeof loadStats === 'function') loadStats(); }, 1500);
+      if (window._dashRefreshInterval) clearInterval(window._dashRefreshInterval);
+      window._dashRefreshInterval = setInterval(() => {
+        loadWeatherForCity(localStorage.getItem('eco_last_city') || 'Jakarta');
+      }, 10 * 60 * 1000);
+    }
+  }
 });
 
 // ── Weather Map dengan OWM Tile Layers ───────────────────────────────────
@@ -1848,7 +1957,7 @@ async function sendGuardian() {
 
   // Typing indicator
   const typingId = "g-typing-" + Date.now();
-  msgs.innerHTML += `<div class="g-msg typing" id="${typingId}">Guardian sedang mengetik<span class="g-dots">...</span></div>`;
+  msgs.innerHTML += `<div class="g-msg typing" id="${typingId}">EcoBot sedang mengetik<span class="g-dots">...</span></div>`;
   msgs.scrollTop = msgs.scrollHeight;
 
   // Get context from last analysis
@@ -2086,17 +2195,67 @@ async function compareCity(city2) {
     return;
   }
   const city1 = lastResult.city;
-  if (!city2 || city2 === city1) return;
+  city2 = (city2 || "").trim();
+  if (!city2) { showNotif("Masukkan nama kota pembanding"); return; }
+  if (city2.toLowerCase() === city1.toLowerCase()) { showNotif("Pilih kota yang berbeda"); return; }
 
-  showNotif(`Mengambil data ${city2} untuk perbandingan...`);
+  // Disable tombol
+  const btn = document.getElementById("compareBtnEl");
+  if (btn) { btn.disabled = true; btn.textContent = "⏳ Memuat..."; }
+  showNotif(`Mengambil data ${city2}...`);
 
   try {
     const res = await fetch(`/api/auto-monitor/${encodeURIComponent(city2)}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    _compareData = { city1: lastResult, city2: data };
-    renderComparison();
+
+    const m1 = lastResult.metrics || {};
+    const m2 = data.metrics || {};
+    const metrics = [
+      { label:"AQI",        v1:m1.aqi,        v2:m2.aqi,        unit:"",    lower:true  },
+      { label:"Suhu",       v1:m1.temperature, v2:m2.temperature, unit:"°C",  lower:false },
+      { label:"Kelembaban", v1:m1.humidity,    v2:m2.humidity,    unit:"%",   lower:false },
+      { label:"PM2.5",      v1:m1.pm25,        v2:m2.pm25,        unit:"μg",  lower:true  },
+      { label:"Angin",      v1:m1.wind_speed,  v2:m2.wind_speed,  unit:"m/s", lower:false },
+    ];
+
+    const rows = metrics.map(r => {
+      const n1 = parseFloat(r.v1) || 0;
+      const n2 = parseFloat(r.v2) || 0;
+      const c1w = r.lower ? n1 < n2 : n1 > n2;
+      const winner = (!r.v1 || !r.v2 || n1 === n2) ? "—" : (c1w ? city1 : city2);
+      const wc = c1w ? "var(--green-d)" : "var(--blue)";
+      return `<tr style="border-top:1px solid var(--border)">
+        <td style="padding:10px 0;color:var(--text2);font-weight:500">${r.label}</td>
+        <td style="padding:10px;text-align:center;font-weight:700;color:var(--green-d)">${r.v1 && r.v1!=="N/A" ? r.v1+r.unit : "—"}</td>
+        <td style="padding:10px;text-align:center;font-weight:700;color:var(--blue)">${r.v2 && r.v2!=="N/A" ? r.v2+r.unit : "—"}</td>
+        <td style="padding:10px;text-align:center;font-weight:700;color:${wc}">${winner}</td>
+      </tr>`;
+    }).join("");
+
+    // Tampilkan di modal
+    const modal = document.getElementById("agentModal");
+    document.getElementById("modalTitle").textContent = `⚖️ ${city1} vs ${city2}`;
+    document.getElementById("modalDot").style.background = "var(--blue)";
+    document.getElementById("modalBody").innerHTML = `
+      <table style="width:100%;border-collapse:collapse;font-size:0.84rem">
+        <tr style="font-size:0.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--border)">
+          <td style="padding:8px 0;width:30%">Metrik</td>
+          <td style="padding:8px;text-align:center;color:var(--green-d)">${city1}</td>
+          <td style="padding:8px;text-align:center;color:var(--blue)">${city2}</td>
+          <td style="padding:8px;text-align:center">Lebih Baik</td>
+        </tr>
+        ${rows}
+      </table>
+      <div style="margin-top:14px;padding:10px 12px;background:var(--surface2);border-radius:8px;font-size:0.78rem;color:var(--text3)">
+        Data dari WAQI API & OpenWeatherMap · ${new Date().toLocaleTimeString("id-ID")}
+      </div>`;
+    modal.style.display = "flex";
+
   } catch(e) {
-    showNotif("Gagal mengambil data kota pembanding");
+    showNotif("Gagal mengambil data: " + e.message);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = "⚖️ Bandingkan"; }
   }
 }
 
@@ -2145,6 +2304,8 @@ function renderComparison() {
     </div>
   `;
   wrap.style.display = "block";
+  wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  showNotif(`Perbandingan ${c1.city} vs ${c2.city} selesai`);
 }
 
 
@@ -2410,11 +2571,32 @@ async function loadStats() {
 
     // Update stat cards
     document.getElementById("stat-total").textContent = data.total || 0;
-    document.getElementById("stat-kritis").textContent =
-      `🔴 ${data.risk_distribution?.kritis||0} kritis  🟠 ${data.risk_distribution?.tinggi||0} tinggi  🟡 ${data.risk_distribution?.sedang||0} sedang  🟢 ${data.risk_distribution?.rendah||0} rendah`;
 
-    // Risiko dominan
+    // Distribusi risiko — render sebagai grid mini 2x2
     const rd = data.risk_distribution || {};
+    const distEl = document.getElementById("stat-kritis");
+    if (distEl) {
+      distEl.style.fontSize = "";
+      distEl.innerHTML = `
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;margin-top:4px">
+          <div style="display:flex;align-items:center;gap:6px;font-size:0.82rem">
+            <span style="width:8px;height:8px;border-radius:50%;background:#ef4444;flex-shrink:0"></span>
+            <span style="color:var(--text2)">${rd.kritis||0} Kritis</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:0.82rem">
+            <span style="width:8px;height:8px;border-radius:50%;background:#f97316;flex-shrink:0"></span>
+            <span style="color:var(--text2)">${rd.tinggi||0} Tinggi</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:0.82rem">
+            <span style="width:8px;height:8px;border-radius:50%;background:#f59e0b;flex-shrink:0"></span>
+            <span style="color:var(--text2)">${rd.sedang||0} Sedang</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:0.82rem">
+            <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0"></span>
+            <span style="color:var(--text2)">${rd.rendah||0} Rendah</span>
+          </div>
+        </div>`;
+    }
     const dominantEntry = Object.entries(rd).sort((a,b) => b[1]-a[1])[0];
     const dominantLabel = dominantEntry ? dominantEntry[0] : "sedang";
     const dominantCount = dominantEntry ? dominantEntry[1] : 0;
@@ -2510,13 +2692,6 @@ async function loadStats() {
   }
 }
 
-// Auto-load stats saat buka halaman statistik
-const _origShowPage = showPage;
-showPage = function(name, btn) {
-  _origShowPage(name, btn);
-  if (name === "statistik") loadStats();
-};
-
 // Update pageMeta untuk statistik
 if (typeof pageMeta !== "undefined") {
   pageMeta.statistik = ["Statistik Global", "Data analisis dari semua sesi — powered by Supabase"];
@@ -2530,6 +2705,46 @@ async function shareReport() {
     showNotif("Jalankan analisis dulu sebelum share");
     return;
   }
+
+  // Tampilkan modal share langsung tanpa bergantung Supabase
+  const shareModal = document.getElementById("agentModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDot   = document.getElementById("modalDot");
+  const modalBody  = document.getElementById("modalBody");
+
+  if (shareModal && modalTitle && modalBody) {
+    modalTitle.textContent = "🔗 Share Laporan";
+    modalDot.style.background = "var(--teal)";
+    modalBody.innerHTML = `
+      <div style="margin-bottom:16px">
+        <div style="font-size:0.75rem;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Kota</div>
+        <div style="font-weight:600;font-size:1rem">${lastResult.city}</div>
+      </div>
+      <div style="margin-bottom:16px">
+        <div style="font-size:0.75rem;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Tingkat Risiko</div>
+        <div style="font-weight:600">${lastResult.risk_level || "—"}</div>
+      </div>
+      <div style="margin-bottom:16px">
+        <div style="font-size:0.75rem;color:var(--text3);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em">Ringkasan Analisis</div>
+        <div style="font-size:0.82rem;line-height:1.7;color:var(--text2)">${(lastResult.response || "").slice(0, 500)}${lastResult.response?.length > 500 ? "…" : ""}</div>
+      </div>
+      <div style="padding-top:12px;border-top:1px solid var(--border)">
+        <button onclick="
+          const txt = 'EcoGuardian AI — ${lastResult.city} (Risiko: ${lastResult.risk_level})\\n' + document.getElementById('shareTextArea').value;
+          navigator.clipboard.writeText(txt).then(()=>showNotif('Teks berhasil disalin ke clipboard')).catch(()=>showNotif('Salin teks di bawah secara manual'));
+        " style="padding:8px 16px;border-radius:8px;border:1px solid var(--teal);background:var(--teal-l);
+                 color:var(--teal);font-size:0.8rem;font-weight:600;cursor:pointer;margin-bottom:10px">
+          📋 Salin ke Clipboard
+        </button>
+        <textarea id="shareTextArea" readonly style="width:100%;height:80px;font-size:0.75rem;
+          background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+          padding:8px;color:var(--text2);resize:none;font-family:var(--mono)">${(lastResult.response || "").slice(0, 400)}</textarea>
+      </div>`;
+    shareModal.style.display = "flex";
+    return;
+  }
+
+  // Fallback: coba Supabase
   try {
     const res = await fetch("/api/share-report", {
       method: "POST",
@@ -2544,43 +2759,14 @@ async function shareReport() {
     const data = await res.json();
     if (data.url) {
       const fullUrl = window.location.origin + data.url;
-      // Copy ke clipboard
       try {
         await navigator.clipboard.writeText(fullUrl);
         showNotif("Link berhasil disalin: " + fullUrl);
       } catch(e) {
         showNotif("Link: " + fullUrl);
       }
-      // Tampilkan di notif panel
-      const panel = document.getElementById("notifPanel");
-      if (panel) {
-        panel.innerHTML += `
-          <div style="margin-top:8px;padding:8px 12px;background:var(--blue-l);border:1px solid #93c5fd;
-                      border-radius:8px;font-size:0.78rem;color:var(--blue)">
-            🔗 <strong>Link Share:</strong>
-            <a href="${fullUrl}" target="_blank" style="color:var(--blue);margin-left:4px">${fullUrl}</a>
-          </div>`;
-      }
     }
   } catch(e) {
     showNotif("Gagal membuat link share");
   }
 }
-
-// Tambah tombol share ke notifPanel
-const _origRenderNotifShare = renderNotifications;
-renderNotifications = function(notifications, reportFile, city) {
-  _origRenderNotifShare(notifications, reportFile, city);
-  const panel = document.getElementById("notifPanel");
-  if (panel && lastResult) {
-    panel.innerHTML += `
-      <button onclick="shareReport()"
-        style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;margin-top:6px;
-               background:var(--teal-l);color:var(--teal);border:1.5px solid #5eead4;
-               border-radius:8px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s"
-        onmouseover="this.style.background='#99f6e4'"
-        onmouseout="this.style.background='var(--teal-l)'">
-        🔗 Share Laporan
-      </button>`;
-  }
-};
