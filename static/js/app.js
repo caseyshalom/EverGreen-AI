@@ -1,22 +1,5 @@
 /* EcoGuardian AI — main.js (inline + overrides) */
 
-// Definisikan enterDashboard di paling atas agar selalu tersedia
-function enterDashboard() {
-  const landing = document.getElementById('eco-landing');
-  const dash    = document.getElementById('eco-dashboard');
-  if (!landing || !dash) return;
-  landing.classList.add('hide');
-  setTimeout(() => {
-    landing.style.display = 'none';
-    dash.style.display = 'block';
-    document.querySelectorAll('.kpi, .stat-card').forEach((c, i) => {
-      setTimeout(() => c.classList.add('on'), 80 + i * 100);
-    });
-    const savedCity = localStorage.getItem('eco_last_city') || 'Jakarta';
-    setTimeout(() => { if (typeof loadWeatherForCity === 'function') loadWeatherForCity(savedCity); }, 300);
-  }, 1000);
-}
-
 let sessionId = localStorage.getItem("eco_session") || "";
 let isLoading = false;
 let analysisCount = 0;
@@ -1457,7 +1440,7 @@ function enterDashboard() {
     });
     // Auto-load cuaca & data real-time saat masuk dashboard
     const savedCity = localStorage.getItem('eco_last_city') || 'Jakarta';
-    localStorage.setItem('eco_dashboard_entered', '1');
+    localStorage.setItem('eco_dashboard_entered', '0');
     setTimeout(() => loadWeatherForCity(savedCity), 300);
     // Auto-monitor untuk alert threshold
     setTimeout(() => startAutoMonitor(savedCity), 1000);
@@ -1489,25 +1472,6 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", function() {
   const saved = localStorage.getItem("eco_theme") || "light";
   applyTheme(saved);
-
-  // Kalau sudah pernah masuk dashboard, langsung skip landing
-  if (localStorage.getItem("eco_dashboard_entered") === "1") {
-    const landing = document.getElementById('eco-landing');
-    const dash    = document.getElementById('eco-dashboard');
-    if (landing && dash) {
-      landing.style.display = 'none';
-      dash.style.display = 'block';
-      document.querySelectorAll('.kpi, .stat-card').forEach(c => c.classList.add('on'));
-      const savedCity = localStorage.getItem('eco_last_city') || 'Jakarta';
-      setTimeout(() => loadWeatherForCity(savedCity), 300);
-      setTimeout(() => startAutoMonitor(savedCity), 1000);
-      setTimeout(() => { if (typeof loadStats === 'function') loadStats(); }, 1500);
-      if (window._dashRefreshInterval) clearInterval(window._dashRefreshInterval);
-      window._dashRefreshInterval = setInterval(() => {
-        loadWeatherForCity(localStorage.getItem('eco_last_city') || 'Jakarta');
-      }, 10 * 60 * 1000);
-    }
-  }
 });
 
 // ── Weather Map dengan OWM Tile Layers ───────────────────────────────────
