@@ -1431,15 +1431,36 @@ window.loadWeatherForCity = async function loadWeatherForCity(city) {
 function toggleSidebar() {
   const sidebar = document.getElementById('mainSidebar');
   const backdrop = document.getElementById('sidebarBackdrop');
+  const toggle = document.getElementById('sidebarToggle');
   if (!sidebar) return;
-  sidebar.classList.toggle('open');
-  backdrop.classList.toggle('open');
+  const isOpen = sidebar.classList.toggle('open');
+  backdrop.classList.toggle('open', isOpen);
+  // Animasi hamburger → ✕
+  if (toggle) {
+    const spans = toggle.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  }
 }
 function closeSidebar() {
   const sidebar = document.getElementById('mainSidebar');
   const backdrop = document.getElementById('sidebarBackdrop');
+  const toggle = document.getElementById('sidebarToggle');
   if (sidebar) sidebar.classList.remove('open');
   if (backdrop) backdrop.classList.remove('open');
+  if (toggle) {
+    const spans = toggle.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  }
 }
 
 function enterDashboard() {

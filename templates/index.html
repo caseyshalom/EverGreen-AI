@@ -60,10 +60,6 @@
     </div>
     <!-- ═══════════════ DASHBOARD ═══════════════ -->
     <div id="eco-dashboard" style="display:none;width:100%;min-height:100vh">
-    <!-- Hamburger (mobile) -->
-    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
     <!-- Backdrop -->
     <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebar()"></div>
     <!-- SIDEBAR -->
@@ -208,6 +204,9 @@
     <!-- MAIN -->
     <div class="main">
       <div class="topbar">
+        <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
         <div>
           <div class="page-title" id="pageTitle">Ringkasan Dashboard</div>
           <div class="page-sub" id="pageSub">
