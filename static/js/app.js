@@ -46,6 +46,8 @@ function showPage(name, btn) {
   const meta = pageMeta[name] || ["", ""];
   document.getElementById("pageTitle").textContent = meta[0];
   document.getElementById("pageSub").textContent = meta[1];
+  // Tutup sidebar di mobile setelah navigasi
+  if (window.innerWidth <= 768) closeSidebar();
 }
 
 function setQuery(el, text) {
@@ -1426,6 +1428,21 @@ window.loadWeatherForCity = async function loadWeatherForCity(city) {
 };
 
 // Auto-load saat enterDashboard dipanggil — sudah diintegrasikan langsung di enterDashboard()
+
+// ── Mobile Sidebar Toggle ────────────────────────────────────────────────
+function toggleSidebar() {
+  const sidebar = document.getElementById('mainSidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  if (!sidebar) return;
+  sidebar.classList.toggle('open');
+  backdrop.classList.toggle('open');
+}
+function closeSidebar() {
+  const sidebar = document.getElementById('mainSidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  if (sidebar) sidebar.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+}
 
 function enterDashboard() {
   const landing = document.getElementById('eco-landing');
