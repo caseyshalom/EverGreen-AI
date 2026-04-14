@@ -1427,7 +1427,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: 14px;
   display: none;
 }
@@ -1440,6 +1440,25 @@ body {
 #ecoMap {
   height: 280px;
   width: 100%;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+/* Fix Leaflet popup z-index & overflow */
+.leaflet-popup {
+  z-index: 9000 !important;
+}
+.leaflet-popup-content-wrapper {
+  max-width: 220px;
+}
+#weatherMap,
+#indonesiaMap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+/* Card containing map must not clip popup */
+.card:has(#weatherMap),
+.card:has(#indonesiaMap),
+.card:has(#ecoMap) {
+  overflow: visible;
 }
 /* SOURCES PANEL */
 .sources-panel {
