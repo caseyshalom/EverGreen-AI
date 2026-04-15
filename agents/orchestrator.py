@@ -247,7 +247,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         except Exception:
             return str(val)
 
-    forecast_days = env_data.get("forecast", {}).get("forecast", [])[:3]
+    forecast_days = env_data.get("forecast", {}).get("forecast", [])[:7]
     eq = env_data.get("earthquake", {})
 
     # ── Context injection kaya ─────────────────────────────────────────────
@@ -429,21 +429,25 @@ def build_crew(env_data: dict, user_query: str, city: str):
         description=(
             f"Pertanyaan user: '{user_query[:120]}'\n\n"
             f"{DATA_CONTEXT}\n\n"
-            f"Prakiraan detail: {json.dumps(forecast_days, ensure_ascii=False) if forecast_days else 'Tidak tersedia'}\n\n"
+            f"DATA PRAKIRAAN LENGKAP 7 HARI KE DEPAN:\n"
+            f"{json.dumps(forecast_days, ensure_ascii=False, indent=2) if forecast_days else 'Data prakiraan tidak tersedia'}\n\n"
+            "PENTING: Jika pertanyaan menyebut '7 hari', kamu WAJIB membahas setiap hari atau minimal per periode (hari 1-2, hari 3-4, hari 5-7).\n\n"
             "Ikuti langkah Chain-of-Thought:\n"
-            "1. ANALISIS TREN: Bagaimana tren cuaca 3 hari ke depan?\n"
-            "2. IDENTIFIKASI RISIKO: Risiko apa yang muncul dari tren ini?\n"
+            "1. TREN HARIAN: Uraikan kondisi per hari atau per periode dari data prakiraan di atas\n"
+            "2. IDENTIFIKASI RISIKO: Hari/periode mana yang paling berisiko? Mengapa?\n"
             "3. MEKANISME: Jelaskan mekanisme kausal risiko tersebut\n"
             "4. PROBABILITAS: Estimasi probabilitas (rendah <30% / sedang 30-60% / tinggi >60%)\n"
             "5. MITIGASI: 2 langkah mitigasi spesifik dengan timeline\n\n"
             "Format output wajib:\n"
-            "RISIKO UTAMA: [nama] | PROBABILITAS: [%] | TIMEFRAME: [kapan]\n"
+            "TREN 7 HARI: [uraian per hari/periode dengan angka suhu dan curah hujan]\n"
+            "RISIKO UTAMA: [nama] | PROBABILITAS: [%] | TIMEFRAME: [hari ke berapa]\n"
             "MEKANISME: [penjelasan kausal]\n"
             "MITIGASI 1: [aksi] — [timeline]\n"
             "MITIGASI 2: [aksi] — [timeline]"
         ),
         expected_output=(
-            "Prediksi risiko dengan probabilitas, mekanisme kausal, dan 2 mitigasi bertimeline."
+            "Uraian tren 7 hari per periode, prediksi risiko dengan probabilitas, "
+            "mekanisme kausal, dan 2 mitigasi bertimeline."
         ),
         agent=predict_agent,
         context=[task_monitor],
@@ -519,7 +523,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
             "[PRIORITAS: tinggi/sedang/rendah] [PELAKU: siapa] [AKSI: tindakan spesifik] "
             "[DAMPAK: dampak terukur dalam angka/persentase]\n"
             "Sertakan alasan berbasis data untuk setiap aksi.\n\n"
-            "Baris terakhir (wajib): RISK_LEVEL: rendah/sedang/tinggi/kritis"
+            "Baris terakhir (wajib, harus persis seperti ini tanpa teks lain): RISK_LEVEL: rendah/sedang/tinggi/kritis"
         ),
         expected_output=(
             "Laporan 5 bagian dengan Chain-of-Thought reasoning, angka spesifik, "
@@ -627,14 +631,18 @@ async def run_ecoguardian_agents(
             final_text = f"Terjadi kesalahan pada agen: {err}"
             break
 
-    # Extract risk level
+    # Extract risk level — cari di seluruh teks, tidak hanya baris terakhir
     risk_level = "sedang"
     clean_lines = []
     for line in final_text.split("\n"):
-        if "RISK_LEVEL:" in line:
-            val = line.split("RISK_LEVEL:")[-1].strip().lower()
+        stripped = line.strip().upper()
+        if "RISK_LEVEL:" in stripped or "RISK LEVEL:" in stripped:
+            val = re.split(r'RISK[_ ]LEVEL\s*:', line, flags=re.IGNORECASE)[-1].strip().lower()
+            # ambil kata pertama saja
+            val = val.split()[0].rstrip('.,;') if val.split() else ""
             if val in ("rendah", "sedang", "tinggi", "kritis"):
                 risk_level = val
+            # jangan masukkan baris ini ke output
         else:
             clean_lines.append(line)
     final_text = "\n".join(clean_lines).strip()
