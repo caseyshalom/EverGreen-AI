@@ -501,11 +501,17 @@ function renderResult(data) {
     renderForecast(data.forecast, data.city);
   }
 
-  // Rencana aksi
+  // Rencana aksi — parse dari data.actions atau fallback parse dari teks
   if (data.actions && data.actions.length > 0) {
     renderAksiTerstruktur(data.actions, data.city);
   } else {
-    renderAksi(data.monitor || {}, data.predict || {}, data.social || {}, data.city);
+    // Fallback: parse dari teks response langsung di frontend
+    const parsedActions = parseActionsFromText(data.response || "");
+    if (parsedActions.length > 0) {
+      renderAksiTerstruktur(parsedActions, data.city);
+    } else {
+      renderAksi(data.monitor || {}, data.predict || {}, data.social || {}, data.city);
+    }
   }
 
   // Notifikasi & download
@@ -1074,6 +1080,51 @@ function renderEthicsInsight(e) {
 
 // Simpan aksi lengkap untuk modal
 let _aksiData = [];
+
+// Parse rencana aksi dari teks response (fallback frontend)
+function parseActionsFromText(text) {
+  const actions = [];
+  const lines = text.split("\n");
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    const prioMatch = line.match(/PRIORITAS:\s*(\w+)/i);
+    if (prioMatch) {
+      const prio = prioMatch[1].toLowerCase();
+      let pelaku = "", aksi = "", dampak = "";
+      // Cek satu baris dulu
+      const pelakuM = line.match(/PELAKU:\s*(.+?)(?=\s+AKSI:|\s+DAMPAK:|$)/i);
+      const aksiM   = line.match(/AKSI:\s*(.+?)(?=\s+DAMPAK:|$)/i);
+      const dampakM = line.match(/DAMPAK:\s*(.+)/i);
+      if (pelakuM) pelaku = pelakuM[1].trim();
+      if (aksiM)   aksi   = aksiM[1].trim();
+      if (dampakM) dampak = dampakM[1].trim();
+      // Jika tidak ada di satu baris, cari di baris berikutnya
+      if (!aksi) {
+        for (let j = i+1; j < Math.min(i+8, lines.length); j++) {
+          const l = lines[j].trim();
+          if (/^PRIORITAS:/i.test(l)) break;
+          const pm = l.match(/^PELAKU:\s*(.+)/i);
+          const am = l.match(/^AKSI:\s*(.+)/i);
+          const dm = l.match(/^DAMPAK:\s*(.+)/i);
+          if (pm) pelaku = pm[1].trim();
+          if (am) aksi   = am[1].trim();
+          if (dm) dampak = dm[1].trim();
+        }
+      }
+      if (aksi) {
+        actions.push({
+          prioritas: prio,
+          pelaku: (pelaku || "Pemerintah & Masyarakat").replace(/\*\*/g, "").trim(),
+          aksi: aksi.replace(/\*\*/g, "").trim(),
+          dampak: (dampak || "Peningkatan kondisi lingkungan").replace(/\*\*/g, "").trim(),
+        });
+      }
+    }
+    i++;
+  }
+  return actions.slice(0, 6);
+}
 
 function renderAksiTerstruktur(actions, city) {
   const list = document.getElementById("aksiList");

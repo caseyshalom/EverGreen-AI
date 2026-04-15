@@ -165,9 +165,8 @@ def parse_action_plan(text: str) -> list:
     actions = []
 
     # Format 1: [PRIORITAS: x] [PELAKU: x] [AKSI: x] [DAMPAK: x]
-    pattern = r'\[PRIORITAS:\s*(\w+)\]\s*\[PELAKU:\s*([^\]]+)\]\s*\[AKSI:\s*([^\]]+)\]\s*\[DAMPAK:\s*([^\]]+)\]'
-    matches = _re.findall(pattern, text, _re.IGNORECASE)
-    for m in matches:
+    pattern1 = r'\[PRIORITAS:\s*(\w+)\]\s*\[PELAKU:\s*([^\]]+)\]\s*\[AKSI:\s*([^\]]+)\]\s*\[DAMPAK:\s*([^\]]+)\]'
+    for m in _re.findall(pattern1, text, _re.IGNORECASE):
         actions.append({
             "prioritas": m[0].strip().lower(),
             "pelaku": m[1].strip(),
@@ -177,23 +176,48 @@ def parse_action_plan(text: str) -> list:
     if actions:
         return actions[:6]
 
-    # Format 2: PRIORITAS: x PELAKU: x AKSI: x DAMPAK: x (tanpa kurung siku)
-    pattern2 = r'PRIORITAS:\s*(\w+)\s+PELAKU:\s*([^A-Z\n]+?)\s+(?:\*\*)?AKSI:\s*([^D\n]+?)\s+(?:\*\*)?DAMPAK:\s*([^\n\[]+)'
-    matches2 = _re.findall(pattern2, text, _re.IGNORECASE)
-    for m in matches2:
-        aksi = m[2].strip().rstrip('*').strip()
-        dampak = m[3].strip().rstrip('*').strip()
+    # Format 2: PRIORITAS: x PELAKU: x AKSI: x DAMPAK: x (tanpa kurung siku, satu baris)
+    pattern2 = r'PRIORITAS:\s*(\w+)\s+PELAKU:\s*(.+?)\s+AKSI:\s*(.+?)\s+DAMPAK:\s*(.+?)(?=PRIORITAS:|$)'
+    for m in _re.findall(pattern2, text, _re.IGNORECASE | _re.DOTALL):
         actions.append({
             "prioritas": m[0].strip().lower(),
-            "pelaku": m[1].strip().rstrip('*').strip(),
-            "aksi": aksi,
-            "dampak": dampak,
+            "pelaku": _re.sub(r'\s+', ' ', m[1]).strip().rstrip('*'),
+            "aksi": _re.sub(r'\s+', ' ', m[2]).strip().rstrip('*'),
+            "dampak": _re.sub(r'\s+', ' ', m[3]).strip().rstrip('*'),
         })
     if actions:
         return actions[:6]
 
-    # Format 3: baris bernomor di bagian Rencana Aksi
+    # Format 3: multi-line — PRIORITAS: di satu baris, PELAKU/AKSI/DAMPAK di baris berikutnya
     lines = text.split("\n")
+    i = 0
+    while i < len(lines):
+        line = lines[i].strip()
+        prio_match = _re.match(r'PRIORITAS:\s*(\w+)', line, _re.IGNORECASE)
+        if prio_match:
+            prio = prio_match.group(1).strip().lower()
+            pelaku = aksi = dampak = ""
+            # Cari PELAKU, AKSI, DAMPAK di baris-baris berikutnya (max 6 baris)
+            for j in range(i+1, min(i+7, len(lines))):
+                l = lines[j].strip()
+                pm = _re.match(r'PELAKU:\s*(.+)', l, _re.IGNORECASE)
+                am = _re.match(r'AKSI:\s*(.+)', l, _re.IGNORECASE)
+                dm = _re.match(r'DAMPAK:\s*(.+)', l, _re.IGNORECASE)
+                if pm: pelaku = pm.group(1).strip()
+                if am: aksi = am.group(1).strip()
+                if dm: dampak = dm.group(1).strip()
+            if aksi:
+                actions.append({
+                    "prioritas": prio,
+                    "pelaku": pelaku or "Pemerintah & Masyarakat",
+                    "aksi": aksi,
+                    "dampak": dampak or "Peningkatan kondisi lingkungan",
+                })
+        i += 1
+    if actions:
+        return actions[:6]
+
+    # Format 4: baris bernomor di bagian Rencana Aksi
     in_aksi = False
     for line in lines:
         line = line.strip()
