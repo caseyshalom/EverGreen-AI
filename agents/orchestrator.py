@@ -446,7 +446,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
             "kausalitas → relevansi → 2 rekomendasi berbasis angka."
         ),
         agent=monitor_agent,
-        callback=lambda _: time.sleep(15),
+        callback=lambda _: time.sleep(5),
     )
 
     task_predict = Task(
@@ -475,7 +475,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         ),
         agent=predict_agent,
         context=[task_monitor],
-        callback=lambda _: time.sleep(15),
+        callback=lambda _: time.sleep(5),
     )
 
     task_social = Task(
@@ -501,7 +501,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         ),
         agent=social_agent,
         context=[task_monitor],
-        callback=lambda _: time.sleep(15),
+        callback=lambda _: time.sleep(5),
     )
 
     task_ethics = Task(
@@ -524,7 +524,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         ),
         agent=ethics_agent,
         context=[task_monitor, task_predict, task_social],
-        callback=lambda _: time.sleep(15),
+        callback=lambda _: time.sleep(5),
     )
 
     task_report = Task(
@@ -601,7 +601,7 @@ async def run_ecoguardian_agents(
                 verbose=False,
             )
             result = mini_crew.kickoff()
-            time.sleep(8)  # jeda setelah tiap agen
+            time.sleep(3)  # jeda setelah tiap agen
             return str(result).strip()
 
         crew, tasks = build_crew(env_data, user_query, city)
@@ -619,11 +619,11 @@ async def run_ecoguardian_agents(
             out_predict  = f_predict.result()
             out_social   = f_social.result()
 
-        time.sleep(8)
+        time.sleep(3)
 
         # Fase 2: Ethics lalu Report (butuh konteks dari fase 1)
         out_ethics = run_single_agent(ethics_ag, task_ethics)
-        time.sleep(8)
+        time.sleep(3)
 
         # Report agent — jalankan dengan full crew untuk dapat konteks
         final_crew = Crew(
