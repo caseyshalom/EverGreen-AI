@@ -2240,34 +2240,54 @@ document.addEventListener("DOMContentLoaded", () => {
 let _compareData = {};
 
 async function compareCity(city2) {
-  if (!lastResult) {
-    showNotif("Jalankan analisis kota pertama dulu");
-    return;
-  }
-  const city1 = lastResult.city;
   city2 = (city2 || "").trim();
   if (!city2) { showNotif("Masukkan nama kota pembanding"); return; }
-  if (city2.toLowerCase() === city1.toLowerCase()) { showNotif("Pilih kota yang berbeda"); return; }
 
   const btn = document.getElementById("compareBtnEl");
   if (btn) { btn.disabled = true; btn.textContent = "⏳ Memuat..."; }
-  showNotif(`Mengambil data ${city2}...`);
+
+  // Kota 1: dari lastResult atau dari input analisis
+  const city1 = (lastResult?.city) || (document.getElementById("cityInput")?.value?.trim()) || "Jakarta";
+  if (city2.toLowerCase() === city1.toLowerCase()) {
+    showNotif("Pilih kota yang berbeda");
+    if (btn) { btn.disabled = false; btn.textContent = "⚖️ Bandingkan"; }
+    return;
+  }
+
+  showNotif(`Mengambil data ${city1} & ${city2}...`);
 
   try {
-    const res = await fetch(`/api/weather/${encodeURIComponent(city2)}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    // Fetch kedua kota paralel
+    const [res1, res2] = await Promise.all([
+      fetch(`/api/weather/${encodeURIComponent(city1)}`),
+      fetch(`/api/weather/${encodeURIComponent(city2)}`),
+    ]);
+    if (!res1.ok) throw new Error(`Gagal ambil data ${city1}: HTTP ${res1.status}`);
+    if (!res2.ok) throw new Error(`Gagal ambil data ${city2}: HTTP ${res2.status}`);
 
-    const m1 = lastResult.metrics || {};
-    // Gabungkan data dari weather + air_quality endpoint
-    const w2 = data.weather || {};
-    const aq2 = data.air_quality || {};
+    const [data1, data2] = await Promise.all([res1.json(), res2.json()]);
+
+    // Gunakan lastResult.metrics jika ada (lebih lengkap), fallback ke API
+    const w1 = data1.weather || {};
+    const aq1 = data1.air_quality || {};
+    const m1 = lastResult?.metrics ? lastResult.metrics : {
+      aqi:         aq1.aqi        || "N/A",
+      pm25:        aq1.pm25       || "N/A",
+      temperature: w1.temperature || "N/A",
+      humidity:    w1.humidity    || "N/A",
+      wind_speed:  w1.wind_speed  || "N/A",
+      weather_desc: w1.description || "N/A",
+    };
+
+    const w2 = data2.weather || {};
+    const aq2 = data2.air_quality || {};
     const m2 = {
       aqi:         aq2.aqi        || "N/A",
       pm25:        aq2.pm25       || "N/A",
       temperature: w2.temperature || "N/A",
       humidity:    w2.humidity    || "N/A",
       wind_speed:  w2.wind_speed  || "N/A",
+      weather_desc: w2.description || "N/A",
     };
 
     const metrics = [
@@ -2285,19 +2305,13 @@ async function compareCity(city2) {
       const c1wins = r.lower ? n1 < n2 : n1 > n2;
       const winner = !hasData || n1 === n2 ? "—" : (c1wins ? city1 : city2);
       const wc = c1wins ? "var(--green-d)" : "var(--blue)";
-      const v1str = r.v1 && r.v1 !== "N/A" ? r.v1 + r.unit : "—";
-      const v2str = r.v2 && r.v2 !== "N/A" ? r.v2 + r.unit : "—";
       return `<tr style="border-top:1px solid var(--border)">
         <td style="padding:10px 0;color:var(--text2);font-weight:500">${r.label}</td>
-        <td style="padding:10px;text-align:center;font-weight:700;color:var(--green-d)">${v1str}</td>
-        <td style="padding:10px;text-align:center;font-weight:700;color:var(--blue)">${v2str}</td>
+        <td style="padding:10px;text-align:center;font-weight:700;color:var(--green-d)">${r.v1 !== "N/A" ? r.v1+r.unit : "—"}</td>
+        <td style="padding:10px;text-align:center;font-weight:700;color:var(--blue)">${r.v2 !== "N/A" ? r.v2+r.unit : "—"}</td>
         <td style="padding:10px;text-align:center;font-weight:700;color:${wc}">${winner}</td>
       </tr>`;
     }).join("");
-
-    // Ringkasan kondisi kota 2
-    const risk2 = data.metrics?.max_level || "—";
-    const desc2 = w2.description || "—";
 
     document.getElementById("modalTitle").textContent = `⚖️ ${city1} vs ${city2}`;
     document.getElementById("modalDot").style.background = "var(--blue)";
@@ -2305,13 +2319,13 @@ async function compareCity(city2) {
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
         <div style="background:var(--green-l);border-radius:8px;padding:10px;text-align:center">
           <div style="font-size:0.7rem;color:var(--green-d);font-weight:700;text-transform:uppercase">${city1}</div>
-          <div style="font-size:0.78rem;color:var(--text2);margin-top:4px">${lastResult.metrics?.weather_desc || "—"}</div>
-          <div style="font-size:0.72rem;color:var(--text3);margin-top:2px">Risiko: ${lastResult.risk_level || "—"}</div>
+          <div style="font-size:0.78rem;color:var(--text2);margin-top:4px">${m1.weather_desc || "—"}</div>
+          <div style="font-size:0.72rem;color:var(--text3);margin-top:2px">Risiko: ${lastResult?.risk_level || "—"}</div>
         </div>
         <div style="background:var(--blue-l);border-radius:8px;padding:10px;text-align:center">
           <div style="font-size:0.7rem;color:var(--blue);font-weight:700;text-transform:uppercase">${city2}</div>
-          <div style="font-size:0.78rem;color:var(--text2);margin-top:4px">${desc2}</div>
-          <div style="font-size:0.72rem;color:var(--text3);margin-top:2px">Kondisi: ${desc2}</div>
+          <div style="font-size:0.78rem;color:var(--text2);margin-top:4px">${m2.weather_desc || "—"}</div>
+          <div style="font-size:0.72rem;color:var(--text3);margin-top:2px">Real-time data</div>
         </div>
       </div>
       <table style="width:100%;border-collapse:collapse;font-size:0.84rem">
@@ -2324,15 +2338,14 @@ async function compareCity(city2) {
         ${rows}
       </table>
       <div style="margin-top:14px;padding:10px 12px;background:var(--surface2);border-radius:8px;font-size:0.78rem;color:var(--text3)">
-        📡 Data dari WAQI API & OpenWeatherMap · ${new Date().toLocaleTimeString("id-ID")}
+        📡 WAQI & OpenWeatherMap · ${new Date().toLocaleTimeString("id-ID")}
       </div>`;
 
-    const modal = document.getElementById("agentModal");
-    modal.style.display = "flex";
+    document.getElementById("agentModal").style.display = "flex";
     showNotif(`Perbandingan ${city1} vs ${city2} selesai`);
 
   } catch(e) {
-    showNotif("Gagal mengambil data: " + e.message);
+    showNotif("Gagal: " + e.message);
     console.error("compareCity error:", e);
   } finally {
     if (btn) { btn.disabled = false; btn.textContent = "⚖️ Bandingkan"; }
