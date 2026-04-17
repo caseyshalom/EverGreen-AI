@@ -265,11 +265,15 @@ def build_crew(env_data: dict, user_query: str, city: str):
         model="groq/meta-llama/llama-4-scout-17b-16e-instruct",
         api_key=os.getenv("GROQ_API_KEY", ""),
         temperature=0.1,
+        timeout=60,
+        max_retries=2,
     )
     report_llm = LLM(
         model="groq/meta-llama/llama-4-scout-17b-16e-instruct",
         api_key=os.getenv("GROQ_API_KEY", ""),
         temperature=0.15,
+        timeout=60,
+        max_retries=2,
     )
 
     aq      = env_data.get("air_quality", {})
@@ -531,19 +535,18 @@ async def run_ecoguardian_agents(
 
         time.sleep(2)
 
-        # Fase 2: Ethics + Report paralel — ethics tidak blocking lagi
-        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-            f_ethics = executor.submit(run_single_agent, ethics_ag, task_ethics)
-            # Report langsung jalan tanpa tunggu ethics
-            final_crew = Crew(
-                agents=[report_ag],
-                tasks=[task_report],
-                process=Process.sequential,
-                verbose=False,
-            )
-            final_result = final_crew.kickoff()
-            final_text = str(final_result).strip()
-            out_ethics = f_ethics.result()  # ambil hasil ethics (sudah jalan paralel)
+        # Fase 2: Ethics dulu (ringan), lalu Report
+        out_ethics = run_single_agent(ethics_ag, task_ethics)
+
+        # Report agent
+        final_crew = Crew(
+            agents=[report_ag],
+            tasks=[task_report],
+            process=Process.sequential,
+            verbose=False,
+        )
+        final_result = final_crew.kickoff()
+        final_text = str(final_result).strip()
 
         outputs = [out_monitor, out_predict, out_social, out_ethics, final_text]
         return final_text, outputs
