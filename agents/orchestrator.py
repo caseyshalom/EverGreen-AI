@@ -394,7 +394,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         ),
         expected_output="Analisis 5 langkah CoT dengan angka spesifik dan 2 rekomendasi.",
         agent=monitor_agent,
-        callback=lambda _: time.sleep(5),
+        callback=lambda _: time.sleep(2),
     )
 
     task_predict = Task(
@@ -408,7 +408,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         expected_output="Tren 7 hari, risiko+probabilitas, mekanisme, 2 mitigasi.",
         agent=predict_agent,
         context=[task_monitor],
-        callback=lambda _: time.sleep(5),
+        callback=lambda _: time.sleep(2),
     )
 
     task_social = Task(
@@ -421,7 +421,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         expected_output="Skor kerentanan, kelompok rentan, kaitan kausal, 2 rekomendasi.",
         agent=social_agent,
         context=[task_monitor],
-        callback=lambda _: time.sleep(5),
+        callback=lambda _: time.sleep(2),
     )
 
     task_ethics = Task(
@@ -434,7 +434,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
         expected_output="Skor etika 0-100 dengan 4 temuan dan catatan keterbatasan.",
         agent=ethics_agent,
         context=[task_monitor, task_predict, task_social],
-        callback=lambda _: time.sleep(5),
+        callback=lambda _: time.sleep(2),
     )
 
     FOCUS_INSTRUCTIONS = {
@@ -511,7 +511,7 @@ async def run_ecoguardian_agents(
                 verbose=False,
             )
             result = mini_crew.kickoff()
-            time.sleep(3)  # jeda setelah tiap agen
+            time.sleep(2)  # jeda setelah tiap agen
             return str(result).strip()
 
         crew, tasks = build_crew(env_data, user_query, city)
@@ -529,21 +529,21 @@ async def run_ecoguardian_agents(
             out_predict  = f_predict.result()
             out_social   = f_social.result()
 
-        time.sleep(3)
+        time.sleep(2)
 
-        # Fase 2: Ethics lalu Report (butuh konteks dari fase 1)
-        out_ethics = run_single_agent(ethics_ag, task_ethics)
-        time.sleep(3)
-
-        # Report agent — jalankan dengan full crew untuk dapat konteks
-        final_crew = Crew(
-            agents=[report_ag],
-            tasks=[task_report],
-            process=Process.sequential,
-            verbose=False,
-        )
-        final_result = final_crew.kickoff()
-        final_text = str(final_result).strip()
+        # Fase 2: Ethics + Report paralel — ethics tidak blocking lagi
+        with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
+            f_ethics = executor.submit(run_single_agent, ethics_ag, task_ethics)
+            # Report langsung jalan tanpa tunggu ethics
+            final_crew = Crew(
+                agents=[report_ag],
+                tasks=[task_report],
+                process=Process.sequential,
+                verbose=False,
+            )
+            final_result = final_crew.kickoff()
+            final_text = str(final_result).strip()
+            out_ethics = f_ethics.result()  # ambil hasil ethics (sudah jalan paralel)
 
         outputs = [out_monitor, out_predict, out_social, out_ethics, final_text]
         return final_text, outputs
