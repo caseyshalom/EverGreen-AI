@@ -262,14 +262,14 @@ def _detect_focus(query: str) -> str:
 
 def build_crew(env_data: dict, user_query: str, city: str):
     fast_llm = LLM(
-        model="groq/llama-3.1-8b-instant",
+        model="groq/meta-llama/llama-4-scout-17b-16e-instruct",
         api_key=os.getenv("GROQ_API_KEY", ""),
-        temperature=0.1,  # lebih deterministik & faktual
+        temperature=0.1,
     )
     report_llm = LLM(
-        model="groq/llama-3.1-8b-instant",
+        model="groq/meta-llama/llama-4-scout-17b-16e-instruct",
         api_key=os.getenv("GROQ_API_KEY", ""),
-        temperature=0.15,  # laporan lebih konsisten
+        temperature=0.15,
     )
 
     aq      = env_data.get("air_quality", {})
