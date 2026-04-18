@@ -277,15 +277,15 @@ def _detect_focus(query: str) -> str:
 
 def build_crew(env_data: dict, user_query: str, city: str):
     fast_llm = LLM(
-        model="openrouter/arcee-ai/trinity-large-preview:free",
-        api_key=os.getenv("OPENROUTER_API_KEY", ""),
+        model="groq/meta-llama/llama-4-scout-17b-16e-instruct",
+        api_key=os.getenv("GROQ_API_KEY", ""),
         temperature=0.1,
         timeout=60,
         max_retries=2,
     )
     report_llm = LLM(
-        model="openrouter/arcee-ai/trinity-large-preview:free",
-        api_key=os.getenv("OPENROUTER_API_KEY", ""),
+        model="groq/meta-llama/llama-4-scout-17b-16e-instruct",
+        api_key=os.getenv("GROQ_API_KEY", ""),
         temperature=0.15,
         timeout=60,
         max_retries=2,
@@ -537,10 +537,10 @@ async def run_ecoguardian_agents(
     session_id: str = "default"
 ) -> dict:
 
-    if not os.getenv("OPENROUTER_API_KEY"):
+    if not os.getenv("GROQ_API_KEY"):
         return {
             "success": False,
-            "response": "OPENROUTER_API_KEY tidak ditemukan.",
+            "response": "GROQ_API_KEY tidak ditemukan.",
             "risk_level": "sedang", "city": city, "metrics": {},
             "forecast": [], "monitor": {}, "predict": {}, "social": {},
             "ethics": {}, "actions": [], "sources": [], "history": [],
