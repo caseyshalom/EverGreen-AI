@@ -1135,32 +1135,64 @@ function renderAksiTerstruktur(actions, city) {
   _aksiData = actions;
 
   const prioConfig = {
-    tinggi:  { color: "badge-red",   icon: "🔴", label: "Tinggi" },
-    sedang:  { color: "badge-amber", icon: "🟡", label: "Sedang" },
-    rendah:  { color: "badge-green", icon: "🟢", label: "Rendah" },
+    tinggi: {
+      bg: "#ff6b6b22", border: "#ff6b6b55", textColor: "#ff4444",
+      badgeBg: "#ff444422", label: "TINGGI"
+    },
+    sedang: {
+      bg: "#f59e0b22", border: "#f59e0b55", textColor: "#d97706",
+      badgeBg: "#f59e0b22", label: "SEDANG"
+    },
+    rendah: {
+      bg: "#22c55e22", border: "#22c55e55", textColor: "#16a34a",
+      badgeBg: "#22c55e22", label: "RENDAH"
+    },
   };
 
-  if (sub) sub.textContent = `Rencana aksi untuk ${city} — klik untuk detail, ✓ untuk tandai selesai`;
+  if (sub) sub.textContent = `Rencana aksi untuk ${city}`;
   if (cnt) cnt.textContent = actions.length + " Aksi";
 
   list.innerHTML = actions.map((a, i) => {
     const prio = prioConfig[a.prioritas] || prioConfig.sedang;
-    // Tampilkan aksi singkat — potong di akhir kata
-    const aksiShort = a.aksi.length > 80
-      ? a.aksi.slice(0, 80).replace(/\s\S+$/, '') + '…'
-      : a.aksi;
     return `
-    <div class="aksi-item" id="aksi-${i}" onclick="openAksiModal(${i})" style="cursor:pointer">
-      <div class="aksi-num" style="background:var(--green-l);color:var(--green-d)">${i + 1}</div>
-      <div class="aksi-content">
-        <div class="aksi-title">${aksiShort}</div>
-        <div class="aksi-meta" style="margin-top:6px">
-          <span class="aksi-tag ${prio.color}">${prio.icon} ${prio.label}</span>
-          <span class="aksi-tag badge-blue">👤 ${a.pelaku.length > 30 ? a.pelaku.slice(0,30)+'…' : a.pelaku}</span>
-        </div>
-        <div style="font-size:0.68rem;color:var(--text3);margin-top:4px">🔍 Klik untuk detail lengkap</div>
+    <div style="
+      background:var(--surface2);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:16px 18px;
+      margin-bottom:10px;
+      transition:all .2s;
+      cursor:pointer;
+    " id="aksi-${i}" onclick="openAksiModal(${i})"
+       onmouseover="this.style.borderColor='var(--border2)';this.style.transform='translateY(-1px)'"
+       onmouseout="this.style.borderColor='var(--border)';this.style.transform=''">
+      <!-- Baris atas: badge prioritas + pelaku -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="
+          background:${prio.badgeBg};
+          color:${prio.textColor};
+          border:1px solid ${prio.border};
+          font-size:0.7rem;font-weight:700;
+          padding:3px 10px;border-radius:6px;
+          letter-spacing:.06em;
+        ">${prio.label}</span>
+        <span style="font-size:0.78rem;color:var(--text3);display:flex;align-items:center;gap:4px">
+          👤 ${a.pelaku}
+        </span>
+        <div class="aksi-check" id="check-${i}"
+          onclick="event.stopPropagation();toggleAksi(${i})"
+          title="Tandai selesai"
+          style="margin-left:auto"></div>
       </div>
-      <div class="aksi-check" id="check-${i}" onclick="event.stopPropagation();toggleAksi(${i})" title="Tandai selesai"></div>
+      <!-- Judul aksi -->
+      <div style="font-size:0.92rem;font-weight:700;color:var(--text);line-height:1.5;margin-bottom:8px">
+        ${a.aksi}
+      </div>
+      <!-- Dampak -->
+      <div style="font-size:0.78rem;color:var(--text3);display:flex;align-items:flex-start;gap:6px">
+        <span>📊</span>
+        <span>${a.dampak}</span>
+      </div>
     </div>`;
   }).join("");
 
