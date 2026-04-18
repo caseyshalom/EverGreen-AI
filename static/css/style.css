@@ -379,16 +379,13 @@ body {
   animation: pulse 2s infinite;
 }
 .content {
-  padding: 20px 36px;
+  padding: 24px 28px;
   flex: 1;
 }
 
-/* Semua page punya max-width dan centered */
+/* PAGE VIEWS */
 .page {
   display: none;
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
 }
 .page.active {
   display: block;
@@ -1937,7 +1934,7 @@ body {
   .status-pill { display: none; }
 
   /* Content padding */
-  .content { padding: 16px 20px; }
+  .content { padding: 16px; }
 
   /* Grids → single column */
   .cards-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -2025,6 +2022,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 0 8px;
   padding-top: 4px;
 }
 #page-sosial .card {
@@ -2040,4 +2038,11 @@ body {
 #page-sosial .summary-hero {
   margin-bottom: 0;
   border-radius: var(--radius);
+}
+
+/* Watermark centered */
+.eco-watermark {
+  text-align: center !important;
+  width: 100%;
+  display: block;
 }
