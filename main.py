@@ -274,6 +274,98 @@ async def get_owm_key():
     return {"key": os.getenv("OPENWEATHER_API_KEY", "")}
 
 
+@app.get("/api/social-features/{city}")
+async def get_social_features(city: str, country_code: str = "ID"):
+    """Data sosial lengkap untuk social_features.js."""
+    from tools.env_tools import get_air_quality, get_weather, get_social_data
+    aq, weather, social = await asyncio.gather(
+        get_air_quality(city), get_weather(city), get_social_data(country_code)
+    )
+    sd = social.get("data", {})
+
+    def sv(key): 
+        v = sd.get(key, {}).get("value")
+        try: return round(float(v), 1) if v is not None else 0
+        except: return 0
+
+    aqi_val = float(aq.get("aqi", 0) or 0)
+    pm25_val = float(aq.get("pm25", 0) or 0)
+    poverty = sv("poverty_rate")
+    water = sv("clean_water_access")
+    sanitation = sv("basic_sanitation")
+    electricity = sv("electricity_access")
+
+    # Community Health Index
+    chi_score = round(
+        max(0, 100 - aqi_val/3) * 0.35 +
+        water * 0.25 +
+        sanitation * 0.25 +
+        max(0, 100 - poverty * 3) * 0.15
+    )
+    chi_label = "Sangat Baik" if chi_score >= 80 else "Baik" if chi_score >= 60 else "Sedang" if chi_score >= 40 else "Buruk"
+    chi_color = "#22c55e" if chi_score >= 80 else "#16a34a" if chi_score >= 60 else "#f59e0b" if chi_score >= 40 else "#ef4444"
+
+    # Vulnerability dimensions
+    def level(v, thresholds):
+        if v >= thresholds[2]: return "kritis"
+        if v >= thresholds[1]: return "tinggi"
+        if v >= thresholds[0]: return "sedang"
+        return "rendah"
+
+    vuln_dims = [
+        {"name": "Kemiskinan", "icon": "💰", "value": poverty, "unit": "%", "desc": "Tingkat kemiskinan", "level": level(poverty, [5, 15, 30])},
+        {"name": "Air Bersih", "icon": "💧", "value": water, "unit": "%", "desc": "Akses air bersih", "level": level(100-water, [10, 30, 50])},
+        {"name": "Sanitasi", "icon": "🚿", "value": sanitation, "unit": "%", "desc": "Sanitasi dasar", "level": level(100-sanitation, [10, 30, 50])},
+        {"name": "Kualitas Udara", "icon": "🌫️", "value": int(aqi_val), "unit": "", "desc": f"AQI (WHO aman <50)", "level": level(aqi_val, [50, 100, 150])},
+        {"name": "PM2.5", "icon": "💨", "value": pm25_val, "unit": "μg", "desc": "WHO batas 25μg/m³", "level": level(pm25_val, [25, 55, 150])},
+        {"name": "Listrik", "icon": "⚡", "value": electricity, "unit": "%", "desc": "Akses listrik", "level": level(100-electricity, [5, 20, 40])},
+    ]
+
+    # Social impact estimation
+    pop_map = {"jakarta": 10.6, "surabaya": 2.9, "bandung": 2.5, "medan": 2.4, "semarang": 1.8, "makassar": 1.5}
+    pop_million = pop_map.get(city.lower(), 1.5)
+    affected_pct = min(95, round(poverty + max(0, (aqi_val - 50) / 3)))
+    affected = round(pop_million * 1e6 * affected_pct / 100)
+    work_days = round(affected * 0.05 * 12)
+    health_cost = round(affected * 0.002)
+
+    # Radar groups
+    radar_groups = [
+        {"name": "Anak-anak", "icon": "👶", "score": min(100, round(aqi_val/1.5 + poverty*2))},
+        {"name": "Lansia", "icon": "👴", "score": min(100, round(aqi_val/1.2 + (100-water)*0.5))},
+        {"name": "Ibu Hamil", "icon": "🤰", "score": min(100, round(pm25_val*1.2 + poverty))},
+        {"name": "Masy. Miskin", "icon": "🏚️", "score": min(100, round(poverty*3 + (100-sanitation)*0.3))},
+        {"name": "Disabilitas", "icon": "♿", "score": min(100, round(aqi_val/2 + (100-electricity)*0.5))},
+    ]
+
+    # Community actions
+    risk = "tinggi" if aqi_val > 100 or poverty > 20 else "sedang" if aqi_val > 50 else "rendah"
+    actions_map = {
+        "Warga & Keluarga": ["Gunakan masker N95 saat AQI >100", "Simpan air bersih cadangan", "Pantau kondisi udara via aplikasi"],
+        "RT/RW & Komunitas": ["Buat posko pemantauan lingkungan", "Distribusi masker untuk warga rentan", "Sosialisasi bahaya polusi udara"],
+        "Sekolah & Kampus": ["Batasi aktivitas luar saat AQI tinggi", "Edukasi siswa tentang kualitas udara", "Pasang tanaman penyerap polutan"],
+        "Puskesmas & Klinik": ["Siapkan stok obat ISPA", "Screening rutin warga rentan", "Edukasi gejala penyakit akibat polusi"],
+        "Pemerintah Daerah": ["Tingkatkan stasiun pemantau udara", "Program air bersih untuk warga miskin", "Regulasi emisi kendaraan dan industri"],
+    }
+
+    return {
+        "city": city,
+        "metrics": {"aqi": aq.get("aqi", "N/A"), "temperature": weather.get("temperature", "N/A"), "pm25": pm25_val},
+        "chi": {"score": chi_score, "label": chi_label, "color": chi_color},
+        "social_data": {"poverty_rate": poverty, "clean_water_access": water, "basic_sanitation": sanitation},
+        "vulnerability_dimensions": vuln_dims,
+        "social_impact": {
+            "affected_people": affected, "affected_pct": affected_pct,
+            "work_days_lost": work_days, "health_cost_billion_idr": health_cost,
+            "population_million": pop_million, "aqi": int(aqi_val), "pm25": pm25_val,
+            "risk_level": risk,
+            "note": "Estimasi berdasarkan data AQI, kemiskinan, dan populasi kota. Bukan data resmi.",
+        },
+        "radar_groups": radar_groups,
+        "community_actions": actions_map,
+    }
+
+
 @app.get("/api/weather/{city}")
 async def get_weather_forecast(city: str, country_code: str = "ID"):
     """Ambil data cuaca & forecast tanpa analisis AI."""
