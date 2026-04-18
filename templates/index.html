@@ -175,17 +175,21 @@
         Audit Etika
       </button>
       <button class="nav-item" onclick="showPage('kemajuan',this)">
-        <svg
-          viewBox="0 0 16 16"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-        >
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="2" y="10" width="3" height="4" rx="1" />
           <rect x="6.5" y="7" width="3" height="7" rx="1" />
           <rect x="11" y="4" width="3" height="10" rx="1" />
         </svg>
         Lacak Kemajuan
+      </button>
+      <button class="nav-item" onclick="showPage('sosial',this)">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="6" cy="5" r="2.5"/>
+          <path d="M1 13c0-2.5 2-4 5-4s5 1.5 5 4"/>
+          <circle cx="12" cy="5" r="2"/>
+          <path d="M12 9c1.5.3 3 1.2 3 3"/>
+        </svg>
+        Dampak Sosial
       </button>
       <div class="sidebar-footer">
         <div class="user-chip" onclick="toggleGuardian()" style="cursor:pointer" title="Buka Guardian AI">
@@ -795,10 +799,12 @@
           </div>
         </div>
 
-        <!-- ===== SOCIAL FEATURES ===== -->
-        <div style="margin-top:20px">
-          <div class="section-title" style="margin-bottom:12px">🌍 Analisis Dampak Sosial Real-Time</div>
-          <div id="socialCityInfo" style="font-size:0.78rem;color:var(--text3);margin-bottom:14px">
+        </div>
+
+        <!-- ===== PAGE: SOSIAL ===== -->
+        <div class="page" id="page-sosial">
+          <div class="section-title" style="margin-bottom:4px">🌍 Analisis Dampak Sosial Real-Time</div>
+          <div id="socialCityInfo" style="font-size:0.78rem;color:var(--text3);margin-bottom:16px">
             Jalankan analisis kota untuk melihat data sosial.
           </div>
 
@@ -811,7 +817,7 @@
               </div>
               <span class="sc-badge badge-green" id="chi-badge">—</span>
             </div>
-            <div id="chi-content"><div class="empty-state"><div class="empty-icon">🏥</div><div class="empty-title">Belum ada data</div></div></div>
+            <div id="chi-content"><div class="empty-state"><div class="empty-icon">🏥</div><div class="empty-title">Belum ada data</div><div class="empty-desc">Jalankan analisis kota terlebih dahulu</div></div></div>
           </div>
 
           <!-- Vulnerability Heatmap -->
@@ -825,7 +831,7 @@
             <div id="vulnerability-heatmap-content"><div class="empty-state"><div class="empty-icon">🗺️</div><div class="empty-title">Belum ada data</div></div></div>
           </div>
 
-          <!-- Social Impact Timeline -->
+          <!-- Social Impact -->
           <div class="card" style="margin-bottom:14px">
             <div class="card-head">
               <div>
@@ -836,14 +842,13 @@
             <div id="social-timeline-content"><div class="empty-state"><div class="empty-icon">📊</div><div class="empty-title">Belum ada data</div></div></div>
           </div>
 
-          <!-- Radar Chart -->
+          <!-- Radar + Community Actions -->
           <div class="two-col" style="margin-bottom:14px">
             <div class="card">
               <div class="card-head"><div class="card-title">🎯 Radar Kerentanan Kelompok</div></div>
               <svg id="radarSvg" viewBox="0 0 400 340" style="width:100%;display:none"></svg>
               <div id="radar-chart-content"></div>
             </div>
-            <!-- Community Actions -->
             <div class="card">
               <div class="card-head">
                 <div>
@@ -854,8 +859,6 @@
               <div id="community-actions-content"><div class="empty-state"><div class="empty-icon">🤝</div><div class="empty-title">Belum ada data</div></div></div>
             </div>
           </div>
-        </div>
-
         </div>
 
         <!-- ===== PAGE: ANALISIS ===== -->
