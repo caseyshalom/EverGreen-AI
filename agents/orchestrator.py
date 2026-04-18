@@ -277,14 +277,14 @@ def _detect_focus(query: str) -> str:
 
 def build_crew(env_data: dict, user_query: str, city: str):
     fast_llm = LLM(
-        model="openrouter/nvidia/nemotron-nano-9b-v2:free",
+        model="openrouter/openai/gpt-oss-120b:free",
         api_key=os.getenv("OPENROUTER_API_KEY", ""),
         temperature=0.1,
         timeout=60,
         max_retries=2,
     )
     report_llm = LLM(
-        model="openrouter/nvidia/nemotron-nano-9b-v2:free",
+        model="openrouter/openai/gpt-oss-120b:free",
         api_key=os.getenv("OPENROUTER_API_KEY", ""),
         temperature=0.15,
         timeout=60,

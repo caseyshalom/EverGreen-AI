@@ -425,7 +425,7 @@ Jika ada data analisis terbaru, gunakan sebagai konteks jawaban."""
                     "X-Title": "EcoGuardian AI",
                 },
                 json={
-                    "model": "nvidia/nemotron-nano-9b-v2:free",
+                    "model": "openai/gpt-oss-120b:free",
                     "messages": messages,
                     "max_tokens": 1024,
                     "temperature": 0.7,
