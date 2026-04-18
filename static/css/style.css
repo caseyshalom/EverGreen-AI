@@ -379,8 +379,9 @@ body {
   animation: pulse 2s infinite;
 }
 .content {
-  padding: 24px 28px;
+  padding: 28px 36px;
   flex: 1;
+  max-width: 1200px;
 }
 
 /* PAGE VIEWS */
@@ -1934,7 +1935,7 @@ body {
   .status-pill { display: none; }
 
   /* Content padding */
-  .content { padding: 16px; }
+  .content { padding: 16px 20px; }
 
   /* Grids → single column */
   .cards-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -2024,7 +2025,7 @@ body {
   gap: 20px;
 }
 #page-sosial .card {
-  padding: 24px;
+  padding: 24px 28px;
 }
 #page-sosial .card-head {
   margin-bottom: 18px;
