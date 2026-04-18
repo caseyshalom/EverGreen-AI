@@ -562,8 +562,17 @@ async def run_ecoguardian_agents(
                 verbose=False,
             )
             result = mini_crew.kickoff()
-            time.sleep(2)  # jeda setelah tiap agen
-            return str(result).strip()
+            time.sleep(2)
+            raw = str(result).strip()
+            # Hapus internal reasoning text
+            import re as _re
+            raw = _re.sub(r'^Thought:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+            raw = _re.sub(r'^I now can give.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+            raw = _re.sub(r'^Final Answer:\s*', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+            raw = _re.sub(r'^Action:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+            raw = _re.sub(r'^Action Input:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+            raw = _re.sub(r'^Observation:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+            return _re.sub(r'\n{3,}', '\n\n', raw).strip()
 
         crew, tasks = build_crew(env_data, user_query, city)
         task_monitor, task_predict, task_social, task_ethics, task_report = tasks
@@ -593,7 +602,20 @@ async def run_ecoguardian_agents(
             verbose=False,
         )
         final_result = final_crew.kickoff()
-        final_text = str(final_result).strip()
+        raw = str(final_result).strip()
+
+        # Hapus internal reasoning text dari CrewAI/LLM yang bocor ke output
+        import re as _re
+        # Hapus baris "Thought: ..." dan sejenisnya
+        raw = _re.sub(r'^Thought:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+        raw = _re.sub(r'^I now can give.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+        raw = _re.sub(r'^Final Answer:\s*', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+        raw = _re.sub(r'^Action:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+        raw = _re.sub(r'^Action Input:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+        raw = _re.sub(r'^Observation:.*$', '', raw, flags=_re.MULTILINE | _re.IGNORECASE)
+        # Bersihkan baris kosong berlebih
+        raw = _re.sub(r'\n{3,}', '\n\n', raw).strip()
+        final_text = raw
 
         outputs = [out_monitor, out_predict, out_social, out_ethics, final_text]
         return final_text, outputs
