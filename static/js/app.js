@@ -48,6 +48,10 @@ function showPage(name, btn) {
   document.getElementById("pageSub").textContent = meta[1];
   // Tutup sidebar di mobile setelah navigasi
   if (window.innerWidth <= 768) closeSidebar();
+  // Load social features saat buka halaman pemantauan
+  if (name === "pemantauan" && typeof loadSocialFeatures === "function") {
+    loadSocialFeatures();
+  }
 }
 
 function setQuery(el, text) {
@@ -172,6 +176,10 @@ async function runAnalysis() {
       showNotif(
         "Analisis selesai! " + data.city + " · Risiko " + data.risk_level
       );
+      // Update social features dengan data kota terbaru
+      if (typeof loadSocialFeatures === "function") {
+        setTimeout(() => loadSocialFeatures(), 500);
+      }
     }, 500);
   } catch (err) {
     document.getElementById("loadingPanel").style.display = "none";
