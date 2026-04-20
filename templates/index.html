@@ -1088,23 +1088,6 @@
             <!-- Skor Tren -->
             <div id="trendWrap" style="display:none"></div>
 
-            <!-- Perbandingan 2 Kota -->
-            <div id="compareWrap" style="display:none"></div>
-            <div style="margin-bottom:14px;display:flex;align-items:center;gap:8px">
-              <input id="compareInput" type="text" placeholder="Bandingkan dengan kota lain..."
-                style="flex:1;font-size:0.78rem;padding:8px 12px;border-radius:8px;border:1px solid var(--border2);
-                       background:var(--surface2);color:var(--text);outline:none;transition:border-color .2s"
-                onfocus="this.style.borderColor='var(--green)'"
-                onblur="this.style.borderColor='var(--border2)'"
-                onkeydown="if(event.key==='Enter') compareCity(this.value.trim())" />
-              <button onclick="compareCity(document.getElementById('compareInput').value.trim())"
-                id="compareBtnEl"
-                style="padding:8px 14px;border-radius:8px;border:1px solid var(--green-m);background:var(--green-l);
-                       color:var(--green-d);font-size:0.78rem;font-weight:600;cursor:pointer;white-space:nowrap">
-                ⚖️ Bandingkan
-              </button>
-            </div>
-
             <div class="insight-row">
               <div class="insight-card" onclick="openAgentModal('monitor')">
                 <div class="ic-head">
