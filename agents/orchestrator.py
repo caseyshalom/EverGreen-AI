@@ -262,16 +262,20 @@ def parse_action_plan(text: str) -> list:
 # ---------------------------------------------------------------------------
 
 def _detect_focus(query: str) -> str:
-    """Deteksi fokus utama dari query user."""
-    q = query.lower()
-    if any(w in q for w in ["rekomendasi aksi", "rencana aksi", "aksi konkret", "langkah pencegahan", "solusi", "tindakan"]):
-        return "aksi"
-    if any(w in q for w in ["cuaca", "hujan", "suhu", "angin", "prakiraan", "prediksi", "iklim", "banjir", "kekeringan"]):
-        return "cuaca"
-    if any(w in q for w in ["udara", "aqi", "pm2.5", "polusi", "polutan", "asap", "kualitas udara"]):
+    """Deteksi fokus utama dari query user — exact match ke query tombol cepat."""
+    q = query.lower().strip()
+    # Exact match ke query tombol cepat
+    if "bagaimana kondisi kualitas udara hari ini" in q:
         return "kualitas_udara"
-    if any(w in q for w in ["sosial", "masyarakat", "rentan", "miskin", "kemiskinan", "sanitasi", "kelompok"]):
+    if "prediksi risiko lingkungan 7 hari ke depan" in q:
+        return "cuaca"
+    if "kelompok masyarakat mana yang paling rentan" in q:
         return "sosial"
+    if "rekomendasi aksi konkret untuk mengurangi risiko" in q:
+        return "aksi"
+    if "analisis lengkap kondisi lingkungan" in q:
+        return "lengkap"
+    # Fallback untuk query custom
     return "lengkap"
 
 
