@@ -255,7 +255,7 @@ function renderRadarChart(groups) {
         const label = g.score >= 70 ? "Sangat Rentan" : g.score >= 40 ? "Rentan" : "Aman";
         return `<div style="background:${scoreBg};border:1px solid ${scoreColor}33;border-radius:8px;padding:10px;text-align:center">
           <div style="font-size:1.2rem">${g.icon}</div>
-          <div style="font-size:0.68rem;font-weight:700;color:var(--text);margin:3px 0">${g.name}</div>
+          <div style="font-size:0.68rem;font-weight:700;color:#1a1a1a;margin:3px 0">${g.name}</div>
           <div style="font-size:1.1rem;font-weight:800;color:${scoreColor}">${g.score}<span style="font-size:0.65rem">/100</span></div>
           <div style="font-size:0.62rem;color:${scoreColor};font-weight:600">${label}</div>
         </div>`;
