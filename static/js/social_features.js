@@ -102,21 +102,21 @@ function renderVulnerabilityHeatmap(dimensions) {
         const cfg = levelConfig[d.level] || levelConfig.sedang;
         return `<div style="background:${cfg.bg};border:1.5px solid ${cfg.color}33;border-radius:10px;padding:12px;text-align:center">
           <div style="font-size:1.4rem;margin-bottom:4px">${d.icon}</div>
-          <div style="font-size:0.72rem;font-weight:700;color:var(--text);margin-bottom:4px">${d.name}</div>
+          <div style="font-size:0.72rem;font-weight:700;color:#1a1a1a;margin-bottom:4px">${d.name}</div>
           <div style="font-size:1.2rem;font-weight:800;color:${cfg.color}">${d.value}${d.unit}</div>
           <div style="font-size:0.65rem;color:${cfg.color};font-weight:600;margin-top:4px;text-transform:uppercase">${cfg.label}</div>
-          <div style="font-size:0.65rem;color:var(--text3);margin-top:3px">${d.desc}</div>
+          <div style="font-size:0.65rem;color:#555;margin-top:3px">${d.desc}</div>
         </div>`;
       }).join("")}
     </div>
-    <div style="font-size:0.72rem;color:var(--text3);display:flex;gap:12px;flex-wrap:wrap">
+    <div style="font-size:0.72rem;color:#555;display:flex;gap:12px;flex-wrap:wrap">
       ${Object.entries(levelConfig).map(([k, v]) =>
         `<span style="display:flex;align-items:center;gap:4px">
           <span style="width:10px;height:10px;border-radius:2px;background:${v.color};display:inline-block"></span>
-          ${v.label}
+          <span style="color:#333">${v.label}</span>
         </span>`
       ).join("")}
-      <span style="margin-left:auto;opacity:.7">Sumber: World Bank + WAQI</span>
+      <span style="margin-left:auto;opacity:.7;color:#555">Sumber: World Bank + WAQI</span>
     </div>`;
 }
 
