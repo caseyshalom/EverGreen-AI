@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 EverGreen AI - FastAPI Backend
 Orkestrasi API untuk sistem multi-agent lingkungan dan dampak sosial.
@@ -314,12 +315,12 @@ async def get_social_features(city: str, country_code: str = "ID"):
         return "rendah"
 
     vuln_dims = [
-        {"name": "Kemiskinan", "icon": "💰", "value": poverty, "unit": "%", "desc": "Tingkat kemiskinan", "level": level(poverty, [5, 15, 30])},
-        {"name": "Air Bersih", "icon": "💧", "value": water, "unit": "%", "desc": "Akses air bersih", "level": level(100-water, [10, 30, 50])},
-        {"name": "Sanitasi", "icon": "🚿", "value": sanitation, "unit": "%", "desc": "Sanitasi dasar", "level": level(100-sanitation, [10, 30, 50])},
-        {"name": "Kualitas Udara", "icon": "🌫️", "value": int(aqi_val), "unit": "", "desc": f"AQI (WHO aman <50)", "level": level(aqi_val, [50, 100, 150])},
-        {"name": "PM2.5", "icon": "💨", "value": pm25_val, "unit": "μg", "desc": "WHO batas 25μg/m³", "level": level(pm25_val, [25, 55, 150])},
-        {"name": "Listrik", "icon": "⚡", "value": electricity, "unit": "%", "desc": "Akses listrik", "level": level(100-electricity, [5, 20, 40])},
+        {"name": "Kemiskinan", "icon": "&#128176;", "value": poverty, "unit": "%", "desc": "Tingkat kemiskinan", "level": level(poverty, [5, 15, 30])},
+        {"name": "Air Bersih", "icon": "&#128167;", "value": water, "unit": "%", "desc": "Akses air bersih", "level": level(100-water, [10, 30, 50])},
+        {"name": "Sanitasi", "icon": "&#128703;", "value": sanitation, "unit": "%", "desc": "Sanitasi dasar", "level": level(100-sanitation, [10, 30, 50])},
+        {"name": "Kualitas Udara", "icon": "&#127787;", "value": int(aqi_val), "unit": "", "desc": "AQI (WHO aman <50)", "level": level(aqi_val, [50, 100, 150])},
+        {"name": "PM2.5", "icon": "&#128168;", "value": pm25_val, "unit": "ug", "desc": "WHO batas 25ug/m3", "level": level(pm25_val, [25, 55, 150])},
+        {"name": "Listrik", "icon": "&#9889;", "value": electricity, "unit": "%", "desc": "Akses listrik", "level": level(100-electricity, [5, 20, 40])},
     ]
 
     # Social impact estimation
@@ -332,11 +333,11 @@ async def get_social_features(city: str, country_code: str = "ID"):
 
     # Radar groups
     radar_groups = [
-        {"name": "Anak-anak", "icon": "👶", "score": min(100, round(aqi_val/1.5 + poverty*2))},
-        {"name": "Lansia", "icon": "👴", "score": min(100, round(aqi_val/1.2 + (100-water)*0.5))},
-        {"name": "Ibu Hamil", "icon": "🤰", "score": min(100, round(pm25_val*1.2 + poverty))},
-        {"name": "Masy. Miskin", "icon": "🏚️", "score": min(100, round(poverty*3 + (100-sanitation)*0.3))},
-        {"name": "Disabilitas", "icon": "♿", "score": min(100, round(aqi_val/2 + (100-electricity)*0.5))},
+        {"name": "Anak-anak", "icon": "&#128118;", "score": min(100, round(aqi_val/1.5 + poverty*2))},
+        {"name": "Lansia", "icon": "&#128116;", "score": min(100, round(aqi_val/1.2 + (100-water)*0.5))},
+        {"name": "Ibu Hamil", "icon": "&#129328;", "score": min(100, round(pm25_val*1.2 + poverty))},
+        {"name": "Masy. Miskin", "icon": "&#127962;", "score": min(100, round(poverty*3 + (100-sanitation)*0.3))},
+        {"name": "Disabilitas", "icon": "&#9855;", "score": min(100, round(aqi_val/2 + (100-electricity)*0.5))},
     ]
 
     # Community actions
