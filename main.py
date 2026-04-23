@@ -24,7 +24,7 @@ logging.getLogger("supabase_db").setLevel(logging.WARNING)
 logging.getLogger("httpx").setLevel(logging.WARNING)
 
 from memory.db import init_db
-from agents.orchestrator import run_Green AI_agents
+from agents.orchestrator import run_greenai_agents
 
 init_db()
 
@@ -125,7 +125,7 @@ async def analyze(req: QueryRequest):
     if not req.query.strip():
         raise HTTPException(status_code=400, detail="Query tidak boleh kosong")
 
-    result = await run_Green AI_agents(
+    result = await run_greenai_agents(
         user_query=req.query,
         city=req.city or "Jakarta",
         country_code=req.country_code or "ID",

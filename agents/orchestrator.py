@@ -534,7 +534,7 @@ def build_crew(env_data: dict, user_query: str, city: str):
 # Orchestrator utama
 # ---------------------------------------------------------------------------
 
-async def run_Green AI_agents(
+async def run_greenai_agents(
     user_query: str,
     city: str = "Jakarta",
     country_code: str = "ID",
