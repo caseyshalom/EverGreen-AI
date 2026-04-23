@@ -280,7 +280,7 @@ function renderCommunityActions(actions, city) {
   el.innerHTML = `
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">
       ${Object.entries(actions).map(([actor, actionList]) => {
-        const cfg = actorConfig[actor] || { icon: "??", color: "var(--text2)", bg: "var(--surface2)", border: "var(--border2)" };
+        const cfg = actorConfig[actor] || { icon: "&#128100;", color: "var(--text2)", bg: "var(--surface2)", border: "var(--border2)" };
         return `<div style="background:${cfg.bg};border:1.5px solid ${cfg.border};border-radius:10px;padding:14px">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
             <span style="font-size:1.2rem">${cfg.icon}</span>
@@ -288,7 +288,7 @@ function renderCommunityActions(actions, city) {
           </div>
           <ul style="margin:0;padding-left:16px;list-style:none">
             ${actionList.map(a => `<li style="font-size:0.78rem;color:var(--text2);margin-bottom:6px;line-height:1.5;padding-left:0;display:flex;gap:6px;align-items:flex-start">
-              <span style="color:${cfg.color};flex-shrink:0;margin-top:2px">?</span>
+              <span style="color:${cfg.color};flex-shrink:0;margin-top:2px">&#8594;</span>
               <span>${a}</span>
             </li>`).join("")}
           </ul>
