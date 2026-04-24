@@ -2981,30 +2981,6 @@ function initLandingInteractivity() {
     if (s3) animateCounter(s3, 34, "+");
   }, 800);
 
-  // 3. Parallax Effect
-  const centerEl = landing.querySelector(".lg-center");
-  const topbarEl = landing.querySelector(".lg-topbar");
-  
-  landing.addEventListener("mousemove", (e) => {
-    if (landing.classList.contains("hide")) return;
-    
-    const x = (e.clientX / window.innerWidth - 0.5) * 2;
-    const y = (e.clientY / window.innerHeight - 0.5) * 2;
-    
-    if (centerEl) {
-      centerEl.style.transform = `translateX(${x * 20}px) translateY(${y * 20}px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg)`;
-    }
-    if (topbarEl) {
-      topbarEl.style.transform = `translateX(${x * -10}px) translateY(${y * -10}px)`;
-    }
-  });
-
-  // Reset transform on leave
-  landing.addEventListener("mouseleave", () => {
-    if (centerEl) centerEl.style.transform = "translateX(0) translateY(0) rotateX(0) rotateY(0)";
-    if (topbarEl) topbarEl.style.transform = "translateX(0) translateY(0)";
-  });
-
   // 2. Canvas Particles Effect
   const canvas = document.getElementById("lgCanvas");
   if (!canvas) return;
