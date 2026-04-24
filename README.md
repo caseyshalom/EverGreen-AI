@@ -1,6 +1,6 @@
-# 🌿 Green AI
+# 🌿 EverGreen AI
 
-Sistem multi-agent AI berbasis **CrewAI** untuk memantau kondisi lingkungan, memprediksi risiko iklim, dan menganalisis dampak sosial secara real-time. Didukung data dari berbagai API publik gratis dan LLM via Groq.
+Sistem multi-agent AI berbasis **CrewAI** untuk memantau kondisi lingkungan, memprediksi risiko iklim, dan menganalisis dampak sosial secara real-time. Didukung data dari berbagai API publik gratis dan LLM via Groq (Llama-4 Scout).
 
 ---
 
@@ -50,10 +50,11 @@ flowchart TD
 
 ## � Fitur
 
+- **Visual & UI Interaktif** — Landing page memukau dengan animasi partikel kanvas, efek parallax 3D, dan glow dinamis
 - **Analisis multi-kota** — kota-kota Indonesia dan beberapa kota Asia (Singapore, KL, Bangkok, Tokyo)
 - **Peta choropleth** — visualisasi cuaca per 34 provinsi Indonesia via Leaflet.js
 - **Indeks Kesehatan Lingkungan (IKL)** — skor gabungan 0–100 dari AQI, risiko, sosial, dan suhu
-- **Guardian AI Chat** — tanya jawab lanjutan berbasis konteks analisis terakhir
+- **EcoBot (EverGreen AI Chat)** — tanya jawab lanjutan berbasis konteks analisis terakhir
 - **Auto-Monitor** — endpoint periodik cek kondisi berbahaya tanpa analisis AI penuh
 - **Download laporan** — export hasil analisis ke file `.txt`
 - **Share laporan** — bagikan hasil via link unik (`/share/{id}`)
@@ -80,9 +81,9 @@ flowchart TD
 ## 🛠️ Stack
 
 - **Backend** — Python 3.11+, FastAPI, Uvicorn
-- **AI / LLM** — CrewAI ≥0.80.0, Groq API (`llama-3.1-8b-instant`)
+- **AI / LLM** — CrewAI ≥0.80.0, Groq API (`llama-4-scout-17b-16e-instruct`)
 - **Database** — Supabase (PostgreSQL) + SQLite fallback
-- **Frontend** — HTML5, CSS3, JavaScript (ES2022), Leaflet.js
+- **Frontend** — HTML5, CSS3, JavaScript (ES2022), Leaflet.js, Canvas API
 
 ---
 
@@ -154,7 +155,7 @@ File tersebut akan membuat:
 
 Sudah termasuk index untuk performa query dan Row Level Security (RLS) dengan policy `allow_all` untuk anon key.
 
-> Jika Supabase tidak dikonfigurasi, sistem otomatis menggunakan SQLite lokal di `data/Green AI.db`.
+> Jika Supabase tidak dikonfigurasi, sistem otomatis menggunakan SQLite lokal di `data/EverGreen AI.db`.
 
 ---
 
