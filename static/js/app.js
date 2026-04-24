@@ -2948,10 +2948,10 @@ function initLandingInteractivity() {
     const y = (e.clientY / window.innerHeight - 0.5) * 2;
     
     if (centerEl) {
-      centerEl.style.transform = \`translateX(\${x * 20}px) translateY(\${y * 20}px) rotateX(\${-y * 5}deg) rotateY(\${x * 5}deg)\`;
+      centerEl.style.transform = `translateX(\${x * 20}px) translateY(\${y * 20}px) rotateX(\${-y * 5}deg) rotateY(\${x * 5}deg)`;
     }
     if (topbarEl) {
-      topbarEl.style.transform = \`translateX(\${x * -10}px) translateY(\${y * -10}px)\`;
+      topbarEl.style.transform = `translateX(\${x * -10}px) translateY(\${y * -10}px)`;
     }
   });
 
@@ -2999,14 +2999,14 @@ function initLandingInteractivity() {
       if (this.x > w) this.x = 0;
     }
     draw() {
-      ctx.fillStyle = \`rgba(\${this.color}, \${this.alpha})\`;
+      ctx.fillStyle = `rgba(\${this.color}, \${this.alpha})`;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fill();
       
       // Glow
       ctx.shadowBlur = 10;
-      ctx.shadowColor = \`rgba(\${this.color}, 0.8)\`;
+      ctx.shadowColor = `rgba(\${this.color}, 0.8)`;
     }
   }
 
@@ -3042,7 +3042,7 @@ function initLandingInteractivity() {
         
         if (distance < 100) {
           ctx.beginPath();
-          ctx.strokeStyle = \`rgba(46, 204, 113, \${0.15 * (1 - distance / 100)})\`;
+          ctx.strokeStyle = `rgba(46, 204, 113, \${0.15 * (1 - distance / 100)})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
