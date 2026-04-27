@@ -3288,7 +3288,7 @@ function renderLgGuide() {
   if (nextBtn) nextBtn.innerHTML = _lgGuideStep === total - 1 ? '&#10003; Mengerti!' : 'Lanjut &#8594;';
 }
 
-function lgGuideNext() {
+function lgGuideNextStep() {
   if (_lgGuideStep < LG_GUIDE_STEPS.length - 1) {
     _lgGuideStep++;
     renderLgGuide();
@@ -3297,7 +3297,7 @@ function lgGuideNext() {
   }
 }
 
-function lgGuidePrev() {
+function lgGuidePrevStep() {
   if (_lgGuideStep > 0) {
     _lgGuideStep--;
     renderLgGuide();

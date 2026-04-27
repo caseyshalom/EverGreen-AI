@@ -65,66 +65,40 @@
         <!-- Landing onboarding tooltip -->
         <div id="landingGuide" style="
           display:block;
-          margin-top:20px;
-          background:rgba(255,255,255,0.08);
-          border:1px solid rgba(46,204,113,0.4);
-          border-radius:14px;
-          padding:16px 20px;
-          max-width:420px;
+          margin-top:18px;
+          background:rgba(0,0,0,0.6);
+          border:1px solid rgba(46,204,113,0.5);
+          border-radius:12px;
+          padding:14px 18px;
+          max-width:460px;
           animation:lgUp .5s ease .7s both;
-          backdrop-filter:blur(8px);
+          backdrop-filter:blur(10px);
         ">
-          <div style="display:flex;align-items:flex-start;gap:12px">
-            <div style="font-size:1.4rem;flex-shrink:0" id="lgGuideIcon">&#128075;</div>
+          <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:10px">
+            <div style="font-size:1.3rem;flex-shrink:0" id="lgGuideIcon">&#128075;</div>
             <div style="flex:1">
-              <div style="font-size:0.85rem;font-weight:700;color:#fff;margin-bottom:4px" id="lgGuideTitle">Halo! Selamat datang</div>
-              <div style="font-size:0.78rem;color:rgba(255,255,255,0.75);line-height:1.6" id="lgGuideDesc">EverGreen AI membantu kamu memantau kondisi lingkungan kotamu secara real-time dengan bantuan 5 agen AI.</div>
+              <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px" id="lgGuideTitle">Halo! Selamat datang</div>
+              <div style="font-size:0.76rem;color:rgba(255,255,255,0.8);line-height:1.5" id="lgGuideDesc">EverGreen AI membantu kamu memantau kondisi lingkungan kotamu secara real-time dengan bantuan 5 agen AI.</div>
             </div>
           </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between">
             <div style="display:flex;gap:5px" id="lgGuideDots">
               <div style="width:16px;height:6px;border-radius:3px;background:#2ecc71"></div>
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3)"></div>
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3)"></div>
               <div style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.3)"></div>
             </div>
-            <div style="display:flex;gap:8px">
-              <button id="lgGuideBack" onclick="lgGuidePrev()" style="
-                padding:6px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.2);
-                background:transparent;color:rgba(255,255,255,0.7);font-size:0.75rem;
-                cursor:pointer;display:none">&#8592; Kembali</button>
-              <button id="lgGuideNext" onclick="lgGuideNext()" style="
-                padding:6px 16px;border-radius:8px;border:none;
-                background:rgba(46,204,113,0.8);color:#fff;font-size:0.75rem;
-                font-weight:700;cursor:pointer">Lanjut &#8594;</button>
+            <div style="display:flex;gap:6px">
+              <button id="lgGuideBack" onclick="if(typeof lgGuidePrevStep==='function')lgGuidePrevStep()" style="
+                padding:5px 12px;border-radius:7px;border:1px solid rgba(255,255,255,0.25);
+                background:transparent;color:rgba(255,255,255,0.75);font-size:0.72rem;
+                cursor:pointer;display:none;font-family:'Outfit',sans-serif">&#8592;</button>
+              <button id="lgGuideNext" onclick="if(typeof lgGuideNextStep==='function')lgGuideNextStep()" style="
+                padding:5px 14px;border-radius:7px;border:none;
+                background:#2ecc71;color:#fff;font-size:0.72rem;
+                font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif">Lanjut &#8594;</button>
             </div>
           </div>
-        </div>
-
-        <!-- Stats row -->
-        <div style="display:flex;gap:28px;margin-top:36px;justify-content:center;animation:lgUp .9s ease .8s both;flex-wrap:wrap">
-          <div style="text-align:center">
-            <div style="font-size:1.6rem;font-weight:700;color:#fff;font-family:'Outfit',sans-serif" id="lgStat1">0</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;margin-top:2px">AGEN AI</div>
-          </div>
-          <div style="width:1px;background:rgba(255,255,255,.15)"></div>
-          <div style="text-align:center">
-            <div style="font-size:1.6rem;font-weight:700;color:#fff;font-family:'Outfit',sans-serif" id="lgStat2">0</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;margin-top:2px">SUMBER DATA</div>
-          </div>
-          <div style="width:1px;background:rgba(255,255,255,.15)"></div>
-          <div style="text-align:center">
-            <div style="font-size:1.6rem;font-weight:700;color:#2ecc71;font-family:'Outfit',sans-serif" id="lgStat3">0</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.1em;margin-top:2px">KOTA DIDUKUNG</div>
-          </div>
-        </div>
-
-        <!-- Feature pills -->
-        <div style="display:flex;gap:8px;margin-top:24px;justify-content:center;flex-wrap:wrap;animation:lgUp .9s ease 1s both">
-          <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 12px;font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.08em">🌫️ Kualitas Udara</span>
-          <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 12px;font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.08em">🌧️ Prediksi Cuaca</span>
-          <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 12px;font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.08em">👥 Dampak Sosial</span>
-          <span style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:4px 12px;font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.08em">🛡️ Audit Etika AI</span>
         </div>
       </div>
       <!-- Scroll hint -->
