@@ -3220,8 +3220,8 @@ function onboardFinish() {
     setTimeout(() => { overlay.style.display = 'none'; overlay.style.opacity = ''; }, 300);
   }
   localStorage.setItem('evergreen_onboarded', '1');
-  // Arahkan ke halaman Analisis Dampak
-  showPage('analisis', document.querySelector('[onclick*="analisis"]'));
+  // Arahkan ke Ringkasan
+  showPage('ringkasan', document.querySelector('[onclick*="ringkasan"]'));
 }
 
 function removeOnboardHighlight() {
