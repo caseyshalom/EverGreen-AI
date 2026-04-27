@@ -1576,6 +1576,8 @@ function closeSidebar() {
 }
 
 function enterDashboard() {
+  // Sembunyikan landing guide jika masih terbuka
+  lgGuideFinish();
   const landing = document.getElementById('eco-landing');
   const dash    = document.getElementById('eco-dashboard');
   if (!landing || !dash) return;
@@ -3253,7 +3255,7 @@ const LG_GUIDE_STEPS = [
 let _lgGuideStep = 0;
 
 function startLandingGuide() {
-  if (localStorage.getItem('evergreen_landing_guided') === '1') return;
+  // Selalu tampilkan guide di landing — disembunyikan setelah user klik Mengerti atau masuk dashboard
   _lgGuideStep = 0;
   renderLgGuide();
   const guide = document.getElementById('landingGuide');
