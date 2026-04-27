@@ -2044,3 +2044,20 @@ body {
   /* Guardian panel */
   .guardian-panel { left: 4px; right: 4px; }
 }
+
+/* ── ONBOARDING ── */
+.ob-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border2); transition: all .3s;
+}
+.ob-dot.active {
+  background: var(--green); width: 20px; border-radius: 4px;
+}
+.onboard-highlight {
+  outline: 3px solid #2ecc71 !important;
+  outline-offset: 4px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 0 6px rgba(46,204,113,.15) !important;
+  transition: all .3s !important;
+  position: relative; z-index: 200;
+}

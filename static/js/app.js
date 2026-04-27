@@ -1600,6 +1600,8 @@ function enterDashboard() {
       const city = localStorage.getItem('eco_last_city') || 'Jakarta';
       loadWeatherForCity(city);
     }, 10 * 60 * 1000);
+    // Tampilkan onboarding jika belum pernah
+    setTimeout(() => startOnboarding(), 800);
   }, 1000);
 }
 // ── Dark / Light Mode ────────────────────────────────────────────────────
@@ -3078,4 +3080,160 @@ function initLandingInteractivity() {
 
   initParticles();
   animateParticles();
+}
+
+
+// ══════════════════════════════════════════════════════
+// ONBOARDING TUTORIAL
+// ══════════════════════════════════════════════════════
+
+const ONBOARD_STEPS = [
+  {
+    icon: "&#127968;",
+    title: "Selamat Datang di EverGreen AI!",
+    desc: "EverGreen AI adalah asisten cerdas yang memantau kondisi lingkungan kotamu secara real-time. Sistem ini menggunakan 5 agen AI yang bekerja bersama untuk memberikan analisis lengkap.",
+    tip: "&#128161; Kamu tidak perlu paham teknologi — cukup pilih kota dan ajukan pertanyaan!",
+    highlight: null,
+  },
+  {
+    icon: "&#128202;",
+    title: "Ringkasan Dashboard",
+    desc: "Halaman ini adalah pusat informasi utama. Di sini kamu bisa melihat kondisi udara, suhu, tingkat risiko, dan statistik global secara sekilas.",
+    tip: "&#128270; Lihat bagian ini setiap hari untuk memantau kondisi lingkungan kotamu.",
+    highlight: "page-ringkasan",
+  },
+  {
+    icon: "&#128269;",
+    title: "Analisis Dampak — Fitur Utama",
+    desc: "Di sini kamu bisa 'bertanya' ke AI tentang kondisi lingkungan. Pilih kota, pilih topik pertanyaan, lalu klik tombol hijau besar. AI akan menganalisis dan memberikan laporan lengkap dalam 1-2 menit.",
+    tip: "&#9889; Coba mulai dengan pertanyaan cepat seperti 'Kualitas Udara' atau 'Analisis Lengkap'.",
+    highlight: "page-analisis",
+  },
+  {
+    icon: "&#127757;",
+    title: "Pemantauan Data Real-Time",
+    desc: "Lihat data lingkungan langsung dari berbagai sumber: kualitas udara, cuaca, peta hujan Indonesia, dan prakiraan 7 hari ke depan — semua tanpa perlu menjalankan analisis AI.",
+    tip: "&#128204; Cocok untuk cek cepat kondisi cuaca sebelum beraktivitas di luar.",
+    highlight: "page-pemantauan",
+  },
+  {
+    icon: "&#9989;",
+    title: "Rencana Aksi",
+    desc: "Setelah analisis selesai, halaman ini menampilkan rekomendasi tindakan konkret. Setiap aksi dilengkapi dengan siapa yang harus bertindak dan dampak yang diharapkan. Kamu bisa menandai aksi yang sudah dilakukan.",
+    tip: "&#128203; Tandai aksi yang sudah selesai untuk melacak kemajuanmu.",
+    highlight: "page-aksi",
+  },
+  {
+    icon: "&#128640;",
+    title: "Siap Memulai!",
+    desc: "Langkah pertama: pergi ke menu Analisis Dampak, pilih kotamu, lalu klik 'Jalankan Analisis Multi-Agent'. Butuh bantuan? Klik tombol robot hijau di pojok kanan bawah untuk chat dengan EcoBot.",
+    tip: null,
+    highlight: null,
+  },
+];
+
+let _onboardStep = 0;
+let _onboardHighlighted = null;
+
+function startOnboarding() {
+  if (localStorage.getItem('evergreen_onboarded') === '1') return;
+  _onboardStep = 0;
+  renderOnboardStep();
+  const overlay = document.getElementById('onboardingOverlay');
+  if (overlay) overlay.style.display = 'flex';
+}
+
+function renderOnboardStep() {
+  const step = ONBOARD_STEPS[_onboardStep];
+  const total = ONBOARD_STEPS.length;
+
+  // Update content
+  document.getElementById('onboardIcon').innerHTML = step.icon;
+  document.getElementById('onboardTitle').textContent = step.title;
+  document.getElementById('onboardDesc').textContent = step.desc;
+
+  const tipEl = document.getElementById('onboardTip');
+  if (step.tip) {
+    tipEl.innerHTML = step.tip;
+    tipEl.style.display = 'block';
+  } else {
+    tipEl.style.display = 'none';
+  }
+
+  // Progress bar
+  document.getElementById('onboardProgress').style.width = ((_onboardStep + 1) / total * 100) + '%';
+  document.getElementById('onboardStepLabel').textContent = (_onboardStep + 1) + ' / ' + total;
+
+  // Dots
+  for (let i = 0; i < total; i++) {
+    const dot = document.getElementById('obDot' + i);
+    if (dot) dot.className = 'ob-dot' + (i === _onboardStep ? ' active' : '');
+  }
+
+  // Back button
+  const backBtn = document.getElementById('onboardBack');
+  if (backBtn) backBtn.style.display = _onboardStep > 0 ? 'block' : 'none';
+
+  // Next button text
+  const nextBtn = document.getElementById('onboardNext');
+  if (nextBtn) nextBtn.textContent = _onboardStep === total - 1 ? '&#127942; Mulai Sekarang!' : 'Selanjutnya →';
+
+  // Highlight
+  removeOnboardHighlight();
+  if (step.highlight) {
+    const el = document.getElementById(step.highlight);
+    if (el) {
+      el.classList.add('onboard-highlight');
+      _onboardHighlighted = el;
+    }
+  }
+}
+
+function onboardNext() {
+  if (_onboardStep < ONBOARD_STEPS.length - 1) {
+    _onboardStep++;
+    renderOnboardStep();
+  } else {
+    onboardFinish();
+  }
+}
+
+function onboardPrev() {
+  if (_onboardStep > 0) {
+    _onboardStep--;
+    renderOnboardStep();
+  }
+}
+
+function onboardSkip() {
+  onboardFinish();
+}
+
+function onboardFinish() {
+  removeOnboardHighlight();
+  const overlay = document.getElementById('onboardingOverlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .3s';
+    setTimeout(() => { overlay.style.display = 'none'; overlay.style.opacity = ''; }, 300);
+  }
+  localStorage.setItem('evergreen_onboarded', '1');
+  // Arahkan ke halaman Analisis Dampak
+  showPage('analisis', document.querySelector('[onclick*="analisis"]'));
+}
+
+function removeOnboardHighlight() {
+  if (_onboardHighlighted) {
+    _onboardHighlighted.classList.remove('onboard-highlight');
+    _onboardHighlighted = null;
+  }
+}
+
+// Tombol "Lihat Tutorial Lagi" — bisa dipanggil dari mana saja
+function showTutorialAgain() {
+  localStorage.removeItem('evergreen_onboarded');
+  _onboardStep = 0;
+  renderOnboardStep();
+  const overlay = document.getElementById('onboardingOverlay');
+  if (overlay) { overlay.style.opacity = ''; overlay.style.display = 'flex'; }
 }
