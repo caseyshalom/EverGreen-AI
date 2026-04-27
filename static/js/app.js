@@ -3207,10 +3207,6 @@ function onboardPrev() {
   }
 }
 
-function onboardSkip() {
-  onboardFinish();
-}
-
 function onboardFinish() {
   removeOnboardHighlight();
   const overlay = document.getElementById('onboardingOverlay');
@@ -3220,11 +3216,22 @@ function onboardFinish() {
     setTimeout(() => { overlay.style.display = 'none'; overlay.style.opacity = ''; }, 300);
   }
   localStorage.setItem('evergreen_onboarded', '1');
-  // Arahkan ke Ringkasan
-  showPage('ringkasan', document.querySelector('[onclick*="ringkasan"]'));
+  // Mulai Sekarang → Analisis Dampak
+  showPage('analisis', document.querySelector('[onclick*="analisis"]'));
 }
 
-function removeOnboardHighlight() {
+function onboardSkip() {
+  removeOnboardHighlight();
+  const overlay = document.getElementById('onboardingOverlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity .3s';
+    setTimeout(() => { overlay.style.display = 'none'; overlay.style.opacity = ''; }, 300);
+  }
+  localStorage.setItem('evergreen_onboarded', '1');
+  // Lewati → Ringkasan
+  showPage('ringkasan', document.querySelector('[onclick*="ringkasan"]'));
+}
   if (_onboardHighlighted) {
     _onboardHighlighted.classList.remove('onboard-highlight');
     _onboardHighlighted = null;
