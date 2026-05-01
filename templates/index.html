@@ -1661,10 +1661,9 @@
   <script src="/static/js/social_features.js?v=3.0"></script>
   <script>
     window.addEventListener('load', function() {
-      // Init landing guide
-      if (typeof renderLgGuide === 'function') {
-        _lgGuideStep = 0;
-        renderLgGuide();
+      // Init landing guide — cek user baru/lama
+      if (typeof startLandingGuide === 'function') {
+        startLandingGuide();
       }
       // Bind landing guide buttons
       var btnNext = document.getElementById('lgGuideNext');

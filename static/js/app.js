@@ -3264,11 +3264,31 @@ const LG_GUIDE_STEPS = [
 let _lgGuideStep = 0;
 
 function startLandingGuide() {
-  // Selalu tampilkan guide di landing — disembunyikan setelah user klik Mengerti atau masuk dashboard
-  _lgGuideStep = 0;
-  renderLgGuide();
+  const isNewUser = localStorage.getItem('evergreen_landing_guided') !== '1';
   const guide = document.getElementById('landingGuide');
-  if (guide) guide.style.display = 'block';
+  const btn = document.getElementById('lgMainBtn');
+
+  if (isNewUser) {
+    // User baru: tampilkan guide, disable tombol utama
+    _lgGuideStep = 0;
+    renderLgGuide();
+    if (guide) guide.style.display = 'block';
+    if (btn) {
+      btn.disabled = true;
+      btn.style.opacity = '0.4';
+      btn.style.cursor = 'not-allowed';
+      btn.title = 'Selesaikan panduan terlebih dahulu';
+    }
+  } else {
+    // User lama: sembunyikan guide, tombol aktif
+    if (guide) guide.style.display = 'none';
+    if (btn) {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.style.cursor = '';
+      btn.title = '';
+    }
+  }
 }
 
 function renderLgGuide() {
@@ -3317,6 +3337,14 @@ function lgGuideFinish() {
   const guide = document.getElementById('landingGuide');
   if (guide) guide.style.display = 'none';
   localStorage.setItem('evergreen_landing_guided', '1');
+  // Enable tombol utama setelah guide selesai
+  const btn = document.getElementById('lgMainBtn');
+  if (btn) {
+    btn.disabled = false;
+    btn.style.opacity = '';
+    btn.style.cursor = '';
+    btn.title = '';
+  }
 }
 
 function landingBtnClick() {
