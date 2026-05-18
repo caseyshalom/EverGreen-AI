@@ -54,7 +54,7 @@ flowchart TD
     E5 --> F[compute_ikl\nIndeks Kesehatan Lingkungan]
     F --> G[(Supabase / SQLite fallback)]
     G --> H[Response JSON ke Frontend]
-    H --> I[Guardian AI Chat]
+    H --> I[EcoBot AI Chat]
 ```
 
 ---
