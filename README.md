@@ -245,41 +245,6 @@ curl -X POST http://127.0.0.1:8080/api/analyze \
 
 ---
 
-## 📁 Struktur Project
-
-```
-EverGreen-AI/
-├── main.py                  # FastAPI app, semua endpoint, alert logic
-├── requirements.txt
-├── .env                     # API keys (tidak di-commit)
-├── supabase_setup.sql       # DDL untuk setup Supabase
-│
-├── agents/
-│   └── orchestrator.py      # CrewAI pipeline, 5 agen, IKL, parse action plan
-│
-├── tools/
-│   ├── env_tools.py         # Fetch data: WAQI, OWM, Open-Meteo, World Bank, BMKG
-│   └── notification_tools.py # Generate & simpan laporan .txt
-│
-├── memory/
-│   ├── db.py                # SQLite: sessions, env_cache, analysis_history
-│   └── supabase_db.py       # Supabase wrapper dengan fallback ke SQLite
-│
-├── static/
-│   ├── css/style.css
-│   └── js/
-│       ├── app.js           # Logic utama dashboard
-│       └── social_features.js # Community Health Index, radar chart
-│
-├── templates/
-│   └── index.html           # Single-page dashboard
-│
-└── data/
-    ├── evergreen.db         # SQLite database (auto-generated)
-    └── reports/             # Laporan .txt yang didownload
-```
-
----
 
 ## 🔑 Cara Mendapatkan API Key
 
