@@ -180,7 +180,6 @@ File tersebut membuat tiga tabel:
 |-------|--------|
 | `sessions` | Riwayat pesan chat per sesi (JSON array) |
 | `analysis_history` | Riwayat analisis: kota, query, ringkasan, risk level |
-| `shared_reports` | Laporan yang di-share via link unik |
 
 Sudah termasuk index untuk performa query dan Row Level Security (RLS) dengan policy `allow_all` untuk anon key.
 
