@@ -387,9 +387,9 @@ async def get_weather_forecast(city: str, country_code: str = "ID"):
     }
 
 
-@app.post("/api/guardian-chat")
-async def guardian_chat(req: dict):
-    """Guardian AI Chat — tanya jawab seputar lingkungan dan analisis."""
+@app.post("/api/ecobot-chat")
+async def ecobot_chat(req: dict):
+    """EcoBot AI Chat — tanya jawab seputar lingkungan dan analisis."""
     from groq import Groq
     message = req.get("message", "").strip()
     context = req.get("context", "")
@@ -404,7 +404,7 @@ async def guardian_chat(req: dict):
 
     client = Groq(api_key=api_key)
 
-    system_prompt = """Kamu adalah Guardian, asisten AI EverGreen AI yang cerdas, responsif, dan peduli lingkungan.
+    system_prompt = """Kamu adalah EcoBot, asisten AI EverGreen AI yang cerdas, responsif, dan peduli lingkungan.
 Kamu seperti JARVIS — pintar, to the point, dan selalu siap membantu.
 Kamu ahli dalam: kualitas udara, cuaca, dampak sosial lingkungan, perubahan iklim, dan kebijakan lingkungan Indonesia.
 Jawab dalam Bahasa Indonesia yang natural dan informatif. Maksimal 3 paragraf per jawaban.

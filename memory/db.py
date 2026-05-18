@@ -1,5 +1,5 @@
 """
-EcoGuardian - Memory Layer
+EverGreen AI - Memory Layer
 Menggunakan SQLite (gratis, lokal) untuk menyimpan riwayat sesi dan cache data.
 """
 
@@ -10,7 +10,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-DB_PATH = Path(__file__).parent.parent / "data" / "ecoguardian.db"
+DB_PATH = Path(__file__).parent.parent / "data" / "evergreen.db"
 
 
 def init_db():

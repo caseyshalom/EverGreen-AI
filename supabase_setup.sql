@@ -1,5 +1,5 @@
 -- ============================================================
--- EcoGuardian AI — Supabase Database Setup
+-- EverGreen AI — Supabase Database Setup
 -- Jalankan file ini di Supabase SQL Editor
 -- Dashboard: https://supabase.com → Project → SQL Editor
 -- ============================================================

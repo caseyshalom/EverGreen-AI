@@ -1,5 +1,5 @@
 """
-EcoGuardian - Supabase Database Layer
+EverGreen AI - Supabase Database Layer
 Auto-reconnect on disconnect, fallback ke SQLite jika Supabase tidak tersedia.
 """
 

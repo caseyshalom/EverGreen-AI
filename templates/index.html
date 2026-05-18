@@ -1591,7 +1591,7 @@
       background:var(--surface);border:1px solid var(--border2);
       border-radius:16px;width:100%;max-width:560px;max-height:80vh;
       display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.4);
-      animation:guardianSlide .25s ease">
+      animation:ecobotSlide .25s ease">
       <!-- Header -->
       <div style="
         display:flex;align-items:center;gap:10px;
@@ -1615,7 +1615,7 @@
 
   <!-- ═══════════════ ECOBOT FAB ═══════════════ -->
   <!-- FAB button — selalu terlihat di kanan bawah -->
-  <button class="guardian-fab" id="guardianFab" onclick="toggleGuardian()" title="EcoBot AI Assistant" style="display:flex">
+  <button class="ecobot-fab" id="ecobotFab" onclick="toggleEcobot()" title="EcoBot AI Assistant" style="display:flex">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <rect x="4" y="4" width="16" height="16" rx="4"/>
       <circle cx="9" cy="10" r="1.2" fill="white" stroke="none"/>
@@ -1626,14 +1626,14 @@
     </svg>
   </button>
   <!-- Label tooltip EcoBot -->
-  <div style="position:fixed;bottom:96px;right:28px;z-index:499;background:#1a2e1a;color:#fff;font-size:0.72rem;font-weight:600;padding:4px 10px;border-radius:8px;pointer-events:none;animation:guardianPulse 3s ease-in-out infinite;white-space:nowrap" id="ecobotLabel">
+  <div style="position:fixed;bottom:96px;right:28px;z-index:499;background:#1a2e1a;color:#fff;font-size:0.72rem;font-weight:600;padding:4px 10px;border-radius:8px;pointer-events:none;animation:ecobotPulse 3s ease-in-out infinite;white-space:nowrap" id="ecobotLabel">
     EcoBot &#8594;
   </div>
 
-  <!-- ═══════════════ GUARDIAN AI PANEL ═══════════════ -->
-  <div class="guardian-panel" id="guardianPanel">
-    <div class="guardian-header">
-      <div class="guardian-avatar" style="display:flex;align-items:center;justify-content:center">
+  <!-- ═══════════════ ECOBOT AI PANEL ═══════════════ -->
+  <div class="ecobot-panel" id="ecobotPanel">
+    <div class="ecobot-header">
+      <div class="ecobot-avatar" style="display:flex;align-items:center;justify-content:center">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="4" y="4" width="16" height="16" rx="4"/>
           <circle cx="9" cy="10" r="1.2" fill="white" stroke="none"/>
@@ -1644,29 +1644,29 @@
         </svg>
       </div>
       <div>
-        <div class="guardian-name">EcoBot</div>
-        <div class="guardian-status">
-          <span class="guardian-status-dot"></span>
+        <div class="ecobot-name">EcoBot</div>
+        <div class="ecobot-status">
+          <span class="ecobot-status-dot"></span>
           AI Assistant
         </div>
       </div>
-      <button class="guardian-close" onclick="toggleGuardian()" title="Tutup">✕</button>
+      <button class="ecobot-close" onclick="toggleEcobot()" title="Tutup">✕</button>
     </div>
-    <div class="guardian-messages" id="guardianMessages">
-      <div class="g-msg guardian">
+    <div class="ecobot-messages" id="ecobotMessages">
+      <div class="g-msg ecobot">
         Halo! Saya EcoBot, asisten dari EverGreen AI. Tanyakan apa saja tentang kondisi lingkungan, analisis risiko, atau rekomendasi aksi. 🌿
       </div>
     </div>
-    <div class="guardian-quick" id="guardianQuick">
+    <div class="ecobot-quick" id="ecobotQuick">
       <button class="q-tag" onclick="sendQuick('Apa kondisi udara saat ini?')">Kondisi udara</button>
       <button class="q-tag" onclick="sendQuick('Apa risiko lingkungan terbesar?')">Risiko utama</button>
       <button class="q-tag" onclick="sendQuick('Berikan rekomendasi aksi konkret')">Rekomendasi</button>
     </div>
-    <div class="guardian-input-wrap">
-      <input class="guardian-input" id="guardianInput" type="text"
+    <div class="ecobot-input-wrap">
+      <input class="ecobot-input" id="ecobotInput" type="text"
         placeholder="Tanya EcoBot..."
-        onkeydown="if(event.key==='Enter') sendGuardian()" />
-      <button class="guardian-send" id="guardianSend" onclick="sendGuardian()" title="Kirim">
+        onkeydown="if(event.key==='Enter') sendEcobot()" />
+      <button class="ecobot-send" id="ecobotSend" onclick="sendEcobot()" title="Kirim">
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
         </svg>

@@ -2034,35 +2034,35 @@ async function renderIndonesiaMap() {
   setTimeout(() => _indonesiaMap.invalidateSize(), 150);
 }
 
-// ── Guardian AI Chat ─────────────────────────────────────────────────────
+// ── EcoBot AI Chat ─────────────────────────────────────────────────────
 
-let _guardianHistory = [];
-let _guardianOpen = false;
+let _ecobotHistory = [];
+let _ecobotOpen = false;
 
-function toggleGuardian() {
-  const panel = document.getElementById("guardianPanel");
-  _guardianOpen = !_guardianOpen;
-  panel.classList.toggle("open", _guardianOpen);
+function toggleEcobot() {
+  const panel = document.getElementById("ecobotPanel");
+  _ecobotOpen = !_ecobotOpen;
+  panel.classList.toggle("open", _ecobotOpen);
   // Sembunyikan label saat panel dibuka
   const label = document.getElementById("ecobotLabel");
-  if (label) label.style.display = _guardianOpen ? "none" : "block";
-  if (_guardianOpen) {
-    setTimeout(() => document.getElementById("guardianInput")?.focus(), 100);
+  if (label) label.style.display = _ecobotOpen ? "none" : "block";
+  if (_ecobotOpen) {
+    setTimeout(() => document.getElementById("ecobotInput")?.focus(), 100);
   }
 }
 
 function sendQuick(text) {
-  document.getElementById("guardianInput").value = text;
+  document.getElementById("ecobotInput").value = text;
   // Hide quick buttons after first use
-  const quick = document.getElementById("guardianQuick");
+  const quick = document.getElementById("ecobotQuick");
   if (quick) quick.style.display = "none";
-  sendGuardian();
+  sendEcobot();
 }
 
-async function sendGuardian() {
-  const input = document.getElementById("guardianInput");
-  const btn   = document.getElementById("guardianSend");
-  const msgs  = document.getElementById("guardianMessages");
+async function sendEcobot() {
+  const input = document.getElementById("ecobotInput");
+  const btn   = document.getElementById("ecobotSend");
+  const msgs  = document.getElementById("ecobotMessages");
   if (!input || !msgs) return;
 
   const message = input.value.trim();
@@ -2071,7 +2071,7 @@ async function sendGuardian() {
   // Add user message
   input.value = "";
   btn.disabled = true;
-  appendGuardianMsg(message, "user");
+  appendEcobotMsg(message, "user");
 
   // Typing indicator
   const typingId = "g-typing-" + Date.now();
@@ -2082,13 +2082,13 @@ async function sendGuardian() {
   const context = lastResult ? (lastResult.response || "").slice(0, 600) : "";
 
   try {
-    const res = await fetch("/api/guardian-chat", {
+    const res = await fetch("/api/ecobot-chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         message,
         context,
-        history: _guardianHistory,
+        history: _ecobotHistory,
       }),
     });
     const data = await res.json();
@@ -2097,22 +2097,22 @@ async function sendGuardian() {
     document.getElementById(typingId)?.remove();
 
     if (data.reply) {
-      appendGuardianMsg(data.reply, "guardian");
-      _guardianHistory.push({ role: "user", content: message });
-      _guardianHistory.push({ role: "assistant", content: data.reply });
-      if (_guardianHistory.length > 12) _guardianHistory = _guardianHistory.slice(-12);
+      appendEcobotMsg(data.reply, "ecobot");
+      _ecobotHistory.push({ role: "user", content: message });
+      _ecobotHistory.push({ role: "assistant", content: data.reply });
+      if (_ecobotHistory.length > 12) _ecobotHistory = _ecobotHistory.slice(-12);
     }
   } catch(e) {
     document.getElementById(typingId)?.remove();
-    appendGuardianMsg("Maaf, terjadi kesalahan. Coba lagi.", "guardian");
+    appendEcobotMsg("Maaf, terjadi kesalahan. Coba lagi.", "ecobot");
   }
 
   btn.disabled = false;
   input.focus();
 }
 
-function appendGuardianMsg(text, role) {
-  const msgs = document.getElementById("guardianMessages");
+function appendEcobotMsg(text, role) {
+  const msgs = document.getElementById("ecobotMessages");
   if (!msgs) return;
   const clean = text
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")

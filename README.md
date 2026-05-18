@@ -66,7 +66,7 @@ flowchart TD
 - **Chain-of-Thought reasoning** — setiap agen menjelaskan langkah analisisnya
 - **Deteksi fokus otomatis** — sistem mendeteksi intent query (kualitas udara / cuaca / sosial / aksi / lengkap) dan menyesuaikan output
 - **Indeks Kesehatan Lingkungan (IKL)** — skor gabungan 0–100 dari AQI (35%), risiko (25%), sosial (25%), suhu (15%)
-- **Guardian AI Chat** — chatbot kontekstual berbasis Groq Llama-4 Scout, memahami konteks analisis terakhir
+- **Ecobot AI Chat** — chatbot kontekstual berbasis Groq Llama-4 Scout, memahami konteks analisis terakhir
 
 ### Dashboard & Visualisasi
 - **Peta choropleth** — data cuaca real-time 34 provinsi Indonesia via Leaflet.js
@@ -106,7 +106,7 @@ flowchart TD
 | **Backend** | Python 3.11+, FastAPI 0.115, Uvicorn 0.30 |
 | **AI / LLM** | CrewAI ≥0.80.0, Groq API — `meta-llama/llama-4-scout-17b-16e-instruct` |
 | **HTTP Client** | httpx ≥0.27 (async) |
-| **Database** | Supabase (PostgreSQL cloud) + SQLite fallback (`data/ecoguardian.db`) |
+| **Database** | Supabase (PostgreSQL cloud) + SQLite fallback (`data/evergreen.db`) |
 | **Frontend** | HTML5, CSS3, JavaScript ES2022, Leaflet.js, Canvas API |
 | **Config** | python-dotenv, Pydantic v2 |
 
@@ -155,7 +155,7 @@ PORT=8080
 DEBUG=false
 ```
 
-> **Catatan:** Jika `SUPABASE_URL` dan `SUPABASE_KEY` tidak diisi, sistem otomatis menggunakan SQLite lokal di `data/ecoguardian.db`.
+> **Catatan:** Jika `SUPABASE_URL` dan `SUPABASE_KEY` tidak diisi, sistem otomatis menggunakan SQLite lokal di `data/evergreen.db`.
 
 ### 4. Jalankan server
 
@@ -192,7 +192,7 @@ Sudah termasuk index untuk performa query dan Row Level Security (RLS) dengan po
 | `GET` | `/api/weather/{city}` | Data cuaca & forecast tanpa analisis AI |
 | `GET` | `/api/indonesia-weather-map` | Data cuaca 34 provinsi untuk choropleth map |
 | `GET` | `/api/social-features/{city}` | Community Health Index, kerentanan sosial, radar chart |
-| `POST` | `/api/guardian-chat` | Guardian AI Chat — tanya jawab kontekstual |
+| `POST` | `/api/ecobot-chat` | EcoBot AI Chat — tanya jawab kontekstual |
 | `GET` | `/api/stats` | Statistik global: distribusi risiko, top kota, heatmap per jam |
 | `POST` | `/api/share-report` | Simpan laporan ke Supabase & return link unik |
 | `GET` | `/share/{share_id}` | Tampilkan laporan yang di-share (HTML) |
@@ -275,7 +275,7 @@ EverGreen-AI/
 │   └── index.html           # Single-page dashboard
 │
 └── data/
-    ├── ecoguardian.db       # SQLite database (auto-generated)
+    ├── evergreen.db         # SQLite database (auto-generated)
     └── reports/             # Laporan .txt yang didownload
 ```
 

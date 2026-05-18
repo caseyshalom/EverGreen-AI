@@ -1,5 +1,5 @@
 """
-EcoGuardian - Environmental Data Tools
+EverGreen AI - Environmental Data Tools
 Menggunakan API gratis: OpenWeatherMap, WAQI, Open-Meteo, World Bank
 """
 
