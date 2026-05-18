@@ -42,16 +42,14 @@ flowchart TD
 
     C1 & C2 & C3 & C4 & C5 --> D[CrewAI Orchestrator]
 
-    subgraph Fase1 [Fase 1 — Paralel ThreadPoolExecutor]
-        D --> E1[Monitor Agent]
-        D --> E2[Predict Agent]
-        D --> E3[Social Agent]
-    end
+    D --> LABEL1([⚡ Fase 1 — Paralel ThreadPoolExecutor])
+    LABEL1 --> E1[Monitor Agent]
+    LABEL1 --> E2[Predict Agent]
+    LABEL1 --> E3[Social Agent]
 
-    subgraph Fase2 [Fase 2 — Sekuensial]
-        E1 & E2 & E3 --> E4[Ethics Agent]
-        E4 --> E5[Report Agent]
-    end
+    E1 & E2 & E3 --> LABEL2([🔗 Fase 2 — Sekuensial])
+    LABEL2 --> E4[Ethics Agent]
+    E4 --> E5[Report Agent]
 
     E5 --> F[compute_ikl\nIndeks Kesehatan Lingkungan]
     F --> G[(Supabase / SQLite fallback)]
