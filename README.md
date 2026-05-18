@@ -83,8 +83,7 @@ flowchart TD
 - **Level alert**: aman → sedang → tinggi → kritis
 
 ### Data & Laporan
-- **Download laporan** — export hasil analisis ke file `.txt` terformat
-- **Share laporan** — bagikan hasil via link unik (`/share/{id}`) yang tersimpan di Supabase
+- **Download laporan** — export hasil analisis ke file `.txt` dan export PDF terformat
 - **Dual database** — Supabase (cloud) dengan fallback otomatis ke SQLite lokal
 - **Sumber resmi per negara** — BMKG, KLHK, ISPU, BPS, BNPB (ID), NEA (SG), JMM (MY), dll.
 
