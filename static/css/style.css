@@ -1726,7 +1726,7 @@ body {
 .ecobot-panel {
   position: fixed;
   bottom: 80px;
-  left: 16px;
+  right: 28px;
   z-index: 500;
   width: 360px;
   max-height: 520px;
@@ -1998,7 +1998,6 @@ body {
     width: auto;
     bottom: 72px;
   }
-
   /* Notif */
   .notif { left: 12px; right: 12px; bottom: 16px; }
 
