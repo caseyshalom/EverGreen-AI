@@ -153,7 +153,6 @@ Supabase (PostgreSQL) ──► jika SUPABASE_URL & SUPABASE_KEY tersedia
 |-------|----------|--------|
 | `sessions` | Supabase + SQLite | Riwayat percakapan per sesi (JSON array) |
 | `analysis_history` | Supabase + SQLite | Log analisis: kota, query, ringkasan, risk level |
-| `shared_reports` | Supabase only | Laporan yang dibagikan via link unik |
 
 ---
 
