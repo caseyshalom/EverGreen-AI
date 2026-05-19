@@ -116,8 +116,8 @@ EverGreen-AI/
 | `GROQ_API_KEY` | ✅ | — | API key Groq untuk LLM Llama-4 Scout |
 | `OPENWEATHER_API_KEY` | ✅ | — | API key OpenWeatherMap (cuaca + geocoding) |
 | `WAQI_TOKEN` | ✅ | `"demo"` | Token WAQI untuk data AQI |
-| `SUPABASE_URL` | ⬜ | — | URL project Supabase (opsional) |
-| `SUPABASE_KEY` | ⬜ | — | Anon key Supabase (opsional) |
+| `SUPABASE_URL` | ✅ | — | URL project Supabase  |
+| `SUPABASE_KEY` | ✅ | — | Anon key Supabase  |
 | `HOST` | ⬜ | `"0.0.0.0"` | Host server |
 | `PORT` | ⬜ | `7860` | Port server |
 | `DEBUG` | ⬜ | `"false"` | Aktifkan hot-reload uvicorn |
@@ -380,7 +380,7 @@ Semua fungsi pengambilan data eksternal. Semua fungsi bersifat `async` menggunak
 
 ### `get_air_quality(city: str) → dict`
 
-**Sumber:** WAQI API (`https://api.waqi.info/feed/{city}/`)  
+**Sumber:** WAQI API   
 **Auth:** `WAQI_TOKEN` (default: `"demo"` — rate limited)  
 **Timeout:** 10 detik
 
@@ -399,7 +399,7 @@ Semua fungsi pengambilan data eksternal. Semua fungsi bersifat `async` menggunak
 
 ### `get_weather(city: str) → dict`
 
-**Sumber:** OpenWeatherMap API (`/data/2.5/weather`)  
+**Sumber:** OpenWeatherMap API   
 **Auth:** `OPENWEATHER_API_KEY`  
 **Unit:** metric (°C, m/s)  
 **Bahasa:** Indonesia (`lang=id`)
@@ -408,7 +408,7 @@ Semua fungsi pengambilan data eksternal. Semua fungsi bersifat `async` menggunak
 
 ### `get_forecast(lat: float, lon: float) → dict`
 
-**Sumber:** Open-Meteo API (`https://api.open-meteo.com/v1/forecast`)  
+**Sumber:** Open-Meteo API   
 **Auth:** Tidak diperlukan  
 **Timezone:** `Asia/Jakarta`  
 **Periode:** 7 hari ke depan
@@ -427,7 +427,7 @@ Semua fungsi pengambilan data eksternal. Semua fungsi bersifat `async` menggunak
 
 ### `get_social_data(country_code: str) → dict`
 
-**Sumber:** World Bank API (`https://api.worldbank.org/v2/country/{code}/indicator/{indicator}`)  
+**Sumber:** World Bank API  
 **Auth:** Tidak diperlukan  
 **Data:** Most Recent Value (MRV) per indikator
 
@@ -444,7 +444,7 @@ Semua fungsi pengambilan data eksternal. Semua fungsi bersifat `async` menggunak
 
 ### `get_earthquake_data() → dict`
 
-**Sumber:** BMKG (`https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json`)  
+**Sumber:** BMKG  
 **Auth:** Tidak diperlukan  
 **Data:** Gempa terbaru (auto-update BMKG)
 
