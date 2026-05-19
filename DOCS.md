@@ -22,7 +22,7 @@ EverGreen AI menggabungkan **5 API data lingkungan**, **5 AI Agent otonom**, dan
 ┌─────────────────────────────────────────────────────────────┐
 │                   FASTAPI BACKEND (main.py)                  │
 │  • Routing & Validasi    • Alert Logic (WHO/ISPU threshold)  │
-│  • Community Health Index (CHI)    • Download Report      │
+│  • Community Health Index (CHI)    • Download Report         │
 └──────────────────────────┬──────────────────────────────────┘
                            │
           ┌────────────────┼────────────────┐
