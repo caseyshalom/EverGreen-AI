@@ -2,6 +2,8 @@
 
 > Sistem **Agentic AI** untuk Pemantauan Lingkungan, Prediksi Risiko Iklim, dan Analisis Dampak Sosial secara Real-Time.
 
+Author: Team G.R.E.E.N
+
 ---
 
 ## 1. Arsitektur Sistem & AI Agent
